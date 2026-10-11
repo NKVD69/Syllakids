@@ -171,3 +171,34 @@ button { font: inherit; color: inherit; }
 }
 .piste .tuile { position: relative; z-index: 1; }
 .piste .tuile.mobile { box-shadow: 0 0 0 0.8vmin var(--vert); cursor: grab; }
+
+/* Écoute : oreilles verte et rouge, cartes, cases-syllabes */
+.bouton-rond.oui { border-color: var(--vert); } .bouton-rond.oui svg { stroke: var(--vert); }
+.bouton-rond.non { border-color: var(--rouge); } .bouton-rond.non svg { stroke: var(--rouge); }
+.bouton-rond.grand { --zone-toucher: 120px; }
+.cases { display: flex; gap: 2.4vmin; }
+.case {
+  width: 18vmin; height: 14vmin; border-radius: 2vmin; border: 0.7vmin solid var(--trait-ui);
+  background: var(--papier); display: grid; place-items: center; cursor: pointer;
+}
+.case.jeton::after { content: ""; width: 6vmin; height: 6vmin; border-radius: 50%; background: var(--vert); }
+.case.faux { border-color: var(--rouge); }
+.cartes { display: flex; gap: 4vmin; flex-wrap: wrap; justify-content: center; }
+.carte {
+  width: 22vmin; height: 22vmin; min-width: 110px; min-height: 110px; border-radius: 3vmin;
+  border: 0.6vmin solid var(--trait-ui); background: var(--papier); display: grid; place-items: center; cursor: pointer;
+}
+.carte svg { width: 46%; height: 46%; stroke: var(--trait-ui); fill: none; }
+.carte.choisie { border-color: var(--bleu); box-shadow: 0 0 0 1vmin rgba(31,95,191,.18); }
+.carte.choisie svg { stroke: var(--bleu); }
+.etiquettes { display: flex; gap: 3vmin; flex-wrap: wrap; justify-content: center; }
+.etiquette { border: 0.5vmin solid var(--trait-ui); border-radius: 2vmin; background: var(--papier); padding: 1.2vmin 2.6vmin; cursor: pointer; }
+.etiquette.juste { border-color: var(--vert); box-shadow: 0 0 0 0.8vmin rgba(46,158,91,.25); }
+.etiquette.faux { border-color: var(--rouge); opacity: .55; }
+.jauge { width: min(70vw, 560px); height: 5vmin; min-height: 28px; border-radius: 99px; border: 0.5vmin solid var(--trait-ui); overflow: hidden; background: var(--papier); }
+.jauge > span { display: block; height: 100%; background: var(--vert); transition: width .08s linear; }
+.niveau { width: min(70vw, 560px); height: 1.4vmin; min-height: 8px; border-radius: 99px; background: var(--ligne-fine); overflow: hidden; }
+.niveau > span { display: block; height: 100%; background: var(--bleu); }
+.etape .seances { position: absolute; bottom: 10%; display: flex; gap: 6px; }
+.etape .seances i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid currentColor; }
+.etape .seances i.faite { background: var(--vert); border-color: var(--vert); }

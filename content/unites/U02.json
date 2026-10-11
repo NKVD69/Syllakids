@@ -354,6 +354,146 @@
       "image": "e1mile.webp"
     },
     {
+      "id": "U02-X-MOLU",
+      "type": "pseudo",
+      "texte": "MOLU",
+      "syllabes": [
+        "MO",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "moly"
+    },
+    {
+      "id": "U02-X-LIMU",
+      "type": "pseudo",
+      "texte": "LIMU",
+      "syllabes": [
+        "LI",
+        "MU"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "limy"
+    },
+    {
+      "id": "U02-X-ME1LU",
+      "type": "pseudo",
+      "texte": "MÉLU",
+      "syllabes": [
+        "MÉ",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "mely"
+    },
+    {
+      "id": "U02-X-LOMI",
+      "type": "pseudo",
+      "texte": "LOMI",
+      "syllabes": [
+        "LO",
+        "MI"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "lomi"
+    },
+    {
+      "id": "U02-X-MULI",
+      "type": "pseudo",
+      "texte": "MULI",
+      "syllabes": [
+        "MU",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "myli"
+    },
+    {
       "id": "U02-P-01",
       "type": "phrase",
       "texte": "MÉMÉ A LU.",

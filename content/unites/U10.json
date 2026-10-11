@@ -500,6 +500,146 @@
       "image": "ope1ra.webp"
     },
     {
+      "id": "U10-X-PIFU",
+      "type": "pseudo",
+      "texte": "PIFU",
+      "syllabes": [
+        "PI",
+        "FU"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "pify"
+    },
+    {
+      "id": "U10-X-PURA",
+      "type": "pseudo",
+      "texte": "PURA",
+      "syllabes": [
+        "PU",
+        "RA"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "pyʁa"
+    },
+    {
+      "id": "U10-X-PE1MO",
+      "type": "pseudo",
+      "texte": "PÉMO",
+      "syllabes": [
+        "PÉ",
+        "MO"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "pemo"
+    },
+    {
+      "id": "U10-X-PIZU",
+      "type": "pseudo",
+      "texte": "PIZU",
+      "syllabes": [
+        "PI",
+        "ZU"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "pizy"
+    },
+    {
+      "id": "U10-X-PE1LU",
+      "type": "pseudo",
+      "texte": "PÉLU",
+      "syllabes": [
+        "PÉ",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "pely"
+    },
+    {
       "id": "U10-P-01",
       "type": "phrase",
       "texte": "PAPI A UN PIANO.",

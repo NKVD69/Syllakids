@@ -488,6 +488,146 @@
       "image": "amina.webp"
     },
     {
+      "id": "U06-X-NUFA",
+      "type": "pseudo",
+      "texte": "NUFA",
+      "syllabes": [
+        "NU",
+        "FA"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "nyfa"
+    },
+    {
+      "id": "U06-X-NOLI",
+      "type": "pseudo",
+      "texte": "NOLI",
+      "syllabes": [
+        "NO",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "noli"
+    },
+    {
+      "id": "U06-X-NE1RU",
+      "type": "pseudo",
+      "texte": "NÉRU",
+      "syllabes": [
+        "NÉ",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "neʁy"
+    },
+    {
+      "id": "U06-X-MINU",
+      "type": "pseudo",
+      "texte": "MINU",
+      "syllabes": [
+        "MI",
+        "NU"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "miny"
+    },
+    {
+      "id": "U06-X-NAFO",
+      "type": "pseudo",
+      "texte": "NAFO",
+      "syllabes": [
+        "NA",
+        "FO"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "nafo"
+    },
+    {
       "id": "U06-P-01",
       "type": "phrase",
       "texte": "IL Y A UNE LUNE.",

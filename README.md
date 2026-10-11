@@ -12,6 +12,7 @@ npm run dev          # application sur http://localhost:5173
 npm test             # tests : déchiffrabilité, contenus, évaluation du tracé
 npm run build        # version installable (PWA) dans apps/app/dist
 npm run contenu:generer   # régénère content/unites/*.json depuis content/sources/listes.json
+npm run parcours -- U07 0 6ans essai   # joue une séance automatiquement (après build + preview)
 ```
 
 Node 20 ou plus récent.

@@ -5,7 +5,7 @@ interface Props {
   nom: string;
   onClick?: () => void;
   children: ReactNode;
-  variante?: "principal" | "petit" | "actif";
+  variante?: string;
   desactive?: boolean;
 }
 

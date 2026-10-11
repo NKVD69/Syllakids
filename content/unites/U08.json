@@ -236,6 +236,146 @@
       "image": "jamal.webp"
     },
     {
+      "id": "U08-X-JUFO",
+      "type": "pseudo",
+      "texte": "JUFO",
+      "syllabes": [
+        "JU",
+        "FO"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "ʒyfo"
+    },
+    {
+      "id": "U08-X-JIRA",
+      "type": "pseudo",
+      "texte": "JIRA",
+      "syllabes": [
+        "JI",
+        "RA"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "ʒiʁa"
+    },
+    {
+      "id": "U08-X-JE1MO",
+      "type": "pseudo",
+      "texte": "JÉMO",
+      "syllabes": [
+        "JÉ",
+        "MO"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "ʒemo"
+    },
+    {
+      "id": "U08-X-JOLU",
+      "type": "pseudo",
+      "texte": "JOLU",
+      "syllabes": [
+        "JO",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "ʒoly"
+    },
+    {
+      "id": "U08-X-MAJU",
+      "type": "pseudo",
+      "texte": "MAJU",
+      "syllabes": [
+        "MA",
+        "JU"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "maʒy"
+    },
+    {
       "id": "U08-P-01",
       "type": "phrase",
       "texte": "JE RÊVE.",

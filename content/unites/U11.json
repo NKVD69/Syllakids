@@ -554,6 +554,146 @@
       "image": "tirelire.webp"
     },
     {
+      "id": "U11-X-TUPO",
+      "type": "pseudo",
+      "texte": "TUPO",
+      "syllabes": [
+        "TU",
+        "PO"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "typo"
+    },
+    {
+      "id": "U11-X-TIMA",
+      "type": "pseudo",
+      "texte": "TIMA",
+      "syllabes": [
+        "TI",
+        "MA"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "tima"
+    },
+    {
+      "id": "U11-X-TE1RU",
+      "type": "pseudo",
+      "texte": "TÉRU",
+      "syllabes": [
+        "TÉ",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "teʁy"
+    },
+    {
+      "id": "U11-X-TOFI",
+      "type": "pseudo",
+      "texte": "TOFI",
+      "syllabes": [
+        "TO",
+        "FI"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "tofi"
+    },
+    {
+      "id": "U11-X-TUZE1",
+      "type": "pseudo",
+      "texte": "TUZÉ",
+      "syllabes": [
+        "TU",
+        "ZÉ"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "tyze"
+    },
+    {
       "id": "U11-P-01",
       "type": "phrase",
       "texte": "LE PILOTE A UNE MOTO.",

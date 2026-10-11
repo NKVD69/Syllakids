@@ -43,9 +43,13 @@ export function PhraseKaraoke({ f, profil, onFini }: PropsActivite) {
     <div className="scene">
       <div className="phrase" style={{ fontSize: "8.5vmin" }}>
         {mots.map((m, k) => (
-          <Mot key={k} texte={m} taille="1em" className={k === lu ? "lu" : ""} />
+          <span key={k} style={{ display: "inline-flex", alignItems: "flex-end" }}>
+            <Mot texte={m} taille="1em" className={k === lu ? "lu" : ""} />
+            {k === mots.length - 1 && /[.!?]/.test(ponctuation) && (
+              <span className="lettres" style={{ paddingBottom: "0.18em", marginLeft: ponctuation === "." ? "0.04em" : "0.25em" }}>{ponctuation}</span>
+            )}
+          </span>
         ))}
-        {/[.!?]/.test(ponctuation) && <span className="lettres">{ponctuation}</span>}
       </div>
       <div className="actions">
         <BoutonRond nom="Écouter la phrase" variante={ecoutee ? undefined : "actif"} onClick={ecouter}><HautParleur /></BoutonRond>

@@ -1,17 +1,22 @@
 import type { Profil } from "./types";
 
 export interface Reglages { profil: Profil; dys: boolean }
-export interface Progression { terminees: string[]; reglages: Reglages }
+export interface Progression {
+  terminees: string[];
+  /** Nombre de séances faites par unité. */
+  seances: Record<string, number>;
+  reglages: Reglages;
+}
 
 const CLE = "syllakids:progression:v1";
-const DEFAUT: Progression = { terminees: [], reglages: { profil: "6ans", dys: false } };
+const DEFAUT: Progression = { terminees: [], seances: {}, reglages: { profil: "6ans", dys: false } };
 
 export function charger(): Progression {
   try {
     const brut = localStorage.getItem(CLE);
     if (!brut) return structuredClone(DEFAUT);
     const p = JSON.parse(brut) as Partial<Progression>;
-    return { terminees: p.terminees ?? [], reglages: { ...DEFAUT.reglages, ...p.reglages } };
+    return { terminees: p.terminees ?? [], seances: p.seances ?? {}, reglages: { ...DEFAUT.reglages, ...p.reglages } };
   } catch {
     return structuredClone(DEFAUT);
   }

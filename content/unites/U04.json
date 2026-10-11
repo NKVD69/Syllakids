@@ -380,6 +380,155 @@
       "image": "samir.webp"
     },
     {
+      "id": "U04-X-SIMO",
+      "type": "pseudo",
+      "texte": "SIMO",
+      "syllabes": [
+        "SI",
+        "MO"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "simo"
+    },
+    {
+      "id": "U04-X-SOLU",
+      "type": "pseudo",
+      "texte": "SOLU",
+      "syllabes": [
+        "SO",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "soly"
+    },
+    {
+      "id": "U04-X-SE1MU",
+      "type": "pseudo",
+      "texte": "SÉMU",
+      "syllabes": [
+        "SÉ",
+        "MU"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "semy"
+    },
+    {
+      "id": "U04-X-SIRU",
+      "type": "pseudo",
+      "texte": "SIRU",
+      "syllabes": [
+        "SI",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "siʁy"
+    },
+    {
+      "id": "U04-X-SOMIRA",
+      "type": "pseudo",
+      "texte": "SOMIRA",
+      "syllabes": [
+        "SO",
+        "MI",
+        "RA"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "somiʁa"
+    },
+    {
       "id": "U04-P-01",
       "type": "phrase",
       "texte": "SAMIR EST SALE.",

@@ -14,7 +14,8 @@
     "test": "vitest run",
     "typecheck": "tsc -p packages/decodabilite && tsc -p apps/app --noEmit",
     "contenu:verifier": "vitest run content",
-    "contenu:generer": "tsx scripts/generer-contenu.ts"
+    "contenu:generer": "tsx scripts/generer-contenu.ts",
+    "parcours": "node scripts/parcours-automatique.mjs"
   },
   "devDependencies": {
     "playwright": "^1.56.1",

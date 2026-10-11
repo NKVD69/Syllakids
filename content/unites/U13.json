@@ -506,6 +506,146 @@
       "image": "limonade.webp"
     },
     {
+      "id": "U13-X-DUMO",
+      "type": "pseudo",
+      "texte": "DUMO",
+      "syllabes": [
+        "DU",
+        "MO"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "dymo"
+    },
+    {
+      "id": "U13-X-DIFA",
+      "type": "pseudo",
+      "texte": "DIFA",
+      "syllabes": [
+        "DI",
+        "FA"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "difa"
+    },
+    {
+      "id": "U13-X-DE1RU",
+      "type": "pseudo",
+      "texte": "DÉRU",
+      "syllabes": [
+        "DÉ",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "deʁy"
+    },
+    {
+      "id": "U13-X-DOPI",
+      "type": "pseudo",
+      "texte": "DOPI",
+      "syllabes": [
+        "DO",
+        "PI"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "dopi"
+    },
+    {
+      "id": "U13-X-BADU",
+      "type": "pseudo",
+      "texte": "BADU",
+      "syllabes": [
+        "BA",
+        "DU"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "bady"
+    },
+    {
       "id": "U13-P-01",
       "type": "phrase",
       "texte": "LE VÉLO EST RAPIDE.",

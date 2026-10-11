@@ -27,6 +27,14 @@ describe("contenu des unités", () => {
         if (a.ok) expect(a.rang, item.texte).toBeLessThanOrEqual(rang);
       }
     });
+    it(`${u.unite.id} : chaque mot inventé est lisible et n'est pas un vrai mot de l'unité`, () => {
+      const vrais = new Set(u.items.filter((i: any) => i.type === "mot").map((i: any) => i.texte));
+      for (const item of u.items.filter((i: any) => i.type === "pseudo")) {
+        const a = analyserMot(item.texte);
+        expect(a.ok && a.rang <= rang, item.texte).toBe(true);
+        expect(vrais.has(item.texte), item.texte).toBe(false);
+      }
+    });
     it(`${u.unite.id} : chaque phrase est lisible au rang ${rang}`, () => {
       for (const item of u.items.filter((i: any) => i.type === "phrase")) {
         const v = verifierPhrase(item.texte, rang);

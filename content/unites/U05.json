@@ -391,6 +391,146 @@
       "image": "fe1mur.webp"
     },
     {
+      "id": "U05-X-FOLU",
+      "type": "pseudo",
+      "texte": "FOLU",
+      "syllabes": [
+        "FO",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "foly"
+    },
+    {
+      "id": "U05-X-FIMA",
+      "type": "pseudo",
+      "texte": "FIMA",
+      "syllabes": [
+        "FI",
+        "MA"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "fima"
+    },
+    {
+      "id": "U05-X-FARU",
+      "type": "pseudo",
+      "texte": "FARU",
+      "syllabes": [
+        "FA",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "faʁy"
+    },
+    {
+      "id": "U05-X-FOMI",
+      "type": "pseudo",
+      "texte": "FOMI",
+      "syllabes": [
+        "FO",
+        "MI"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "fomi"
+    },
+    {
+      "id": "U05-X-LUFA",
+      "type": "pseudo",
+      "texte": "LUFA",
+      "syllabes": [
+        "LU",
+        "FA"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "lyfa"
+    },
+    {
       "id": "U05-P-01",
       "type": "phrase",
       "texte": "LE SOFA EST SALE.",

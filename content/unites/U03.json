@@ -365,6 +365,146 @@
       "image": "omar.webp"
     },
     {
+      "id": "U03-X-RIMU",
+      "type": "pseudo",
+      "texte": "RIMU",
+      "syllabes": [
+        "RI",
+        "MU"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "ʁimy"
+    },
+    {
+      "id": "U03-X-LORU",
+      "type": "pseudo",
+      "texte": "LORU",
+      "syllabes": [
+        "LO",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "loʁy"
+    },
+    {
+      "id": "U03-X-ME1RU",
+      "type": "pseudo",
+      "texte": "MÉRU",
+      "syllabes": [
+        "MÉ",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "meʁy"
+    },
+    {
+      "id": "U03-X-ROLU",
+      "type": "pseudo",
+      "texte": "ROLU",
+      "syllabes": [
+        "RO",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "ʁoly"
+    },
+    {
+      "id": "U03-X-MIRU",
+      "type": "pseudo",
+      "texte": "MIRU",
+      "syllabes": [
+        "MI",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "miʁy"
+    },
+    {
       "id": "U03-P-01",
       "type": "phrase",
       "texte": "RÉMI A RAMÉ.",

@@ -73,6 +73,18 @@ for (const r of sources.rangs) {
     return { id: `${uid}-P-${id2(i + 1)}`, type: "phrase", texte: p, rangMin: v.rang, image: `${uid.toLowerCase()}-p${id2(i + 1)}.webp` };
   });
 
+  const reels = new Set((r.mots as string[]).map((m) => m.normalize("NFC")));
+  const pseudos = (r.pseudoMots ?? []).map((m: string) => {
+    const a = analyserMot(m);
+    if (!a.ok) {
+      erreurs.push(`${uid} mot inventé ${m} : ${a.problemes.join(", ")}`);
+      return null;
+    }
+    if (a.rang > r.rang) erreurs.push(`${uid} mot inventé ${m} : lisible seulement au rang ${a.rang}`);
+    if (reels.has(a.mot)) erreurs.push(`${uid} mot inventé ${m} : figure dans les vrais mots`);
+    return { id: `${uid}-X-${slug(a.mot)}`, type: "pseudo", texte: a.mot, syllabes: a.syllabes, segments: a.segments, api: api(a.segments) };
+  });
+
   const unite = {
     version: "1.0",
     unite: {
@@ -84,7 +96,7 @@ for (const r of sources.rangs) {
       motsOutils: r.rang >= 1 && r.rang <= 13 ? motsOutilsDisponibles(r.rang).filter((m) => m.rang === r.rang).map((m) => m.mot) : [],
       ...(r.revision ? { revision: r.revision } : {}),
     },
-    items: [...syllabes, ...mots.filter(Boolean), ...phrases],
+    items: [...syllabes, ...mots.filter(Boolean), ...pseudos.filter(Boolean), ...phrases],
   };
   writeFileSync(join(sortie, `${uid}.json`), JSON.stringify(unite, null, 2) + "\n");
   index.push({ id: uid, rang: r.rang, titre: r.titre, fichier: `unites/${uid}.json` });

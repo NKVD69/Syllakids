@@ -37,6 +37,11 @@ export function Chemin() {
                 >
                   {u.bloc === "voyelles" ? "AEIOU" : u.bloc === "bilan" ? <Etoile /> : u.titre}
                   {faite && <span className="badge"><Coche /></span>}
+                  {ouverte && !faite && u.bloc !== "bilan" && (
+                    <span className="seances" aria-hidden>
+                      {[0, 1].map((k) => <i key={k} className={(progression.seances[u.id] ?? 0) > k ? "faite" : ""} />)}
+                    </span>
+                  )}
                   {!ouverte && <span className="badge"><Cadenas /></span>}
                 </button>
               </li>

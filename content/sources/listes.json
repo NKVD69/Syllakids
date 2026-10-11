@@ -85,6 +85,13 @@
         "LOLA A LU.",
         "IL Y A LÉA.",
         "ALI A LU À LILA."
+      ],
+      "pseudoMots": [
+        "LULI",
+        "LÉLO",
+        "ULA",
+        "ILO",
+        "LOLU"
       ]
     },
     {
@@ -110,6 +117,13 @@
         "ÉMILE A MIMÉ LA MULE.",
         "LOLA A LIMÉ LA LAME.",
         "ELLE A MA LIME."
+      ],
+      "pseudoMots": [
+        "MOLU",
+        "LIMU",
+        "MÉLU",
+        "LOMI",
+        "MULI"
       ]
     },
     {
@@ -135,6 +149,13 @@
         "MA MÈRE A RI.",
         "ÉMILE A LU À MÉMÉ.",
         "OMAR RIRA."
+      ],
+      "pseudoMots": [
+        "RIMU",
+        "LORU",
+        "MÉRU",
+        "ROLU",
+        "MIRU"
       ]
     },
     {
@@ -161,6 +182,13 @@
         "LOLA EST SUR LE MUR.",
         "MÉMÉ A SEMÉ.",
         "SAMIR A LU À SES AMIS."
+      ],
+      "pseudoMots": [
+        "SIMO",
+        "SOLU",
+        "SÉMU",
+        "SIRU",
+        "SOMIRA"
       ]
     },
     {
@@ -186,6 +214,13 @@
         "LA RAFALE A FÊLÉ LE MUR.",
         "LILA A LU SUR LE SOFA.",
         "LE FIL EST SUR LE SOFA."
+      ],
+      "pseudoMots": [
+        "FOLU",
+        "FIMA",
+        "FARU",
+        "FOMI",
+        "LUFA"
       ]
     },
     {
@@ -214,6 +249,13 @@
         "UN ANIMAL ÉNORME EST LÀ.",
         "LA FARINE EST SUR LE SOFA.",
         "AMINA A LU ET ELLE A RI."
+      ],
+      "pseudoMots": [
+        "NUFA",
+        "NOLI",
+        "NÉRU",
+        "MINU",
+        "NAFO"
       ]
     },
     {
@@ -242,6 +284,13 @@
         "LA MULE A VOLÉ UNE OLIVE.",
         "OMAR A RÊVÉ À UN NAVIRE.",
         "NINA VA SUR LA RIVE."
+      ],
+      "pseudoMots": [
+        "VUMO",
+        "VOLI",
+        "VÉNA",
+        "VIRO",
+        "NOVU"
       ]
     },
     {
@@ -262,6 +311,13 @@
         "JE LAVE LA MULE.",
         "JAMILA A UN JOLI VÉLO.",
         "JAMAL EST SUR LE SOFA ET IL RÊVE."
+      ],
+      "pseudoMots": [
+        "JUFO",
+        "JIRA",
+        "JÉMO",
+        "JOLU",
+        "MAJU"
       ]
     },
     {
@@ -281,6 +337,13 @@
         "ZOÉ A VU LA LUNE.",
         "ZORA A ZÉRO OLIVE.",
         "ZOÉ A UN SOFA AZUR."
+      ],
+      "pseudoMots": [
+        "ZUMO",
+        "ZILA",
+        "ZÉFU",
+        "ZORU",
+        "ZAVI"
       ]
     },
     {
@@ -309,6 +372,13 @@
         "JAMILA A UN JOLI PYJAMA.",
         "LE PUMA NE VA PAS SUR LE SOFA.",
         "LA PILE EST SUR LE PIANO."
+      ],
+      "pseudoMots": [
+        "PIFU",
+        "PURA",
+        "PÉMO",
+        "PIZU",
+        "PÉLU"
       ]
     },
     {
@@ -338,6 +408,13 @@
         "TU AS VU LA TULIPE ?",
         "LE PIRATE A VOLÉ TES PATATES.",
         "LA TOMATE EST SUR LA TÉLÉ."
+      ],
+      "pseudoMots": [
+        "TUPO",
+        "TIMA",
+        "TÉRU",
+        "TOFI",
+        "TUZÉ"
       ]
     },
     {
@@ -362,6 +439,13 @@
         "PÉPÉ A UNE BARBE.",
         "LE BOA EST SUR LA TÉLÉ.",
         "AMINA A LAVÉ SA ROBE."
+      ],
+      "pseudoMots": [
+        "BIRO",
+        "BÉFU",
+        "BOLI",
+        "BUMA",
+        "BAZU"
       ]
     },
     {
@@ -391,6 +475,13 @@
         "LA PÉDALE DU VÉLO EST SALE.",
         "LA MÈRE DE JAMILA A DES DOMINOS.",
         "ZOÉ EST TIMIDE."
+      ],
+      "pseudoMots": [
+        "DUMO",
+        "DIFA",
+        "DÉRU",
+        "DOPI",
+        "BADU"
       ]
     },
     {
@@ -431,5 +522,6 @@
         "SAMEDI, NAFILA A LU À MÉMÉ."
       ]
     }
-  ]
+  ],
+  "noteSources": "pseudoMots : mots inventés pour l'activité L6, choisis pour ne ressembler à l'oral à aucun mot courant"
 }

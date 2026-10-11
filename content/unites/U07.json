@@ -463,6 +463,146 @@
       "image": "salive.webp"
     },
     {
+      "id": "U07-X-VUMO",
+      "type": "pseudo",
+      "texte": "VUMO",
+      "syllabes": [
+        "VU",
+        "MO"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "vymo"
+    },
+    {
+      "id": "U07-X-VOLI",
+      "type": "pseudo",
+      "texte": "VOLI",
+      "syllabes": [
+        "VO",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "voli"
+    },
+    {
+      "id": "U07-X-VE1NA",
+      "type": "pseudo",
+      "texte": "VÉNA",
+      "syllabes": [
+        "VÉ",
+        "NA"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "vena"
+    },
+    {
+      "id": "U07-X-VIRO",
+      "type": "pseudo",
+      "texte": "VIRO",
+      "syllabes": [
+        "VI",
+        "RO"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "viʁo"
+    },
+    {
+      "id": "U07-X-NOVU",
+      "type": "pseudo",
+      "texte": "NOVU",
+      "syllabes": [
+        "NO",
+        "VU"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "novy"
+    },
+    {
       "id": "U07-P-01",
       "type": "phrase",
       "texte": "AMINA LAVE LE VÉLO.",

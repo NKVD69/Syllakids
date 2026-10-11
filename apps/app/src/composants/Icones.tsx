@@ -10,3 +10,12 @@ export const Cadenas = (_: P) => (<svg {...base} aria-hidden><rect x="5" y="10.5
 export const Gomme = (_: P) => (<svg {...base} aria-hidden><path d="m14.5 4.5 5 5L11 18H6l-2-2z" /><path d="M9.5 9.5l5 5" /><path d="M11 18h9" /></svg>);
 export const Etoile = (_: P) => (<svg {...base} aria-hidden><path d="m12 3.5 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z" /></svg>);
 export const Parler = (_: P) => (<svg {...base} aria-hidden><path d="M5 21v-3.6A7 7 0 0 1 3 12.5 6.8 6.8 0 0 1 9.8 5.6c3.4 0 5.9 2.4 6.2 5.6l1.5 2.5c.3.4 0 .9-.5.9h-1.2v1.8a1.8 1.8 0 0 1-1.8 1.8H12V21" /><path d="M19.2 8.6a4 4 0 0 1 0 4.8" /><path d="M21.4 6.6a7 7 0 0 1 0 8.8" /></svg>);
+export const Pouce = (_: P) => (<svg {...base} aria-hidden><path d="M7.5 10.5v9H4.5v-9z" /><path d="M7.5 10.5 11 4c1.4 0 2.3 1.1 2 2.5l-.7 3H18a2 2 0 0 1 2 2.3l-1.1 6.2a2 2 0 0 1-2 1.5H7.5" /></svg>);
+export const Interrogation = (_: P) => (<svg {...base} aria-hidden><path d="M8.5 8.5a3.5 3.5 0 1 1 5.2 3c-1.1.6-1.7 1.3-1.7 2.5v.5" /><path d="M12 18.5v.5" /></svg>);
+export const Micro = (_: P) => (<svg {...base} aria-hidden><rect x="9" y="3.5" width="6" height="11" rx="3" /><path d="M6 11.5a6 6 0 0 0 12 0" /><path d="M12 17.5V21" /></svg>);
+export const VisageContent = (_: P) => (<svg {...base} aria-hidden><circle cx="12" cy="12" r="8.5" /><path d="M8.5 14a4.2 4.2 0 0 0 7 0" /><path d="M9 9.5v.5M15 9.5v.5" /></svg>);
+export const VisageMoyen = (_: P) => (<svg {...base} aria-hidden><circle cx="12" cy="12" r="8.5" /><path d="M8.5 15h7" /><path d="M9 9.5v.5M15 9.5v.5" /></svg>);
+export const VisageTriste = (_: P) => (<svg {...base} aria-hidden><circle cx="12" cy="12" r="8.5" /><path d="M8.5 16a4.2 4.2 0 0 1 7 0" /><path d="M9 9.5v.5M15 9.5v.5" /></svg>);
+export const Rond = (_: P) => (<svg {...base} aria-hidden><circle cx="12" cy="12" r="7.5" /></svg>);
+export const Triangle = (_: P) => (<svg {...base} aria-hidden><path d="M12 4.5 20 19H4z" /></svg>);
+export const Carre = (_: P) => (<svg {...base} aria-hidden><rect x="5" y="5" width="14" height="14" rx="1.5" /></svg>);

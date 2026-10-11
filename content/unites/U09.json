@@ -216,6 +216,146 @@
       "image": "zola.webp"
     },
     {
+      "id": "U09-X-ZUMO",
+      "type": "pseudo",
+      "texte": "ZUMO",
+      "syllabes": [
+        "ZU",
+        "MO"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "zymo"
+    },
+    {
+      "id": "U09-X-ZILA",
+      "type": "pseudo",
+      "texte": "ZILA",
+      "syllabes": [
+        "ZI",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "zila"
+    },
+    {
+      "id": "U09-X-ZE1FU",
+      "type": "pseudo",
+      "texte": "ZÉFU",
+      "syllabes": [
+        "ZÉ",
+        "FU"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "zefy"
+    },
+    {
+      "id": "U09-X-ZORU",
+      "type": "pseudo",
+      "texte": "ZORU",
+      "syllabes": [
+        "ZO",
+        "RU"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "zoʁy"
+    },
+    {
+      "id": "U09-X-ZAVI",
+      "type": "pseudo",
+      "texte": "ZAVI",
+      "syllabes": [
+        "ZA",
+        "VI"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "zavi"
+    },
+    {
       "id": "U09-P-01",
       "type": "phrase",
       "texte": "ZOÉ A VU LA LUNE.",

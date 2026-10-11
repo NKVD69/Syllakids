@@ -11,3 +11,4 @@ desktop.ini
 !.env.example
 playwright-report/
 test-results/
+captures/

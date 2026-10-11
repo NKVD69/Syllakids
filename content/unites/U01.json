@@ -334,6 +334,138 @@
       "image": "lili.webp"
     },
     {
+      "id": "U01-X-LULI",
+      "type": "pseudo",
+      "texte": "LULI",
+      "syllabes": [
+        "LU",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "lyli"
+    },
+    {
+      "id": "U01-X-LE1LO",
+      "type": "pseudo",
+      "texte": "LÉLO",
+      "syllabes": [
+        "LÉ",
+        "LO"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "lelo"
+    },
+    {
+      "id": "U01-X-ULA",
+      "type": "pseudo",
+      "texte": "ULA",
+      "syllabes": [
+        "U",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "yla"
+    },
+    {
+      "id": "U01-X-ILO",
+      "type": "pseudo",
+      "texte": "ILO",
+      "syllabes": [
+        "I",
+        "LO"
+      ],
+      "segments": [
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "ilo"
+    },
+    {
+      "id": "U01-X-LOLU",
+      "type": "pseudo",
+      "texte": "LOLU",
+      "syllabes": [
+        "LO",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "loly"
+    },
+    {
       "id": "U01-P-01",
       "type": "phrase",
       "texte": "LOLA A LU.",

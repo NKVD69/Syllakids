@@ -1,5 +1,20 @@
 # Journal des sessions
 
+## Session 2 — 11 octobre 2026
+
+Fait :
+
+- 7 nouvelles activités : A1 j'entends / je n'entends pas, A2 où est le son, A3 l'intrus sonore, R1 l'écho (micro, réécoute, auto-évaluation), R2 le son qui dure (jauge de volume), L4 quelle syllabe, L6 vrai mot ou mot inventé. 13 activités sur 17 sont maintenant en place.
+- Chaque unité se fait en deux séances : découverte du son, puis entraînement et lecture ; le chemin affiche l'avancement par séance.
+- Règle « jamais bloqué » : après 3 erreurs sur un même élément, la bonne réponse est donnée et l'activité continue ; R2 propose de continuer après 15 secondes.
+- Mots inventés (5 par rang) ajoutés aux listes et vérifiés automatiquement.
+- Bibliothèque : repérage d'un son dans un mot et dans ses syllabes.
+- Script de parcours automatique (`npm run parcours`) : joue une séance entière avec un micro simulé et prend une capture par activité.
+- 129 tests automatisés.
+
+Reste pour le MVP : E2 dictée tracée, E3 étiquettes, C1 phrase et image, F1 chrono-lecture, critère de maîtrise et révisions espacées, espace enseignant, comptes et synchronisation, sons et illustrations.
+
+
 ## Session 1 — 11 octobre 2026
 
 Fait :

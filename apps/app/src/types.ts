@@ -5,7 +5,8 @@ export interface ItemMot {
   id: string; type: "mot"; texte: string; rangMin: number; syllabes: string[]; segments: Segment[]; api: string; image: string; motOutil?: boolean;
 }
 export interface ItemPhrase { id: string; type: "phrase"; texte: string; rangMin: number; image: string }
-export type Item = ItemSyllabe | ItemMot | ItemPhrase;
+export interface ItemPseudo { id: string; type: "pseudo"; texte: string; syllabes: string[]; segments: Segment[]; api: string }
+export type Item = ItemSyllabe | ItemMot | ItemPseudo | ItemPhrase;
 
 export interface Unite {
   id: string; rang: number; titre: string; bloc: "voyelles" | "sons-simples" | "bilan";

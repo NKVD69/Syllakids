@@ -367,6 +367,146 @@
       "image": "butine.webp"
     },
     {
+      "id": "U12-X-BIRO",
+      "type": "pseudo",
+      "texte": "BIRO",
+      "syllabes": [
+        "BI",
+        "RO"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "biʁo"
+    },
+    {
+      "id": "U12-X-BE1FU",
+      "type": "pseudo",
+      "texte": "BÉFU",
+      "syllabes": [
+        "BÉ",
+        "FU"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "befy"
+    },
+    {
+      "id": "U12-X-BOLI",
+      "type": "pseudo",
+      "texte": "BOLI",
+      "syllabes": [
+        "BO",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "boli"
+    },
+    {
+      "id": "U12-X-BUMA",
+      "type": "pseudo",
+      "texte": "BUMA",
+      "syllabes": [
+        "BU",
+        "MA"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "byma"
+    },
+    {
+      "id": "U12-X-BAZU",
+      "type": "pseudo",
+      "texte": "BAZU",
+      "syllabes": [
+        "BA",
+        "ZU"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "bazy"
+    },
+    {
       "id": "U12-P-01",
       "type": "phrase",
       "texte": "LE BÉBÉ A UNE BANANE.",
