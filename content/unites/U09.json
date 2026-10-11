@@ -1,0 +1,240 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U09",
+    "rang": 9,
+    "titre": "Z",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "Z",
+        "p": "z",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": []
+  },
+  "items": [
+    {
+      "id": "U09-S-ZA",
+      "type": "syllabe",
+      "texte": "ZA",
+      "api": "za"
+    },
+    {
+      "id": "U09-S-ZE",
+      "type": "syllabe",
+      "texte": "ZE",
+      "api": "zə"
+    },
+    {
+      "id": "U09-S-ZI",
+      "type": "syllabe",
+      "texte": "ZI",
+      "api": "zi"
+    },
+    {
+      "id": "U09-S-ZO",
+      "type": "syllabe",
+      "texte": "ZO",
+      "api": "zo"
+    },
+    {
+      "id": "U09-S-ZU",
+      "type": "syllabe",
+      "texte": "ZU",
+      "api": "zy"
+    },
+    {
+      "id": "U09-S-ZY",
+      "type": "syllabe",
+      "texte": "ZY",
+      "api": "zi"
+    },
+    {
+      "id": "U09-S-ZE1",
+      "type": "syllabe",
+      "texte": "ZÉ",
+      "api": "ze"
+    },
+    {
+      "id": "U09-S-ZE2",
+      "type": "syllabe",
+      "texte": "ZÈ",
+      "api": "zɛ"
+    },
+    {
+      "id": "U09-S-ZE3",
+      "type": "syllabe",
+      "texte": "ZÊ",
+      "api": "zɛ"
+    },
+    {
+      "id": "U09-M-ZE1RO",
+      "type": "mot",
+      "texte": "ZÉRO",
+      "rangMin": 9,
+      "syllabes": [
+        "ZÉ",
+        "RO"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "zeʁo",
+      "image": "ze1ro.webp"
+    },
+    {
+      "id": "U09-M-ZOE1",
+      "type": "mot",
+      "texte": "ZOÉ",
+      "rangMin": 9,
+      "syllabes": [
+        "ZO",
+        "É"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "zoe",
+      "image": "zoe1.webp"
+    },
+    {
+      "id": "U09-M-ZORA",
+      "type": "mot",
+      "texte": "ZORA",
+      "rangMin": 9,
+      "syllabes": [
+        "ZO",
+        "RA"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "zoʁa",
+      "image": "zora.webp"
+    },
+    {
+      "id": "U09-M-AZUR",
+      "type": "mot",
+      "texte": "AZUR",
+      "rangMin": 9,
+      "syllabes": [
+        "A",
+        "ZUR"
+      ],
+      "segments": [
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        }
+      ],
+      "api": "azyʁ",
+      "image": "azur.webp"
+    },
+    {
+      "id": "U09-M-ZOLA",
+      "type": "mot",
+      "texte": "ZOLA",
+      "rangMin": 9,
+      "syllabes": [
+        "ZO",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "zola",
+      "image": "zola.webp"
+    },
+    {
+      "id": "U09-P-01",
+      "type": "phrase",
+      "texte": "ZOÉ A VU LA LUNE.",
+      "rangMin": 9,
+      "image": "u09-p01.webp"
+    },
+    {
+      "id": "U09-P-02",
+      "type": "phrase",
+      "texte": "ZORA A ZÉRO OLIVE.",
+      "rangMin": 9,
+      "image": "u09-p02.webp"
+    },
+    {
+      "id": "U09-P-03",
+      "type": "phrase",
+      "texte": "ZOÉ A UN SOFA AZUR.",
+      "rangMin": 9,
+      "image": "u09-p03.webp"
+    }
+  ]
+}

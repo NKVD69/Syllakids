@@ -1,0 +1,551 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U13",
+    "rang": 13,
+    "titre": "D",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "D",
+        "p": "d",
+        "type": "occlusive"
+      }
+    ],
+    "motsOutils": [
+      "DE",
+      "DU",
+      "DES"
+    ]
+  },
+  "items": [
+    {
+      "id": "U13-S-DA",
+      "type": "syllabe",
+      "texte": "DA",
+      "api": "da"
+    },
+    {
+      "id": "U13-S-DE",
+      "type": "syllabe",
+      "texte": "DE",
+      "api": "də"
+    },
+    {
+      "id": "U13-S-DI",
+      "type": "syllabe",
+      "texte": "DI",
+      "api": "di"
+    },
+    {
+      "id": "U13-S-DO",
+      "type": "syllabe",
+      "texte": "DO",
+      "api": "do"
+    },
+    {
+      "id": "U13-S-DU",
+      "type": "syllabe",
+      "texte": "DU",
+      "api": "dy"
+    },
+    {
+      "id": "U13-S-DY",
+      "type": "syllabe",
+      "texte": "DY",
+      "api": "di"
+    },
+    {
+      "id": "U13-S-DE1",
+      "type": "syllabe",
+      "texte": "DÉ",
+      "api": "de"
+    },
+    {
+      "id": "U13-S-DE2",
+      "type": "syllabe",
+      "texte": "DÈ",
+      "api": "dɛ"
+    },
+    {
+      "id": "U13-S-DE3",
+      "type": "syllabe",
+      "texte": "DÊ",
+      "api": "dɛ"
+    },
+    {
+      "id": "U13-M-DE1",
+      "type": "mot",
+      "texte": "DÉ",
+      "rangMin": 13,
+      "syllabes": [
+        "DÉ"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "de",
+      "image": "de1.webp"
+    },
+    {
+      "id": "U13-M-DAME",
+      "type": "mot",
+      "texte": "DAME",
+      "rangMin": 13,
+      "syllabes": [
+        "DA",
+        "ME"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "damə",
+      "image": "dame.webp"
+    },
+    {
+      "id": "U13-M-DUNE",
+      "type": "mot",
+      "texte": "DUNE",
+      "rangMin": 13,
+      "syllabes": [
+        "DU",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "dynə",
+      "image": "dune.webp"
+    },
+    {
+      "id": "U13-M-MIDI",
+      "type": "mot",
+      "texte": "MIDI",
+      "rangMin": 13,
+      "syllabes": [
+        "MI",
+        "DI"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "midi",
+      "image": "midi.webp"
+    },
+    {
+      "id": "U13-M-SALADE",
+      "type": "mot",
+      "texte": "SALADE",
+      "rangMin": 13,
+      "syllabes": [
+        "SA",
+        "LA",
+        "DE"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "saladə",
+      "image": "salade.webp"
+    },
+    {
+      "id": "U13-M-MALADE",
+      "type": "mot",
+      "texte": "MALADE",
+      "rangMin": 13,
+      "syllabes": [
+        "MA",
+        "LA",
+        "DE"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "maladə",
+      "image": "malade.webp"
+    },
+    {
+      "id": "U13-M-SAMEDI",
+      "type": "mot",
+      "texte": "SAMEDI",
+      "rangMin": 13,
+      "syllabes": [
+        "SA",
+        "ME",
+        "DI"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "samədi",
+      "image": "samedi.webp"
+    },
+    {
+      "id": "U13-M-DOMINO",
+      "type": "mot",
+      "texte": "DOMINO",
+      "rangMin": 13,
+      "syllabes": [
+        "DO",
+        "MI",
+        "NO"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "domino",
+      "image": "domino.webp"
+    },
+    {
+      "id": "U13-M-RAPIDE",
+      "type": "mot",
+      "texte": "RAPIDE",
+      "rangMin": 13,
+      "syllabes": [
+        "RA",
+        "PI",
+        "DE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁapidə",
+      "image": "rapide.webp"
+    },
+    {
+      "id": "U13-M-TIMIDE",
+      "type": "mot",
+      "texte": "TIMIDE",
+      "rangMin": 13,
+      "syllabes": [
+        "TI",
+        "MI",
+        "DE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "timidə",
+      "image": "timide.webp"
+    },
+    {
+      "id": "U13-M-PE1DALE",
+      "type": "mot",
+      "texte": "PÉDALE",
+      "rangMin": 13,
+      "syllabes": [
+        "PÉ",
+        "DA",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "pedalə",
+      "image": "pe1dale.webp"
+    },
+    {
+      "id": "U13-M-LIMONADE",
+      "type": "mot",
+      "texte": "LIMONADE",
+      "rangMin": 13,
+      "syllabes": [
+        "LI",
+        "MO",
+        "NA",
+        "DE"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "limonadə",
+      "image": "limonade.webp"
+    },
+    {
+      "id": "U13-P-01",
+      "type": "phrase",
+      "texte": "LE VÉLO EST RAPIDE.",
+      "rangMin": 13,
+      "image": "u13-p01.webp"
+    },
+    {
+      "id": "U13-P-02",
+      "type": "phrase",
+      "texte": "RÉMI EST MALADE.",
+      "rangMin": 13,
+      "image": "u13-p02.webp"
+    },
+    {
+      "id": "U13-P-03",
+      "type": "phrase",
+      "texte": "SAMEDI À MIDI, OMAR A DE LA SALADE.",
+      "rangMin": 13,
+      "image": "u13-p03.webp"
+    },
+    {
+      "id": "U13-P-04",
+      "type": "phrase",
+      "texte": "LA PÉDALE DU VÉLO EST SALE.",
+      "rangMin": 13,
+      "image": "u13-p04.webp"
+    },
+    {
+      "id": "U13-P-05",
+      "type": "phrase",
+      "texte": "LA MÈRE DE JAMILA A DES DOMINOS.",
+      "rangMin": 13,
+      "image": "u13-p05.webp"
+    },
+    {
+      "id": "U13-P-06",
+      "type": "phrase",
+      "texte": "ZOÉ EST TIMIDE.",
+      "rangMin": 13,
+      "image": "u13-p06.webp"
+    }
+  ]
+}

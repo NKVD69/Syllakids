@@ -1,0 +1,422 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U05",
+    "rang": 5,
+    "titre": "F",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "F",
+        "p": "f",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": []
+  },
+  "items": [
+    {
+      "id": "U05-S-FA",
+      "type": "syllabe",
+      "texte": "FA",
+      "api": "fa"
+    },
+    {
+      "id": "U05-S-FE",
+      "type": "syllabe",
+      "texte": "FE",
+      "api": "fə"
+    },
+    {
+      "id": "U05-S-FI",
+      "type": "syllabe",
+      "texte": "FI",
+      "api": "fi"
+    },
+    {
+      "id": "U05-S-FO",
+      "type": "syllabe",
+      "texte": "FO",
+      "api": "fo"
+    },
+    {
+      "id": "U05-S-FU",
+      "type": "syllabe",
+      "texte": "FU",
+      "api": "fy"
+    },
+    {
+      "id": "U05-S-FY",
+      "type": "syllabe",
+      "texte": "FY",
+      "api": "fi"
+    },
+    {
+      "id": "U05-S-FE1",
+      "type": "syllabe",
+      "texte": "FÉ",
+      "api": "fe"
+    },
+    {
+      "id": "U05-S-FE2",
+      "type": "syllabe",
+      "texte": "FÈ",
+      "api": "fɛ"
+    },
+    {
+      "id": "U05-S-FE3",
+      "type": "syllabe",
+      "texte": "FÊ",
+      "api": "fɛ"
+    },
+    {
+      "id": "U05-M-FIL",
+      "type": "mot",
+      "texte": "FIL",
+      "rangMin": 5,
+      "syllabes": [
+        "FIL"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        }
+      ],
+      "api": "fil",
+      "image": "fil.webp"
+    },
+    {
+      "id": "U05-M-FILE",
+      "type": "mot",
+      "texte": "FILE",
+      "rangMin": 5,
+      "syllabes": [
+        "FI",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "filə",
+      "image": "file.webp"
+    },
+    {
+      "id": "U05-M-FILE1",
+      "type": "mot",
+      "texte": "FILÉ",
+      "rangMin": 5,
+      "syllabes": [
+        "FI",
+        "LÉ"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "file",
+      "image": "file1.webp"
+    },
+    {
+      "id": "U05-M-FUME1",
+      "type": "mot",
+      "texte": "FUMÉ",
+      "rangMin": 5,
+      "syllabes": [
+        "FU",
+        "MÉ"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "fyme",
+      "image": "fume1.webp"
+    },
+    {
+      "id": "U05-M-FE3LE1",
+      "type": "mot",
+      "texte": "FÊLÉ",
+      "rangMin": 5,
+      "syllabes": [
+        "FÊ",
+        "LÉ"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "Ê",
+          "p": "ɛ"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "fɛle",
+      "image": "fe3le1.webp"
+    },
+    {
+      "id": "U05-M-RAFALE",
+      "type": "mot",
+      "texte": "RAFALE",
+      "rangMin": 5,
+      "syllabes": [
+        "RA",
+        "FA",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁafalə",
+      "image": "rafale.webp"
+    },
+    {
+      "id": "U05-M-FORME",
+      "type": "mot",
+      "texte": "FORME",
+      "rangMin": 5,
+      "syllabes": [
+        "FOR",
+        "ME"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "foʁmə",
+      "image": "forme.webp"
+    },
+    {
+      "id": "U05-M-SOFA",
+      "type": "mot",
+      "texte": "SOFA",
+      "rangMin": 5,
+      "syllabes": [
+        "SO",
+        "FA"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "sofa",
+      "image": "sofa.webp"
+    },
+    {
+      "id": "U05-M-SAFARI",
+      "type": "mot",
+      "texte": "SAFARI",
+      "rangMin": 5,
+      "syllabes": [
+        "SA",
+        "FA",
+        "RI"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "safaʁi",
+      "image": "safari.webp"
+    },
+    {
+      "id": "U05-M-FE1MUR",
+      "type": "mot",
+      "texte": "FÉMUR",
+      "rangMin": 5,
+      "syllabes": [
+        "FÉ",
+        "MUR"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        }
+      ],
+      "api": "femyʁ",
+      "image": "fe1mur.webp"
+    },
+    {
+      "id": "U05-P-01",
+      "type": "phrase",
+      "texte": "LE SOFA EST SALE.",
+      "rangMin": 5,
+      "image": "u05-p01.webp"
+    },
+    {
+      "id": "U05-P-02",
+      "type": "phrase",
+      "texte": "LA RAFALE A FÊLÉ LE MUR.",
+      "rangMin": 5,
+      "image": "u05-p02.webp"
+    },
+    {
+      "id": "U05-P-03",
+      "type": "phrase",
+      "texte": "LILA A LU SUR LE SOFA.",
+      "rangMin": 5,
+      "image": "u05-p03.webp"
+    },
+    {
+      "id": "U05-P-04",
+      "type": "phrase",
+      "texte": "LE FIL EST SUR LE SOFA.",
+      "rangMin": 5,
+      "image": "u05-p04.webp"
+    }
+  ]
+}

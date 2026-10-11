@@ -1,0 +1,585 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U11",
+    "rang": 11,
+    "titre": "T",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "T",
+        "p": "t",
+        "type": "occlusive"
+      }
+    ],
+    "motsOutils": [
+      "TU",
+      "TES",
+      "AS"
+    ]
+  },
+  "items": [
+    {
+      "id": "U11-S-TA",
+      "type": "syllabe",
+      "texte": "TA",
+      "api": "ta"
+    },
+    {
+      "id": "U11-S-TE",
+      "type": "syllabe",
+      "texte": "TE",
+      "api": "tə"
+    },
+    {
+      "id": "U11-S-TI",
+      "type": "syllabe",
+      "texte": "TI",
+      "api": "ti"
+    },
+    {
+      "id": "U11-S-TO",
+      "type": "syllabe",
+      "texte": "TO",
+      "api": "to"
+    },
+    {
+      "id": "U11-S-TU",
+      "type": "syllabe",
+      "texte": "TU",
+      "api": "ty"
+    },
+    {
+      "id": "U11-S-TY",
+      "type": "syllabe",
+      "texte": "TY",
+      "api": "ti"
+    },
+    {
+      "id": "U11-S-TE1",
+      "type": "syllabe",
+      "texte": "TÉ",
+      "api": "te"
+    },
+    {
+      "id": "U11-S-TE2",
+      "type": "syllabe",
+      "texte": "TÈ",
+      "api": "tɛ"
+    },
+    {
+      "id": "U11-S-TE3",
+      "type": "syllabe",
+      "texte": "TÊ",
+      "api": "tɛ"
+    },
+    {
+      "id": "U11-M-TU",
+      "type": "mot",
+      "texte": "TU",
+      "rangMin": 11,
+      "syllabes": [
+        "TU"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "ty",
+      "motOutil": true,
+      "image": "tu.webp"
+    },
+    {
+      "id": "U11-M-TATA",
+      "type": "mot",
+      "texte": "TATA",
+      "rangMin": 11,
+      "syllabes": [
+        "TA",
+        "TA"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "tata",
+      "image": "tata.webp"
+    },
+    {
+      "id": "U11-M-TE3TE",
+      "type": "mot",
+      "texte": "TÊTE",
+      "rangMin": 11,
+      "syllabes": [
+        "TÊ",
+        "TE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "Ê",
+          "p": "ɛ"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "tɛtə",
+      "image": "te3te.webp"
+    },
+    {
+      "id": "U11-M-TE1LE1",
+      "type": "mot",
+      "texte": "TÉLÉ",
+      "rangMin": 11,
+      "syllabes": [
+        "TÉ",
+        "LÉ"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "tele",
+      "image": "te1le1.webp"
+    },
+    {
+      "id": "U11-M-E1TE1",
+      "type": "mot",
+      "texte": "ÉTÉ",
+      "rangMin": 11,
+      "syllabes": [
+        "É",
+        "TÉ"
+      ],
+      "segments": [
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "ete",
+      "image": "e1te1.webp"
+    },
+    {
+      "id": "U11-M-MOTO",
+      "type": "mot",
+      "texte": "MOTO",
+      "rangMin": 11,
+      "syllabes": [
+        "MO",
+        "TO"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "moto",
+      "image": "moto.webp"
+    },
+    {
+      "id": "U11-M-TUTU",
+      "type": "mot",
+      "texte": "TUTU",
+      "rangMin": 11,
+      "syllabes": [
+        "TU",
+        "TU"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "tyty",
+      "image": "tutu.webp"
+    },
+    {
+      "id": "U11-M-TOMATE",
+      "type": "mot",
+      "texte": "TOMATE",
+      "rangMin": 11,
+      "syllabes": [
+        "TO",
+        "MA",
+        "TE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "tomatə",
+      "image": "tomate.webp"
+    },
+    {
+      "id": "U11-M-PATATE",
+      "type": "mot",
+      "texte": "PATATE",
+      "rangMin": 11,
+      "syllabes": [
+        "PA",
+        "TA",
+        "TE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "patatə",
+      "image": "patate.webp"
+    },
+    {
+      "id": "U11-M-TULIPE",
+      "type": "mot",
+      "texte": "TULIPE",
+      "rangMin": 11,
+      "syllabes": [
+        "TU",
+        "LI",
+        "PE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "tylipə",
+      "image": "tulipe.webp"
+    },
+    {
+      "id": "U11-M-PIRATE",
+      "type": "mot",
+      "texte": "PIRATE",
+      "rangMin": 11,
+      "syllabes": [
+        "PI",
+        "RA",
+        "TE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "piʁatə",
+      "image": "pirate.webp"
+    },
+    {
+      "id": "U11-M-PILOTE",
+      "type": "mot",
+      "texte": "PILOTE",
+      "rangMin": 11,
+      "syllabes": [
+        "PI",
+        "LO",
+        "TE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "pilotə",
+      "image": "pilote.webp"
+    },
+    {
+      "id": "U11-M-PE1TALE",
+      "type": "mot",
+      "texte": "PÉTALE",
+      "rangMin": 11,
+      "syllabes": [
+        "PÉ",
+        "TA",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "petalə",
+      "image": "pe1tale.webp"
+    },
+    {
+      "id": "U11-M-TIRELIRE",
+      "type": "mot",
+      "texte": "TIRELIRE",
+      "rangMin": 11,
+      "syllabes": [
+        "TI",
+        "RE",
+        "LI",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "tiʁəliʁə",
+      "image": "tirelire.webp"
+    },
+    {
+      "id": "U11-P-01",
+      "type": "phrase",
+      "texte": "LE PILOTE A UNE MOTO.",
+      "rangMin": 11,
+      "image": "u11-p01.webp"
+    },
+    {
+      "id": "U11-P-02",
+      "type": "phrase",
+      "texte": "TU AS VU LA TULIPE ?",
+      "rangMin": 11,
+      "image": "u11-p02.webp"
+    },
+    {
+      "id": "U11-P-03",
+      "type": "phrase",
+      "texte": "LE PIRATE A VOLÉ TES PATATES.",
+      "rangMin": 11,
+      "image": "u11-p03.webp"
+    },
+    {
+      "id": "U11-P-04",
+      "type": "phrase",
+      "texte": "LA TOMATE EST SUR LA TÉLÉ.",
+      "rangMin": 11,
+      "image": "u11-p04.webp"
+    }
+  ]
+}

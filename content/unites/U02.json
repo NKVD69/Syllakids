@@ -1,0 +1,385 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U02",
+    "rang": 2,
+    "titre": "M",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "M",
+        "p": "m",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": []
+  },
+  "items": [
+    {
+      "id": "U02-S-MA",
+      "type": "syllabe",
+      "texte": "MA",
+      "api": "ma"
+    },
+    {
+      "id": "U02-S-ME",
+      "type": "syllabe",
+      "texte": "ME",
+      "api": "mə"
+    },
+    {
+      "id": "U02-S-MI",
+      "type": "syllabe",
+      "texte": "MI",
+      "api": "mi"
+    },
+    {
+      "id": "U02-S-MO",
+      "type": "syllabe",
+      "texte": "MO",
+      "api": "mo"
+    },
+    {
+      "id": "U02-S-MU",
+      "type": "syllabe",
+      "texte": "MU",
+      "api": "my"
+    },
+    {
+      "id": "U02-S-MY",
+      "type": "syllabe",
+      "texte": "MY",
+      "api": "mi"
+    },
+    {
+      "id": "U02-S-ME1",
+      "type": "syllabe",
+      "texte": "MÉ",
+      "api": "me"
+    },
+    {
+      "id": "U02-S-ME2",
+      "type": "syllabe",
+      "texte": "MÈ",
+      "api": "mɛ"
+    },
+    {
+      "id": "U02-S-ME3",
+      "type": "syllabe",
+      "texte": "MÊ",
+      "api": "mɛ"
+    },
+    {
+      "id": "U02-M-MA",
+      "type": "mot",
+      "texte": "MA",
+      "rangMin": 2,
+      "syllabes": [
+        "MA"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "ma",
+      "image": "ma.webp"
+    },
+    {
+      "id": "U02-M-AMI",
+      "type": "mot",
+      "texte": "AMI",
+      "rangMin": 2,
+      "syllabes": [
+        "A",
+        "MI"
+      ],
+      "segments": [
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ami",
+      "image": "ami.webp"
+    },
+    {
+      "id": "U02-M-ME1ME1",
+      "type": "mot",
+      "texte": "MÉMÉ",
+      "rangMin": 2,
+      "syllabes": [
+        "MÉ",
+        "MÉ"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "meme",
+      "image": "me1me1.webp"
+    },
+    {
+      "id": "U02-M-MIMI",
+      "type": "mot",
+      "texte": "MIMI",
+      "rangMin": 2,
+      "syllabes": [
+        "MI",
+        "MI"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "mimi",
+      "image": "mimi.webp"
+    },
+    {
+      "id": "U02-M-LIME",
+      "type": "mot",
+      "texte": "LIME",
+      "rangMin": 2,
+      "syllabes": [
+        "LI",
+        "ME"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "limə",
+      "image": "lime.webp"
+    },
+    {
+      "id": "U02-M-LAME",
+      "type": "mot",
+      "texte": "LAME",
+      "rangMin": 2,
+      "syllabes": [
+        "LA",
+        "ME"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "lamə",
+      "image": "lame.webp"
+    },
+    {
+      "id": "U02-M-MULE",
+      "type": "mot",
+      "texte": "MULE",
+      "rangMin": 2,
+      "syllabes": [
+        "MU",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "mylə",
+      "image": "mule.webp"
+    },
+    {
+      "id": "U02-M-E1MU",
+      "type": "mot",
+      "texte": "ÉMU",
+      "rangMin": 2,
+      "syllabes": [
+        "É",
+        "MU"
+      ],
+      "segments": [
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "emy",
+      "image": "e1mu.webp"
+    },
+    {
+      "id": "U02-M-MIA",
+      "type": "mot",
+      "texte": "MIA",
+      "rangMin": 2,
+      "syllabes": [
+        "MI",
+        "A"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "mia",
+      "image": "mia.webp"
+    },
+    {
+      "id": "U02-M-E1MILE",
+      "type": "mot",
+      "texte": "ÉMILE",
+      "rangMin": 2,
+      "syllabes": [
+        "É",
+        "MI",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "emilə",
+      "image": "e1mile.webp"
+    },
+    {
+      "id": "U02-P-01",
+      "type": "phrase",
+      "texte": "MÉMÉ A LU.",
+      "rangMin": 2,
+      "image": "u02-p01.webp"
+    },
+    {
+      "id": "U02-P-02",
+      "type": "phrase",
+      "texte": "ÉMILE A MIMÉ LA MULE.",
+      "rangMin": 2,
+      "image": "u02-p02.webp"
+    },
+    {
+      "id": "U02-P-03",
+      "type": "phrase",
+      "texte": "LOLA A LIMÉ LA LAME.",
+      "rangMin": 2,
+      "image": "u02-p03.webp"
+    },
+    {
+      "id": "U02-P-04",
+      "type": "phrase",
+      "texte": "ELLE A MA LIME.",
+      "rangMin": 2,
+      "image": "u02-p04.webp"
+    }
+  ]
+}

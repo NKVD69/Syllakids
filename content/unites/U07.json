@@ -1,0 +1,501 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U07",
+    "rang": 7,
+    "titre": "V",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "V",
+        "p": "v",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": []
+  },
+  "items": [
+    {
+      "id": "U07-S-VA",
+      "type": "syllabe",
+      "texte": "VA",
+      "api": "va"
+    },
+    {
+      "id": "U07-S-VE",
+      "type": "syllabe",
+      "texte": "VE",
+      "api": "və"
+    },
+    {
+      "id": "U07-S-VI",
+      "type": "syllabe",
+      "texte": "VI",
+      "api": "vi"
+    },
+    {
+      "id": "U07-S-VO",
+      "type": "syllabe",
+      "texte": "VO",
+      "api": "vo"
+    },
+    {
+      "id": "U07-S-VU",
+      "type": "syllabe",
+      "texte": "VU",
+      "api": "vy"
+    },
+    {
+      "id": "U07-S-VY",
+      "type": "syllabe",
+      "texte": "VY",
+      "api": "vi"
+    },
+    {
+      "id": "U07-S-VE1",
+      "type": "syllabe",
+      "texte": "VÉ",
+      "api": "ve"
+    },
+    {
+      "id": "U07-S-VE2",
+      "type": "syllabe",
+      "texte": "VÈ",
+      "api": "vɛ"
+    },
+    {
+      "id": "U07-S-VE3",
+      "type": "syllabe",
+      "texte": "VÊ",
+      "api": "vɛ"
+    },
+    {
+      "id": "U07-M-VA",
+      "type": "mot",
+      "texte": "VA",
+      "rangMin": 7,
+      "syllabes": [
+        "VA"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "va",
+      "image": "va.webp"
+    },
+    {
+      "id": "U07-M-VE1LO",
+      "type": "mot",
+      "texte": "VÉLO",
+      "rangMin": 7,
+      "syllabes": [
+        "VÉ",
+        "LO"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "velo",
+      "image": "ve1lo.webp"
+    },
+    {
+      "id": "U07-M-LAVE",
+      "type": "mot",
+      "texte": "LAVE",
+      "rangMin": 7,
+      "syllabes": [
+        "LA",
+        "VE"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "lavə",
+      "image": "lave.webp"
+    },
+    {
+      "id": "U07-M-RE3VE",
+      "type": "mot",
+      "texte": "RÊVE",
+      "rangMin": 7,
+      "syllabes": [
+        "RÊ",
+        "VE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "Ê",
+          "p": "ɛ"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁɛvə",
+      "image": "re3ve.webp"
+    },
+    {
+      "id": "U07-M-RIVE",
+      "type": "mot",
+      "texte": "RIVE",
+      "rangMin": 7,
+      "syllabes": [
+        "RI",
+        "VE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁivə",
+      "image": "rive.webp"
+    },
+    {
+      "id": "U07-M-RAVI",
+      "type": "mot",
+      "texte": "RAVI",
+      "rangMin": 7,
+      "syllabes": [
+        "RA",
+        "VI"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ʁavi",
+      "image": "ravi.webp"
+    },
+    {
+      "id": "U07-M-VOLE",
+      "type": "mot",
+      "texte": "VOLE",
+      "rangMin": 7,
+      "syllabes": [
+        "VO",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "volə",
+      "image": "vole.webp"
+    },
+    {
+      "id": "U07-M-OLIVE",
+      "type": "mot",
+      "texte": "OLIVE",
+      "rangMin": 7,
+      "syllabes": [
+        "O",
+        "LI",
+        "VE"
+      ],
+      "segments": [
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "olivə",
+      "image": "olive.webp"
+    },
+    {
+      "id": "U07-M-NAVIRE",
+      "type": "mot",
+      "texte": "NAVIRE",
+      "rangMin": 7,
+      "syllabes": [
+        "NA",
+        "VI",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "naviʁə",
+      "image": "navire.webp"
+    },
+    {
+      "id": "U07-M-E1LE2VE",
+      "type": "mot",
+      "texte": "ÉLÈVE",
+      "rangMin": 7,
+      "syllabes": [
+        "É",
+        "LÈ",
+        "VE"
+      ],
+      "segments": [
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "È",
+          "p": "ɛ"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "elɛvə",
+      "image": "e1le2ve.webp"
+    },
+    {
+      "id": "U07-M-RAVIOLI",
+      "type": "mot",
+      "texte": "RAVIOLI",
+      "rangMin": 7,
+      "syllabes": [
+        "RA",
+        "VI",
+        "O",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ʁavioli",
+      "image": "ravioli.webp"
+    },
+    {
+      "id": "U07-M-SALIVE",
+      "type": "mot",
+      "texte": "SALIVE",
+      "rangMin": 7,
+      "syllabes": [
+        "SA",
+        "LI",
+        "VE"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "salivə",
+      "image": "salive.webp"
+    },
+    {
+      "id": "U07-P-01",
+      "type": "phrase",
+      "texte": "AMINA LAVE LE VÉLO.",
+      "rangMin": 7,
+      "image": "u07-p01.webp"
+    },
+    {
+      "id": "U07-P-02",
+      "type": "phrase",
+      "texte": "RÉMI EST RAVI.",
+      "rangMin": 7,
+      "image": "u07-p02.webp"
+    },
+    {
+      "id": "U07-P-03",
+      "type": "phrase",
+      "texte": "LA MULE A VOLÉ UNE OLIVE.",
+      "rangMin": 7,
+      "image": "u07-p03.webp"
+    },
+    {
+      "id": "U07-P-04",
+      "type": "phrase",
+      "texte": "OMAR A RÊVÉ À UN NAVIRE.",
+      "rangMin": 7,
+      "image": "u07-p04.webp"
+    },
+    {
+      "id": "U07-P-05",
+      "type": "phrase",
+      "texte": "NINA VA SUR LA RIVE.",
+      "rangMin": 7,
+      "image": "u07-p05.webp"
+    }
+  ]
+}

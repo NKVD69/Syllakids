@@ -1,0 +1,358 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U01",
+    "rang": 1,
+    "titre": "L",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "L",
+        "p": "l",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": [
+      "LE",
+      "LA",
+      "A",
+      "À",
+      "LÀ",
+      "IL",
+      "Y",
+      "ELLE"
+    ]
+  },
+  "items": [
+    {
+      "id": "U01-S-LA",
+      "type": "syllabe",
+      "texte": "LA",
+      "api": "la"
+    },
+    {
+      "id": "U01-S-LE",
+      "type": "syllabe",
+      "texte": "LE",
+      "api": "lə"
+    },
+    {
+      "id": "U01-S-LI",
+      "type": "syllabe",
+      "texte": "LI",
+      "api": "li"
+    },
+    {
+      "id": "U01-S-LO",
+      "type": "syllabe",
+      "texte": "LO",
+      "api": "lo"
+    },
+    {
+      "id": "U01-S-LU",
+      "type": "syllabe",
+      "texte": "LU",
+      "api": "ly"
+    },
+    {
+      "id": "U01-S-LY",
+      "type": "syllabe",
+      "texte": "LY",
+      "api": "li"
+    },
+    {
+      "id": "U01-S-LE1",
+      "type": "syllabe",
+      "texte": "LÉ",
+      "api": "le"
+    },
+    {
+      "id": "U01-S-LE2",
+      "type": "syllabe",
+      "texte": "LÈ",
+      "api": "lɛ"
+    },
+    {
+      "id": "U01-S-LE3",
+      "type": "syllabe",
+      "texte": "LÊ",
+      "api": "lɛ"
+    },
+    {
+      "id": "U01-M-LA",
+      "type": "mot",
+      "texte": "LA",
+      "rangMin": 1,
+      "syllabes": [
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "la",
+      "motOutil": true,
+      "image": "la.webp"
+    },
+    {
+      "id": "U01-M-LE",
+      "type": "mot",
+      "texte": "LE",
+      "rangMin": 1,
+      "syllabes": [
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "lə",
+      "motOutil": true,
+      "image": "le.webp"
+    },
+    {
+      "id": "U01-M-LA2",
+      "type": "mot",
+      "texte": "LÀ",
+      "rangMin": 1,
+      "syllabes": [
+        "LÀ"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "À",
+          "p": "a"
+        }
+      ],
+      "api": "la",
+      "motOutil": true,
+      "image": "la2.webp"
+    },
+    {
+      "id": "U01-M-LU",
+      "type": "mot",
+      "texte": "LU",
+      "rangMin": 1,
+      "syllabes": [
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "ly",
+      "image": "lu.webp"
+    },
+    {
+      "id": "U01-M-E1LU",
+      "type": "mot",
+      "texte": "ÉLU",
+      "rangMin": 1,
+      "syllabes": [
+        "É",
+        "LU"
+      ],
+      "segments": [
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "ely",
+      "image": "e1lu.webp"
+    },
+    {
+      "id": "U01-M-ALI",
+      "type": "mot",
+      "texte": "ALI",
+      "rangMin": 1,
+      "syllabes": [
+        "A",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ali",
+      "image": "ali.webp"
+    },
+    {
+      "id": "U01-M-LE1A",
+      "type": "mot",
+      "texte": "LÉA",
+      "rangMin": 1,
+      "syllabes": [
+        "LÉ",
+        "A"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "lea",
+      "image": "le1a.webp"
+    },
+    {
+      "id": "U01-M-LOLA",
+      "type": "mot",
+      "texte": "LOLA",
+      "rangMin": 1,
+      "syllabes": [
+        "LO",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "lola",
+      "image": "lola.webp"
+    },
+    {
+      "id": "U01-M-LILA",
+      "type": "mot",
+      "texte": "LILA",
+      "rangMin": 1,
+      "syllabes": [
+        "LI",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "lila",
+      "image": "lila.webp"
+    },
+    {
+      "id": "U01-M-LILI",
+      "type": "mot",
+      "texte": "LILI",
+      "rangMin": 1,
+      "syllabes": [
+        "LI",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "lili",
+      "image": "lili.webp"
+    },
+    {
+      "id": "U01-P-01",
+      "type": "phrase",
+      "texte": "LOLA A LU.",
+      "rangMin": 1,
+      "image": "u01-p01.webp"
+    },
+    {
+      "id": "U01-P-02",
+      "type": "phrase",
+      "texte": "IL Y A LÉA.",
+      "rangMin": 1,
+      "image": "u01-p02.webp"
+    },
+    {
+      "id": "U01-P-03",
+      "type": "phrase",
+      "texte": "ALI A LU À LILA.",
+      "rangMin": 1,
+      "image": "u01-p03.webp"
+    }
+  ]
+}

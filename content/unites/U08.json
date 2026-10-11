@@ -1,0 +1,267 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U08",
+    "rang": 8,
+    "titre": "J",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "J",
+        "p": "ʒ",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": [
+      "JE"
+    ]
+  },
+  "items": [
+    {
+      "id": "U08-S-JA",
+      "type": "syllabe",
+      "texte": "JA",
+      "api": "ʒa"
+    },
+    {
+      "id": "U08-S-JE",
+      "type": "syllabe",
+      "texte": "JE",
+      "api": "ʒə"
+    },
+    {
+      "id": "U08-S-JI",
+      "type": "syllabe",
+      "texte": "JI",
+      "api": "ʒi"
+    },
+    {
+      "id": "U08-S-JO",
+      "type": "syllabe",
+      "texte": "JO",
+      "api": "ʒo"
+    },
+    {
+      "id": "U08-S-JU",
+      "type": "syllabe",
+      "texte": "JU",
+      "api": "ʒy"
+    },
+    {
+      "id": "U08-S-JY",
+      "type": "syllabe",
+      "texte": "JY",
+      "api": "ʒi"
+    },
+    {
+      "id": "U08-S-JE1",
+      "type": "syllabe",
+      "texte": "JÉ",
+      "api": "ʒe"
+    },
+    {
+      "id": "U08-S-JE2",
+      "type": "syllabe",
+      "texte": "JÈ",
+      "api": "ʒɛ"
+    },
+    {
+      "id": "U08-S-JE3",
+      "type": "syllabe",
+      "texte": "JÊ",
+      "api": "ʒɛ"
+    },
+    {
+      "id": "U08-M-JE",
+      "type": "mot",
+      "texte": "JE",
+      "rangMin": 8,
+      "syllabes": [
+        "JE"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʒə",
+      "motOutil": true,
+      "image": "je.webp"
+    },
+    {
+      "id": "U08-M-JOLI",
+      "type": "mot",
+      "texte": "JOLI",
+      "rangMin": 8,
+      "syllabes": [
+        "JO",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ʒoli",
+      "image": "joli.webp"
+    },
+    {
+      "id": "U08-M-JUNIOR",
+      "type": "mot",
+      "texte": "JUNIOR",
+      "rangMin": 8,
+      "syllabes": [
+        "JU",
+        "NI",
+        "OR"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        }
+      ],
+      "api": "ʒynioʁ",
+      "image": "junior.webp"
+    },
+    {
+      "id": "U08-M-JAMILA",
+      "type": "mot",
+      "texte": "JAMILA",
+      "rangMin": 8,
+      "syllabes": [
+        "JA",
+        "MI",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "ʒamila",
+      "image": "jamila.webp"
+    },
+    {
+      "id": "U08-M-JAMAL",
+      "type": "mot",
+      "texte": "JAMAL",
+      "rangMin": 8,
+      "syllabes": [
+        "JA",
+        "MAL"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        }
+      ],
+      "api": "ʒamal",
+      "image": "jamal.webp"
+    },
+    {
+      "id": "U08-P-01",
+      "type": "phrase",
+      "texte": "JE RÊVE.",
+      "rangMin": 8,
+      "image": "u08-p01.webp"
+    },
+    {
+      "id": "U08-P-02",
+      "type": "phrase",
+      "texte": "JE LAVE LA MULE.",
+      "rangMin": 8,
+      "image": "u08-p02.webp"
+    },
+    {
+      "id": "U08-P-03",
+      "type": "phrase",
+      "texte": "JAMILA A UN JOLI VÉLO.",
+      "rangMin": 8,
+      "image": "u08-p03.webp"
+    },
+    {
+      "id": "U08-P-04",
+      "type": "phrase",
+      "texte": "JAMAL EST SUR LE SOFA ET IL RÊVE.",
+      "rangMin": 8,
+      "image": "u08-p04.webp"
+    }
+  ]
+}

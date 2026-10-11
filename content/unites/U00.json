@@ -1,0 +1,157 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U00",
+    "rang": 0,
+    "titre": "Voyelles",
+    "bloc": "voyelles",
+    "graphemes": [
+      {
+        "g": "A",
+        "p": "a",
+        "type": "voyelle"
+      },
+      {
+        "g": "E",
+        "p": "ə",
+        "type": "voyelle"
+      },
+      {
+        "g": "I",
+        "p": "i",
+        "type": "voyelle"
+      },
+      {
+        "g": "O",
+        "p": "o",
+        "type": "voyelle"
+      },
+      {
+        "g": "U",
+        "p": "y",
+        "type": "voyelle"
+      },
+      {
+        "g": "Y",
+        "p": "i",
+        "type": "voyelle"
+      },
+      {
+        "g": "É",
+        "p": "e",
+        "type": "voyelle"
+      },
+      {
+        "g": "È",
+        "p": "ɛ",
+        "type": "voyelle"
+      },
+      {
+        "g": "Ê",
+        "p": "ɛ",
+        "type": "voyelle"
+      }
+    ],
+    "motsOutils": [],
+    "revision": [
+      [
+        "A",
+        "E",
+        "I",
+        "O",
+        "U"
+      ],
+      [
+        "Y",
+        "É",
+        "È",
+        "Ê",
+        "O"
+      ],
+      [
+        "E",
+        "A",
+        "È",
+        "O",
+        "Ê"
+      ],
+      [
+        "I",
+        "U",
+        "É",
+        "Y",
+        "E"
+      ],
+      [
+        "Y",
+        "Ê",
+        "I",
+        "E",
+        "U"
+      ],
+      [
+        "È",
+        "O",
+        "É",
+        "A",
+        "I"
+      ]
+    ]
+  },
+  "items": [
+    {
+      "id": "U00-S-A",
+      "type": "syllabe",
+      "texte": "A",
+      "api": "a"
+    },
+    {
+      "id": "U00-S-E",
+      "type": "syllabe",
+      "texte": "E",
+      "api": "ə"
+    },
+    {
+      "id": "U00-S-I",
+      "type": "syllabe",
+      "texte": "I",
+      "api": "i"
+    },
+    {
+      "id": "U00-S-O",
+      "type": "syllabe",
+      "texte": "O",
+      "api": "o"
+    },
+    {
+      "id": "U00-S-U",
+      "type": "syllabe",
+      "texte": "U",
+      "api": "y"
+    },
+    {
+      "id": "U00-S-Y",
+      "type": "syllabe",
+      "texte": "Y",
+      "api": "i"
+    },
+    {
+      "id": "U00-S-E1",
+      "type": "syllabe",
+      "texte": "É",
+      "api": "e"
+    },
+    {
+      "id": "U00-S-E2",
+      "type": "syllabe",
+      "texte": "È",
+      "api": "ɛ"
+    },
+    {
+      "id": "U00-S-E3",
+      "type": "syllabe",
+      "texte": "Ê",
+      "api": "ɛ"
+    }
+  ]
+}

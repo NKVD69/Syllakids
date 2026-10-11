@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "note": "Un prénom n'est utilisé dans une phrase que si l'enfant peut le lire à ce rang (cahier des charges, section 10).",
+  "jeux": {
+    "classique": [
+      { "prenom": "RÉMI", "rang": 3 },
+      { "prenom": "LOLA", "rang": 1 },
+      { "prenom": "LÉA", "rang": 1 },
+      { "prenom": "ÉMILE", "rang": 2 },
+      { "prenom": "ZOÉ", "rang": 9 },
+      { "prenom": "JULIE", "rang": null, "remarque": "e final muet après une voyelle : sons complexes" },
+      { "prenom": "NICOLAS", "rang": null, "remarque": "C dur et S muet : sons complexes" },
+      { "prenom": "CAROLINE", "rang": null, "remarque": "C dur : sons complexes" },
+      { "prenom": "JULIEN", "rang": null, "remarque": "IEN : sons complexes" }
+    ],
+    "arabe": [
+      { "prenom": "OMAR", "rang": 3 },
+      { "prenom": "SAMIR", "rang": 4 },
+      { "prenom": "NAFILA", "rang": 6 },
+      { "prenom": "AMINA", "rang": 6 },
+      { "prenom": "JAMILA", "rang": 8 },
+      { "prenom": "JAMAL", "rang": 8 },
+      { "prenom": "FARAJ", "rang": null, "remarque": "J final prononcé : à décider" },
+      { "prenom": "MOHAMED", "rang": null, "remarque": "H muet, D final : sons complexes" },
+      { "prenom": "AÏSSA", "rang": null, "remarque": "tréma, SS : sons complexes" },
+      { "prenom": "AYDEN", "rang": null, "remarque": "Y = [j], EN = [ɛn] : mot particulier" }
+    ]
+  },
+  "animal": { "prenom": "MINOU", "rang": null, "remarque": "OU : sons complexes" }
+}

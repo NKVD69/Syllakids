@@ -1,0 +1,418 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U04",
+    "rang": 4,
+    "titre": "S",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "S",
+        "p": "s",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": [
+      "LES",
+      "MES",
+      "SUR",
+      "SES",
+      "EST"
+    ]
+  },
+  "items": [
+    {
+      "id": "U04-S-SA",
+      "type": "syllabe",
+      "texte": "SA",
+      "api": "sa"
+    },
+    {
+      "id": "U04-S-SE",
+      "type": "syllabe",
+      "texte": "SE",
+      "api": "sə"
+    },
+    {
+      "id": "U04-S-SI",
+      "type": "syllabe",
+      "texte": "SI",
+      "api": "si"
+    },
+    {
+      "id": "U04-S-SO",
+      "type": "syllabe",
+      "texte": "SO",
+      "api": "so"
+    },
+    {
+      "id": "U04-S-SU",
+      "type": "syllabe",
+      "texte": "SU",
+      "api": "sy"
+    },
+    {
+      "id": "U04-S-SY",
+      "type": "syllabe",
+      "texte": "SY",
+      "api": "si"
+    },
+    {
+      "id": "U04-S-SE1",
+      "type": "syllabe",
+      "texte": "SÉ",
+      "api": "se"
+    },
+    {
+      "id": "U04-S-SE2",
+      "type": "syllabe",
+      "texte": "SÈ",
+      "api": "sɛ"
+    },
+    {
+      "id": "U04-S-SE3",
+      "type": "syllabe",
+      "texte": "SÊ",
+      "api": "sɛ"
+    },
+    {
+      "id": "U04-M-SA",
+      "type": "mot",
+      "texte": "SA",
+      "rangMin": 4,
+      "syllabes": [
+        "SA"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "sa",
+      "image": "sa.webp"
+    },
+    {
+      "id": "U04-M-SALE",
+      "type": "mot",
+      "texte": "SALE",
+      "rangMin": 4,
+      "syllabes": [
+        "SA",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "salə",
+      "image": "sale.webp"
+    },
+    {
+      "id": "U04-M-SALI",
+      "type": "mot",
+      "texte": "SALI",
+      "rangMin": 4,
+      "syllabes": [
+        "SA",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "sali",
+      "image": "sali.webp"
+    },
+    {
+      "id": "U04-M-SALE1",
+      "type": "mot",
+      "texte": "SALÉ",
+      "rangMin": 4,
+      "syllabes": [
+        "SA",
+        "LÉ"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "sale",
+      "image": "sale1.webp"
+    },
+    {
+      "id": "U04-M-SALAMI",
+      "type": "mot",
+      "texte": "SALAMI",
+      "rangMin": 4,
+      "syllabes": [
+        "SA",
+        "LA",
+        "MI"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "salami",
+      "image": "salami.webp"
+    },
+    {
+      "id": "U04-M-SOLO",
+      "type": "mot",
+      "texte": "SOLO",
+      "rangMin": 4,
+      "syllabes": [
+        "SO",
+        "LO"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "solo",
+      "image": "solo.webp"
+    },
+    {
+      "id": "U04-M-SILO",
+      "type": "mot",
+      "texte": "SILO",
+      "rangMin": 4,
+      "syllabes": [
+        "SI",
+        "LO"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "silo",
+      "image": "silo.webp"
+    },
+    {
+      "id": "U04-M-SOLE",
+      "type": "mot",
+      "texte": "SOLE",
+      "rangMin": 4,
+      "syllabes": [
+        "SO",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "solə",
+      "image": "sole.webp"
+    },
+    {
+      "id": "U04-M-SEME1",
+      "type": "mot",
+      "texte": "SEMÉ",
+      "rangMin": 4,
+      "syllabes": [
+        "SE",
+        "MÉ"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "səme",
+      "image": "seme1.webp"
+    },
+    {
+      "id": "U04-M-SAMIR",
+      "type": "mot",
+      "texte": "SAMIR",
+      "rangMin": 4,
+      "syllabes": [
+        "SA",
+        "MIR"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        }
+      ],
+      "api": "samiʁ",
+      "image": "samir.webp"
+    },
+    {
+      "id": "U04-P-01",
+      "type": "phrase",
+      "texte": "SAMIR EST SALE.",
+      "rangMin": 4,
+      "image": "u04-p01.webp"
+    },
+    {
+      "id": "U04-P-02",
+      "type": "phrase",
+      "texte": "LE SALAMI EST SALÉ.",
+      "rangMin": 4,
+      "image": "u04-p02.webp"
+    },
+    {
+      "id": "U04-P-03",
+      "type": "phrase",
+      "texte": "LOLA EST SUR LE MUR.",
+      "rangMin": 4,
+      "image": "u04-p03.webp"
+    },
+    {
+      "id": "U04-P-04",
+      "type": "phrase",
+      "texte": "MÉMÉ A SEMÉ.",
+      "rangMin": 4,
+      "image": "u04-p04.webp"
+    },
+    {
+      "id": "U04-P-05",
+      "type": "phrase",
+      "texte": "SAMIR A LU À SES AMIS.",
+      "rangMin": 4,
+      "image": "u04-p05.webp"
+    }
+  ]
+}

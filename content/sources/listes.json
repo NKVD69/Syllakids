@@ -1,0 +1,435 @@
+{
+  "version": "1.0",
+  "source": "Listes validées le 11 octobre 2026 (onglet « Listes de mots et phrases » du cahier des charges)",
+  "rangs": [
+    {
+      "rang": 0,
+      "titre": "Voyelles",
+      "graphemes": [
+        "A",
+        "E",
+        "I",
+        "O",
+        "U",
+        "Y",
+        "É",
+        "È",
+        "Ê"
+      ],
+      "mots": [],
+      "phrases": [],
+      "revision": [
+        [
+          "A",
+          "E",
+          "I",
+          "O",
+          "U"
+        ],
+        [
+          "Y",
+          "É",
+          "È",
+          "Ê",
+          "O"
+        ],
+        [
+          "E",
+          "A",
+          "È",
+          "O",
+          "Ê"
+        ],
+        [
+          "I",
+          "U",
+          "É",
+          "Y",
+          "E"
+        ],
+        [
+          "Y",
+          "Ê",
+          "I",
+          "E",
+          "U"
+        ],
+        [
+          "È",
+          "O",
+          "É",
+          "A",
+          "I"
+        ]
+      ]
+    },
+    {
+      "rang": 1,
+      "titre": "L",
+      "graphemes": [
+        "L"
+      ],
+      "mots": [
+        "LA",
+        "LE",
+        "LÀ",
+        "LU",
+        "ÉLU",
+        "ALI",
+        "LÉA",
+        "LOLA",
+        "LILA",
+        "LILI"
+      ],
+      "phrases": [
+        "LOLA A LU.",
+        "IL Y A LÉA.",
+        "ALI A LU À LILA."
+      ]
+    },
+    {
+      "rang": 2,
+      "titre": "M",
+      "graphemes": [
+        "M"
+      ],
+      "mots": [
+        "MA",
+        "AMI",
+        "MÉMÉ",
+        "MIMI",
+        "LIME",
+        "LAME",
+        "MULE",
+        "ÉMU",
+        "MIA",
+        "ÉMILE"
+      ],
+      "phrases": [
+        "MÉMÉ A LU.",
+        "ÉMILE A MIMÉ LA MULE.",
+        "LOLA A LIMÉ LA LAME.",
+        "ELLE A MA LIME."
+      ]
+    },
+    {
+      "rang": 3,
+      "titre": "R",
+      "graphemes": [
+        "R"
+      ],
+      "mots": [
+        "MÈRE",
+        "MARI",
+        "RIRE",
+        "LIRE",
+        "RAME",
+        "RARE",
+        "MUR",
+        "MIRA",
+        "RÉMI",
+        "OMAR"
+      ],
+      "phrases": [
+        "RÉMI A RAMÉ.",
+        "MA MÈRE A RI.",
+        "ÉMILE A LU À MÉMÉ.",
+        "OMAR RIRA."
+      ]
+    },
+    {
+      "rang": 4,
+      "titre": "S",
+      "graphemes": [
+        "S"
+      ],
+      "mots": [
+        "SA",
+        "SALE",
+        "SALI",
+        "SALÉ",
+        "SALAMI",
+        "SOLO",
+        "SILO",
+        "SOLE",
+        "SEMÉ",
+        "SAMIR"
+      ],
+      "phrases": [
+        "SAMIR EST SALE.",
+        "LE SALAMI EST SALÉ.",
+        "LOLA EST SUR LE MUR.",
+        "MÉMÉ A SEMÉ.",
+        "SAMIR A LU À SES AMIS."
+      ]
+    },
+    {
+      "rang": 5,
+      "titre": "F",
+      "graphemes": [
+        "F"
+      ],
+      "mots": [
+        "FIL",
+        "FILE",
+        "FILÉ",
+        "FUMÉ",
+        "FÊLÉ",
+        "RAFALE",
+        "FORME",
+        "SOFA",
+        "SAFARI",
+        "FÉMUR"
+      ],
+      "phrases": [
+        "LE SOFA EST SALE.",
+        "LA RAFALE A FÊLÉ LE MUR.",
+        "LILA A LU SUR LE SOFA.",
+        "LE FIL EST SUR LE SOFA."
+      ]
+    },
+    {
+      "rang": 6,
+      "titre": "N",
+      "graphemes": [
+        "N"
+      ],
+      "mots": [
+        "LUNE",
+        "MENU",
+        "FINI",
+        "NUL",
+        "MARINE",
+        "FARINE",
+        "ANIMAL",
+        "NUMÉRO",
+        "ÉNORME",
+        "NINA",
+        "NAFILA",
+        "AMINA"
+      ],
+      "phrases": [
+        "IL Y A UNE LUNE.",
+        "NAFILA A FINI LE MENU.",
+        "UN ANIMAL ÉNORME EST LÀ.",
+        "LA FARINE EST SUR LE SOFA.",
+        "AMINA A LU ET ELLE A RI."
+      ]
+    },
+    {
+      "rang": 7,
+      "titre": "V",
+      "graphemes": [
+        "V"
+      ],
+      "mots": [
+        "VA",
+        "VÉLO",
+        "LAVE",
+        "RÊVE",
+        "RIVE",
+        "RAVI",
+        "VOLE",
+        "OLIVE",
+        "NAVIRE",
+        "ÉLÈVE",
+        "RAVIOLI",
+        "SALIVE"
+      ],
+      "phrases": [
+        "AMINA LAVE LE VÉLO.",
+        "RÉMI EST RAVI.",
+        "LA MULE A VOLÉ UNE OLIVE.",
+        "OMAR A RÊVÉ À UN NAVIRE.",
+        "NINA VA SUR LA RIVE."
+      ]
+    },
+    {
+      "rang": 8,
+      "titre": "J",
+      "graphemes": [
+        "J"
+      ],
+      "mots": [
+        "JE",
+        "JOLI",
+        "JUNIOR",
+        "JAMILA",
+        "JAMAL"
+      ],
+      "phrases": [
+        "JE RÊVE.",
+        "JE LAVE LA MULE.",
+        "JAMILA A UN JOLI VÉLO.",
+        "JAMAL EST SUR LE SOFA ET IL RÊVE."
+      ]
+    },
+    {
+      "rang": 9,
+      "titre": "Z",
+      "graphemes": [
+        "Z"
+      ],
+      "mots": [
+        "ZÉRO",
+        "ZOÉ",
+        "ZORA",
+        "AZUR",
+        "ZOLA"
+      ],
+      "phrases": [
+        "ZOÉ A VU LA LUNE.",
+        "ZORA A ZÉRO OLIVE.",
+        "ZOÉ A UN SOFA AZUR."
+      ]
+    },
+    {
+      "rang": 10,
+      "titre": "P",
+      "graphemes": [
+        "P"
+      ],
+      "mots": [
+        "PAPA",
+        "PAPI",
+        "PÉPÉ",
+        "PILE",
+        "PILULE",
+        "PUMA",
+        "POLO",
+        "PARI",
+        "PIRE",
+        "PARURE",
+        "PYJAMA",
+        "PIANO",
+        "OPÉRA"
+      ],
+      "phrases": [
+        "PAPI A UN PIANO.",
+        "JAMILA A UN JOLI PYJAMA.",
+        "LE PUMA NE VA PAS SUR LE SOFA.",
+        "LA PILE EST SUR LE PIANO."
+      ]
+    },
+    {
+      "rang": 11,
+      "titre": "T",
+      "graphemes": [
+        "T"
+      ],
+      "mots": [
+        "TU",
+        "TATA",
+        "TÊTE",
+        "TÉLÉ",
+        "ÉTÉ",
+        "MOTO",
+        "TUTU",
+        "TOMATE",
+        "PATATE",
+        "TULIPE",
+        "PIRATE",
+        "PILOTE",
+        "PÉTALE",
+        "TIRELIRE"
+      ],
+      "phrases": [
+        "LE PILOTE A UNE MOTO.",
+        "TU AS VU LA TULIPE ?",
+        "LE PIRATE A VOLÉ TES PATATES.",
+        "LA TOMATE EST SUR LA TÉLÉ."
+      ]
+    },
+    {
+      "rang": 12,
+      "titre": "B",
+      "graphemes": [
+        "B"
+      ],
+      "mots": [
+        "BÉBÉ",
+        "BOA",
+        "TUBE",
+        "TUBA",
+        "ROBE",
+        "BARBE",
+        "BANANE",
+        "BOBINE",
+        "BUTINE"
+      ],
+      "phrases": [
+        "LE BÉBÉ A UNE BANANE.",
+        "PÉPÉ A UNE BARBE.",
+        "LE BOA EST SUR LA TÉLÉ.",
+        "AMINA A LAVÉ SA ROBE."
+      ]
+    },
+    {
+      "rang": 13,
+      "titre": "D",
+      "graphemes": [
+        "D"
+      ],
+      "mots": [
+        "DÉ",
+        "DAME",
+        "DUNE",
+        "MIDI",
+        "SALADE",
+        "MALADE",
+        "SAMEDI",
+        "DOMINO",
+        "RAPIDE",
+        "TIMIDE",
+        "PÉDALE",
+        "LIMONADE"
+      ],
+      "phrases": [
+        "LE VÉLO EST RAPIDE.",
+        "RÉMI EST MALADE.",
+        "SAMEDI À MIDI, OMAR A DE LA SALADE.",
+        "LA PÉDALE DU VÉLO EST SALE.",
+        "LA MÈRE DE JAMILA A DES DOMINOS.",
+        "ZOÉ EST TIMIDE."
+      ]
+    },
+    {
+      "rang": 14,
+      "titre": "Bilan de lecture",
+      "graphemes": [],
+      "bilan": true,
+      "mots": [
+        "LOLA",
+        "AMI",
+        "MÈRE",
+        "SALÉ",
+        "SOFA",
+        "LUNE",
+        "VÉLO",
+        "JOLI",
+        "ZÉRO",
+        "PYJAMA",
+        "TOMATE",
+        "BANANE",
+        "SALADE",
+        "DOMINO",
+        "NAVIRE",
+        "PIANO",
+        "TULIPE",
+        "RAPIDE",
+        "OLIVE",
+        "FARINE"
+      ],
+      "phrases": [
+        "PAPA A UNE MOTO RAPIDE.",
+        "LE PIRATE EST SUR LE NAVIRE.",
+        "JAMILA A VU UNE TULIPE.",
+        "LE BÉBÉ A UN JOLI PYJAMA.",
+        "OMAR A FINI LA SALADE DE TOMATE.",
+        "ZOÉ NE VA PAS SUR LA DUNE.",
+        "LA MULE A VOLÉ LA BANANE DE PAPA.",
+        "SAMEDI, NAFILA A LU À MÉMÉ."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "unites": [
+    {
+      "id": "U00",
+      "rang": 0,
+      "titre": "Voyelles",
+      "fichier": "unites/U00.json"
+    },
+    {
+      "id": "U01",
+      "rang": 1,
+      "titre": "L",
+      "fichier": "unites/U01.json"
+    },
+    {
+      "id": "U02",
+      "rang": 2,
+      "titre": "M",
+      "fichier": "unites/U02.json"
+    },
+    {
+      "id": "U03",
+      "rang": 3,
+      "titre": "R",
+      "fichier": "unites/U03.json"
+    },
+    {
+      "id": "U04",
+      "rang": 4,
+      "titre": "S",
+      "fichier": "unites/U04.json"
+    },
+    {
+      "id": "U05",
+      "rang": 5,
+      "titre": "F",
+      "fichier": "unites/U05.json"
+    },
+    {
+      "id": "U06",
+      "rang": 6,
+      "titre": "N",
+      "fichier": "unites/U06.json"
+    },
+    {
+      "id": "U07",
+      "rang": 7,
+      "titre": "V",
+      "fichier": "unites/U07.json"
+    },
+    {
+      "id": "U08",
+      "rang": 8,
+      "titre": "J",
+      "fichier": "unites/U08.json"
+    },
+    {
+      "id": "U09",
+      "rang": 9,
+      "titre": "Z",
+      "fichier": "unites/U09.json"
+    },
+    {
+      "id": "U10",
+      "rang": 10,
+      "titre": "P",
+      "fichier": "unites/U10.json"
+    },
+    {
+      "id": "U11",
+      "rang": 11,
+      "titre": "T",
+      "fichier": "unites/U11.json"
+    },
+    {
+      "id": "U12",
+      "rang": 12,
+      "titre": "B",
+      "fichier": "unites/U12.json"
+    },
+    {
+      "id": "U13",
+      "rang": 13,
+      "titre": "D",
+      "fichier": "unites/U13.json"
+    },
+    {
+      "id": "U14",
+      "rang": 14,
+      "titre": "Bilan de lecture",
+      "fichier": "unites/U14.json"
+    }
+  ]
+}

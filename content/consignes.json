@@ -1,0 +1,1084 @@
+{
+  "version": "1.0",
+  "activites": {
+    "A1": {
+      "nom": "J'entends / je n'entends pas"
+    },
+    "A2": {
+      "nom": "Où est le son ?"
+    },
+    "A3": {
+      "nom": "L'intrus sonore"
+    },
+    "R1": {
+      "nom": "L'écho"
+    },
+    "R2": {
+      "nom": "Le son qui dure"
+    },
+    "L1": {
+      "nom": "La glissade"
+    },
+    "L2": {
+      "nom": "Lis puis vérifie"
+    },
+    "L3": {
+      "nom": "Le tableau de syllabes"
+    },
+    "L4": {
+      "nom": "Quelle syllabe ?"
+    },
+    "L5": {
+      "nom": "Lis le mot"
+    },
+    "L6": {
+      "nom": "Vrai mot ou mot inventé ?"
+    },
+    "L7": {
+      "nom": "La phrase karaoké"
+    },
+    "E1": {
+      "nom": "Trace la lettre"
+    },
+    "E2": {
+      "nom": "La dictée"
+    },
+    "E3": {
+      "nom": "Les étiquettes"
+    },
+    "C1": {
+      "nom": "Lis et choisis l'image"
+    },
+    "F1": {
+      "nom": "Chrono-lecture (profil 6 ans)"
+    }
+  },
+  "messages": [
+    {
+      "id": "CON-A1-STD",
+      "categorie": "A1",
+      "moment": "consigne (6 ans)",
+      "texte": "Écoute bien le mot. Si tu entends [son], touche l'oreille verte. Sinon, touche l'oreille rouge."
+    },
+    {
+      "id": "CON-A1-COURT",
+      "categorie": "A1",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Tu entends [son] ? Oreille verte pour oui, oreille rouge pour non."
+    },
+    {
+      "id": "CON-A1-RELANCE",
+      "categorie": "A1",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Écoute encore une fois le mot."
+    },
+    {
+      "id": "CON-A1-AIDE",
+      "categorie": "A1",
+      "moment": "après 2 erreurs",
+      "texte": "Dis le mot tout doucement avec moi, morceau par morceau."
+    },
+    {
+      "id": "CON-A2-STD",
+      "categorie": "A2",
+      "moment": "consigne (6 ans)",
+      "texte": "Chaque case est un morceau du mot. Pose le jeton dans la case où tu entends [son]."
+    },
+    {
+      "id": "CON-A2-COURT",
+      "categorie": "A2",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Mets le jeton là où tu entends [son]."
+    },
+    {
+      "id": "CON-A2-RELANCE",
+      "categorie": "A2",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Écoute le mot, morceau par morceau."
+    },
+    {
+      "id": "CON-A2-AIDE",
+      "categorie": "A2",
+      "moment": "après 2 erreurs",
+      "texte": "Je dis chaque morceau lentement. Écoute bien lequel contient [son]."
+    },
+    {
+      "id": "CON-A3-STD",
+      "categorie": "A3",
+      "moment": "consigne (6 ans)",
+      "texte": "Écoute le nom des trois images. Une seule n'a pas le son [son]. Touche-la."
+    },
+    {
+      "id": "CON-A3-COURT",
+      "categorie": "A3",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Trouve l'image qui n'a pas [son]."
+    },
+    {
+      "id": "CON-A3-RELANCE",
+      "categorie": "A3",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Touche une image pour réentendre son nom."
+    },
+    {
+      "id": "CON-A3-AIDE",
+      "categorie": "A3",
+      "moment": "après 2 erreurs",
+      "texte": "Répète chaque mot à voix haute. Lequel n'a pas [son] ?"
+    },
+    {
+      "id": "CON-R1-STD",
+      "categorie": "R1",
+      "moment": "consigne (6 ans)",
+      "texte": "Écoute bien, puis répète. Appuie sur le micro quand tu veux."
+    },
+    {
+      "id": "CON-R1-COURT",
+      "categorie": "R1",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Écoute, puis répète dans le micro."
+    },
+    {
+      "id": "CON-R1-RELANCE",
+      "categorie": "R1",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Appuie sur le micro et parle bien fort."
+    },
+    {
+      "id": "CON-R1-AIDE",
+      "categorie": "R1",
+      "moment": "après 2 erreurs",
+      "texte": "Écoute encore le modèle, puis essaie de dire pareil."
+    },
+    {
+      "id": "CON-R1-BILAN",
+      "categorie": "R1",
+      "moment": "après l'enregistrement",
+      "texte": "Écoute le modèle, puis ta voix. C'était pareil ? Touche le visage qui va bien."
+    },
+    {
+      "id": "CON-R2-STD",
+      "categorie": "R2",
+      "moment": "consigne (6 ans)",
+      "texte": "Fais durer le son [son] tant que la barre avance."
+    },
+    {
+      "id": "CON-R2-COURT",
+      "categorie": "R2",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Fais durer [son] très longtemps !"
+    },
+    {
+      "id": "CON-R2-RELANCE",
+      "categorie": "R2",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Prends une grande inspiration, et vas-y."
+    },
+    {
+      "id": "CON-R2-AIDE",
+      "categorie": "R2",
+      "moment": "après 2 erreurs",
+      "texte": "Écoute comment je le fais durer, puis essaie."
+    },
+    {
+      "id": "CON-L1-STD",
+      "categorie": "L1",
+      "moment": "consigne (6 ans)",
+      "texte": "Fais glisser la première lettre jusqu'à l'autre avec ton doigt. Écoute : les deux sons se collent !"
+    },
+    {
+      "id": "CON-L1-COURT",
+      "categorie": "L1",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Glisse la lettre vers l'autre lettre."
+    },
+    {
+      "id": "CON-L1-RELANCE",
+      "categorie": "L1",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Pose ton doigt sur la lettre et fais-la glisser."
+    },
+    {
+      "id": "CON-L1-AIDE",
+      "categorie": "L1",
+      "moment": "après 2 erreurs",
+      "texte": "Regarde, je le fais une fois. À toi maintenant."
+    },
+    {
+      "id": "CON-L1-SUITE",
+      "categorie": "L1",
+      "moment": "après la glissade",
+      "texte": "Maintenant, dis la syllabe toute seule."
+    },
+    {
+      "id": "CON-L2-STD",
+      "categorie": "L2",
+      "moment": "consigne (6 ans)",
+      "texte": "Lis à voix haute. Ensuite, touche le haut-parleur pour vérifier."
+    },
+    {
+      "id": "CON-L2-COURT",
+      "categorie": "L2",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Lis, puis écoute."
+    },
+    {
+      "id": "CON-L2-RELANCE",
+      "categorie": "L2",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Tu peux lire tout doucement, un son après l'autre."
+    },
+    {
+      "id": "CON-L2-AIDE",
+      "categorie": "L2",
+      "moment": "après 2 erreurs",
+      "texte": "Dis chaque son, puis colle-les ensemble."
+    },
+    {
+      "id": "CON-L3-STD",
+      "categorie": "L3",
+      "moment": "consigne (6 ans)",
+      "texte": "Suis la ligne avec ton doigt et lis chaque syllabe qui s'allume."
+    },
+    {
+      "id": "CON-L3-COURT",
+      "categorie": "L3",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Lis chaque syllabe qui s'allume."
+    },
+    {
+      "id": "CON-L3-RELANCE",
+      "categorie": "L3",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Pose ton doigt sur la première syllabe."
+    },
+    {
+      "id": "CON-L3-AIDE",
+      "categorie": "L3",
+      "moment": "après 2 erreurs",
+      "texte": "Lis-la avec moi."
+    },
+    {
+      "id": "CON-L3-MELANGE",
+      "categorie": "L3",
+      "moment": "passage en ordre mélangé",
+      "texte": "Attention, maintenant les syllabes sont mélangées !"
+    },
+    {
+      "id": "CON-L4-STD",
+      "categorie": "L4",
+      "moment": "consigne (6 ans)",
+      "texte": "Écoute la syllabe, puis touche celle que tu as entendue."
+    },
+    {
+      "id": "CON-L4-COURT",
+      "categorie": "L4",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Touche la syllabe que tu entends."
+    },
+    {
+      "id": "CON-L4-RELANCE",
+      "categorie": "L4",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Touche l'oreille pour réentendre."
+    },
+    {
+      "id": "CON-L4-AIDE",
+      "categorie": "L4",
+      "moment": "après 2 erreurs",
+      "texte": "Regarde bien la première lettre de chaque étiquette."
+    },
+    {
+      "id": "CON-L5-STD",
+      "categorie": "L5",
+      "moment": "consigne (6 ans)",
+      "texte": "Lis le mot, morceau par morceau. Puis touche le haut-parleur pour vérifier."
+    },
+    {
+      "id": "CON-L5-COURT",
+      "categorie": "L5",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Lis le mot, puis écoute."
+    },
+    {
+      "id": "CON-L5-RELANCE",
+      "categorie": "L5",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Commence par le premier morceau."
+    },
+    {
+      "id": "CON-L5-AIDE",
+      "categorie": "L5",
+      "moment": "après 2 erreurs",
+      "texte": "Lis chaque morceau, puis dis-les vite l'un après l'autre."
+    },
+    {
+      "id": "CON-L5-IMAGE",
+      "categorie": "L5",
+      "moment": "après une bonne lecture",
+      "texte": "Bravo ! Regarde l'image de ce mot."
+    },
+    {
+      "id": "CON-L6-STD",
+      "categorie": "L6",
+      "moment": "consigne (6 ans)",
+      "texte": "Lis ce mot. Est-ce qu'il existe vraiment ? Touche le pouce si c'est un vrai mot, le point d'interrogation si c'est un mot inventé."
+    },
+    {
+      "id": "CON-L6-COURT",
+      "categorie": "L6",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Vrai mot ou mot inventé ?"
+    },
+    {
+      "id": "CON-L6-RELANCE",
+      "categorie": "L6",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Lis-le tout bas, puis décide."
+    },
+    {
+      "id": "CON-L6-AIDE",
+      "categorie": "L6",
+      "moment": "après 2 erreurs",
+      "texte": "Lis-le encore une fois. Est-ce que tu connais ce mot ?"
+    },
+    {
+      "id": "CON-L7-STD",
+      "categorie": "L7",
+      "moment": "consigne (6 ans)",
+      "texte": "Lis la phrase. Ensuite, écoute-la et suis les mots qui s'allument."
+    },
+    {
+      "id": "CON-L7-COURT",
+      "categorie": "L7",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Lis la phrase, puis écoute-la."
+    },
+    {
+      "id": "CON-L7-RELANCE",
+      "categorie": "L7",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Commence par le premier mot."
+    },
+    {
+      "id": "CON-L7-AIDE",
+      "categorie": "L7",
+      "moment": "après 2 erreurs",
+      "texte": "Lis mot après mot, sans te presser."
+    },
+    {
+      "id": "CON-E1-OBSERVER",
+      "categorie": "E1",
+      "moment": "étape 1 du geste",
+      "texte": "Regarde comment on trace la lettre. Le point vert, c'est le départ."
+    },
+    {
+      "id": "CON-E1-REPASSER",
+      "categorie": "E1",
+      "moment": "étape 2",
+      "texte": "À toi ! Repasse sur les pointillés en partant du point vert."
+    },
+    {
+      "id": "CON-E1-GUIDE",
+      "categorie": "E1",
+      "moment": "étape 3",
+      "texte": "Trace la lettre en partant du point vert."
+    },
+    {
+      "id": "CON-E1-LIBRE",
+      "categorie": "E1",
+      "moment": "étape 4",
+      "texte": "Trace la lettre sans aide, entre les lignes."
+    },
+    {
+      "id": "CON-E1-COURT",
+      "categorie": "E1",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Pars du point vert et trace."
+    },
+    {
+      "id": "CON-E1-RELANCE",
+      "categorie": "E1",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Pose ton doigt sur le point vert."
+    },
+    {
+      "id": "CON-E2-STD",
+      "categorie": "E2",
+      "moment": "consigne (6 ans)",
+      "texte": "Écoute bien, puis écris ce que tu entends."
+    },
+    {
+      "id": "CON-E2-COURT",
+      "categorie": "E2",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Écris ce que tu entends."
+    },
+    {
+      "id": "CON-E2-RELANCE",
+      "categorie": "E2",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Touche l'oreille pour réentendre."
+    },
+    {
+      "id": "CON-E2-AIDE",
+      "categorie": "E2",
+      "moment": "après 2 erreurs",
+      "texte": "Dis-le tout doucement. Quel son entends-tu en premier ?"
+    },
+    {
+      "id": "CON-E3-STD",
+      "categorie": "E3",
+      "moment": "consigne (6 ans)",
+      "texte": "Écoute, puis range les étiquettes dans l'ordre pour écrire ce que tu entends."
+    },
+    {
+      "id": "CON-E3-COURT",
+      "categorie": "E3",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Mets les étiquettes dans l'ordre."
+    },
+    {
+      "id": "CON-E3-RELANCE",
+      "categorie": "E3",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Quel son entends-tu au début ?"
+    },
+    {
+      "id": "CON-E3-AIDE",
+      "categorie": "E3",
+      "moment": "après 2 erreurs",
+      "texte": "Je le redis lentement. Cherche le premier son."
+    },
+    {
+      "id": "CON-C1-STD",
+      "categorie": "C1",
+      "moment": "consigne (6 ans)",
+      "texte": "Lis la phrase, puis touche l'image qui va avec."
+    },
+    {
+      "id": "CON-C1-COURT",
+      "categorie": "C1",
+      "moment": "consigne courte (5 ans)",
+      "texte": "Lis, puis touche la bonne image."
+    },
+    {
+      "id": "CON-C1-RELANCE",
+      "categorie": "C1",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Relis la phrase, mot après mot."
+    },
+    {
+      "id": "CON-C1-AIDE",
+      "categorie": "C1",
+      "moment": "après 2 erreurs",
+      "texte": "Regarde bien les images : qu'est-ce qui change de l'une à l'autre ?"
+    },
+    {
+      "id": "CON-F1-STD",
+      "categorie": "F1",
+      "moment": "consigne (6 ans)",
+      "texte": "Lis le plus de mots possible pendant une minute. Touche chaque mot quand tu l'as lu. Attention… c'est parti !"
+    },
+    {
+      "id": "CON-F1-RELANCE",
+      "categorie": "F1",
+      "moment": "pas de réponse après 8 s",
+      "texte": "Continue, tu lis bien !"
+    },
+    {
+      "id": "CON-F1-FIN",
+      "categorie": "F1",
+      "moment": "fin de la minute",
+      "texte": "Stop ! Tu as lu [nombre] mots."
+    },
+    {
+      "id": "CON-F1-RECORD",
+      "categorie": "F1",
+      "moment": "nouveau record",
+      "texte": "C'est ton meilleur score !"
+    },
+    {
+      "id": "CON-GEN-01",
+      "categorie": "GEN",
+      "texte": "Bonjour ! On va apprendre à lire ensemble."
+    },
+    {
+      "id": "CON-GEN-02",
+      "categorie": "GEN",
+      "texte": "Choisis ton personnage."
+    },
+    {
+      "id": "CON-GEN-03",
+      "categorie": "GEN",
+      "texte": "Touche tes trois images secrètes."
+    },
+    {
+      "id": "CON-GEN-04",
+      "categorie": "GEN",
+      "texte": "Ce ne sont pas les bonnes images. Essaie encore."
+    },
+    {
+      "id": "CON-GEN-05",
+      "categorie": "GEN",
+      "texte": "Te revoilà ! On reprend là où on en était."
+    },
+    {
+      "id": "CON-GEN-06",
+      "categorie": "GEN",
+      "texte": "Touche l'étape qui brille pour commencer."
+    },
+    {
+      "id": "CON-GEN-07",
+      "categorie": "GEN",
+      "texte": "On commence par une petite révision."
+    },
+    {
+      "id": "CON-GEN-08",
+      "categorie": "GEN",
+      "texte": "Aujourd'hui, tu vas découvrir un nouveau son !"
+    },
+    {
+      "id": "CON-GEN-09",
+      "categorie": "GEN",
+      "texte": "Touche l'oreille quand tu veux réentendre la consigne."
+    },
+    {
+      "id": "CON-GEN-10",
+      "categorie": "GEN",
+      "texte": "Tu as bien travaillé. C'est l'heure d'une pause !"
+    },
+    {
+      "id": "CON-GEN-11",
+      "categorie": "GEN",
+      "texte": "La séance est finie. À demain !"
+    },
+    {
+      "id": "CON-GEN-12",
+      "categorie": "GEN",
+      "texte": "On s'arrête ici pour aujourd'hui. Tu as bien travaillé."
+    },
+    {
+      "id": "CON-GEN-13",
+      "categorie": "GEN",
+      "texte": "Demande à un adulte de venir t'aider."
+    },
+    {
+      "id": "CON-GEN-14",
+      "categorie": "GEN",
+      "texte": "Tu n'entends rien ? Demande à un adulte de monter le son."
+    },
+    {
+      "id": "CON-GEN-15",
+      "categorie": "GEN",
+      "texte": "Touche la maison pour revenir au chemin."
+    },
+    {
+      "id": "CON-SON-01",
+      "categorie": "SON",
+      "texte": "Écoute ce son : [son]."
+    },
+    {
+      "id": "CON-SON-02",
+      "categorie": "SON",
+      "texte": "Dis-le avec moi : [son]."
+    },
+    {
+      "id": "CON-SON-03",
+      "categorie": "SON",
+      "texte": "Ce son peut durer longtemps : écoute."
+    },
+    {
+      "id": "CON-SON-04",
+      "categorie": "SON",
+      "texte": "Ce son est tout court : on ne peut pas le faire durer."
+    },
+    {
+      "id": "CON-SON-05",
+      "categorie": "SON",
+      "texte": "Regarde : voici la lettre qui fait [son]."
+    },
+    {
+      "id": "CON-SON-06",
+      "categorie": "SON",
+      "texte": "Quand tu vois cette lettre, tu dis [son]."
+    },
+    {
+      "id": "CON-SON-07",
+      "categorie": "SON",
+      "texte": "Tu connais maintenant le son [son] !"
+    },
+    {
+      "id": "CON-OK-01",
+      "categorie": "OK",
+      "texte": "Bravo !"
+    },
+    {
+      "id": "CON-OK-02",
+      "categorie": "OK",
+      "texte": "Super !"
+    },
+    {
+      "id": "CON-OK-03",
+      "categorie": "OK",
+      "texte": "C'est ça !"
+    },
+    {
+      "id": "CON-OK-04",
+      "categorie": "OK",
+      "texte": "Bien lu !"
+    },
+    {
+      "id": "CON-OK-05",
+      "categorie": "OK",
+      "texte": "Excellent !"
+    },
+    {
+      "id": "CON-OK-06",
+      "categorie": "OK",
+      "texte": "Tu as trouvé !"
+    },
+    {
+      "id": "CON-OK-07",
+      "categorie": "OK",
+      "texte": "Très bien !"
+    },
+    {
+      "id": "CON-OK-08",
+      "categorie": "OK",
+      "texte": "Génial !"
+    },
+    {
+      "id": "CON-OK-09",
+      "categorie": "OK",
+      "texte": "Oui, bravo !"
+    },
+    {
+      "id": "CON-OK-10",
+      "categorie": "OK",
+      "texte": "Tu lis de mieux en mieux !"
+    },
+    {
+      "id": "CON-OK-11",
+      "categorie": "OK",
+      "texte": "Quelle belle lettre !"
+    },
+    {
+      "id": "CON-OK-12",
+      "categorie": "OK",
+      "texte": "Bien écrit !"
+    },
+    {
+      "id": "CON-OK-13",
+      "categorie": "OK",
+      "texte": "Bien écouté !"
+    },
+    {
+      "id": "CON-OK-14",
+      "categorie": "OK",
+      "texte": "Tu progresses !"
+    },
+    {
+      "id": "CON-OK-15",
+      "categorie": "OK",
+      "texte": "Parfait !"
+    },
+    {
+      "id": "CON-OK-16",
+      "categorie": "OK",
+      "texte": "Waouh, tu es rapide !"
+    },
+    {
+      "id": "CON-OK-17",
+      "categorie": "OK",
+      "texte": "C'est exactement ça !"
+    },
+    {
+      "id": "CON-OK-18",
+      "categorie": "OK",
+      "texte": "Quel beau travail !"
+    },
+    {
+      "id": "CON-OK-19",
+      "categorie": "OK",
+      "texte": "Bien joué !"
+    },
+    {
+      "id": "CON-OK-20",
+      "categorie": "OK",
+      "texte": "Tu as réussi du premier coup !"
+    },
+    {
+      "id": "CON-ERR-01",
+      "categorie": "ERR",
+      "texte": "Presque ! Essaie encore."
+    },
+    {
+      "id": "CON-ERR-02",
+      "categorie": "ERR",
+      "texte": "Pas tout à fait. Écoute encore."
+    },
+    {
+      "id": "CON-ERR-03",
+      "categorie": "ERR",
+      "texte": "Regarde bien, et réessaie."
+    },
+    {
+      "id": "CON-ERR-04",
+      "categorie": "ERR",
+      "texte": "Ce n'est pas grave, on recommence."
+    },
+    {
+      "id": "CON-ERR-05",
+      "categorie": "ERR",
+      "texte": "Prends ton temps."
+    },
+    {
+      "id": "CON-ERR-06",
+      "categorie": "ERR",
+      "texte": "Essaie encore une fois, tu vas y arriver."
+    },
+    {
+      "id": "CON-ERR-07",
+      "categorie": "ERR",
+      "texte": "Écoute la bonne réponse."
+    },
+    {
+      "id": "CON-ERR-08",
+      "categorie": "ERR",
+      "texte": "Voilà la bonne réponse. On la refera plus tard."
+    },
+    {
+      "id": "CON-ERR-09",
+      "categorie": "ERR",
+      "texte": "Regarde bien la première lettre."
+    },
+    {
+      "id": "CON-ERR-10",
+      "categorie": "ERR",
+      "texte": "Attention, ces deux sons se ressemblent. Écoute bien la différence."
+    },
+    {
+      "id": "CON-ERR-11",
+      "categorie": "ERR",
+      "texte": "Tu as lu trop vite. Recommence doucement."
+    },
+    {
+      "id": "CON-ERR-12",
+      "categorie": "ERR",
+      "texte": "Tu as oublié un morceau du mot. Relis-le."
+    },
+    {
+      "id": "CON-TR-01",
+      "categorie": "TR",
+      "texte": "Bon départ, bravo !"
+    },
+    {
+      "id": "CON-TR-02",
+      "categorie": "TR",
+      "texte": "Attention : on part toujours du point vert."
+    },
+    {
+      "id": "CON-TR-03",
+      "categorie": "TR",
+      "texte": "Ton trait commence en bas. Regarde où commence la lettre."
+    },
+    {
+      "id": "CON-TR-04",
+      "categorie": "TR",
+      "texte": "Ce trait se trace de haut en bas."
+    },
+    {
+      "id": "CON-TR-05",
+      "categorie": "TR",
+      "texte": "Ce trait se trace de gauche à droite."
+    },
+    {
+      "id": "CON-TR-06",
+      "categorie": "TR",
+      "texte": "Le rond tourne de l'autre côté. Regarde."
+    },
+    {
+      "id": "CON-TR-07",
+      "categorie": "TR",
+      "texte": "Tu as oublié un trait."
+    },
+    {
+      "id": "CON-TR-08",
+      "categorie": "TR",
+      "texte": "Tu as fait les traits dans le désordre. Regarde l'ordre."
+    },
+    {
+      "id": "CON-TR-09",
+      "categorie": "TR",
+      "texte": "Reste bien dans le chemin."
+    },
+    {
+      "id": "CON-TR-10",
+      "categorie": "TR",
+      "texte": "Ta lettre est trop petite : utilise toute la place entre les lignes."
+    },
+    {
+      "id": "CON-TR-11",
+      "categorie": "TR",
+      "texte": "Ta lettre dépasse les lignes."
+    },
+    {
+      "id": "CON-TR-12",
+      "categorie": "TR",
+      "texte": "Regarde ta lettre et le modèle, l'une sur l'autre."
+    },
+    {
+      "id": "CON-TR-13",
+      "categorie": "TR",
+      "texte": "Belle lettre !"
+    },
+    {
+      "id": "CON-TR-14",
+      "categorie": "TR",
+      "texte": "Touche la gomme pour effacer et recommencer."
+    },
+    {
+      "id": "CON-TR-15",
+      "categorie": "TR",
+      "texte": "L'accent se trace à la fin, au-dessus de la lettre."
+    },
+    {
+      "id": "CON-MIC-01",
+      "categorie": "MIC",
+      "texte": "Je n'ai rien entendu. Parle plus fort, près de la tablette."
+    },
+    {
+      "id": "CON-MIC-02",
+      "categorie": "MIC",
+      "texte": "Appuie sur le micro, puis parle."
+    },
+    {
+      "id": "CON-MIC-03",
+      "categorie": "MIC",
+      "texte": "Écoute ta voix."
+    },
+    {
+      "id": "CON-MIC-04",
+      "categorie": "MIC",
+      "texte": "Écoute le modèle, puis ta voix."
+    },
+    {
+      "id": "CON-MIC-05",
+      "categorie": "MIC",
+      "texte": "C'était pareil ? Touche le visage content, moyen ou triste."
+    },
+    {
+      "id": "CON-MIC-06",
+      "categorie": "MIC",
+      "texte": "Demande à un adulte d'autoriser le micro."
+    },
+    {
+      "id": "CON-PROG-01",
+      "categorie": "PROG",
+      "texte": "Tu as débloqué un nouveau son !"
+    },
+    {
+      "id": "CON-PROG-02",
+      "categorie": "PROG",
+      "texte": "Regarde, une nouvelle étape s'allume sur le chemin."
+    },
+    {
+      "id": "CON-PROG-03",
+      "categorie": "PROG",
+      "texte": "Aujourd'hui, on révise les sons que tu connais."
+    },
+    {
+      "id": "CON-PROG-04",
+      "categorie": "PROG",
+      "texte": "C'est l'heure du petit bilan : montre tout ce que tu sais !"
+    },
+    {
+      "id": "CON-PROG-05",
+      "categorie": "PROG",
+      "texte": "Bravo, tu as réussi le petit bilan !"
+    },
+    {
+      "id": "CON-PROG-06",
+      "categorie": "PROG",
+      "texte": "On va revoir encore un peu ce son avant d'avancer."
+    },
+    {
+      "id": "CON-PROG-07",
+      "categorie": "PROG",
+      "texte": "Tu as gagné une nouvelle image pour ta collection !"
+    },
+    {
+      "id": "CON-PROG-08",
+      "categorie": "PROG",
+      "texte": "C'est le grand bilan de lecture. Lis bien chaque mot."
+    },
+    {
+      "id": "CON-PROG-09",
+      "categorie": "PROG",
+      "texte": "Bravo ! Tu sais lire tous les sons simples."
+    },
+    {
+      "id": "CON-PROG-10",
+      "categorie": "PROG",
+      "texte": "Ton chemin continue avec de nouveaux sons."
+    },
+    {
+      "id": "CON-MO-01",
+      "categorie": "MO",
+      "texte": "LE et LA sont des petits mots qui vont devant un nom : LE MUR, LA LUNE."
+    },
+    {
+      "id": "CON-MO-02",
+      "categorie": "MO",
+      "texte": "Ce A a un petit accent. Il se lit [a], comme A tout seul."
+    },
+    {
+      "id": "CON-MO-03",
+      "categorie": "MO",
+      "texte": "Dans IL, on entend le L à la fin."
+    },
+    {
+      "id": "CON-MO-04",
+      "categorie": "MO",
+      "texte": "Dans IL Y A, la lettre Y se lit [i]."
+    },
+    {
+      "id": "CON-MO-05",
+      "categorie": "MO",
+      "texte": "Dans ELLE, le E se lit [è] parce qu'il est devant deux L."
+    },
+    {
+      "id": "CON-MO-06",
+      "categorie": "MO",
+      "texte": "Dans LES et MES, la fin ES se lit [é]."
+    },
+    {
+      "id": "CON-MO-07",
+      "categorie": "MO",
+      "texte": "Dans SUR, on entend le R à la fin."
+    },
+    {
+      "id": "CON-MO-08",
+      "categorie": "MO",
+      "texte": "SES se lit comme LES : on entend [é] à la fin."
+    },
+    {
+      "id": "CON-MO-09",
+      "categorie": "MO",
+      "texte": "Dans EST, on entend seulement [è]. Le S et le T ne se prononcent pas : ils sont en gris."
+    },
+    {
+      "id": "CON-MO-10",
+      "categorie": "MO",
+      "texte": "U et N ensemble font le son [un]."
+    },
+    {
+      "id": "CON-MO-11",
+      "categorie": "MO",
+      "texte": "ET se lit [é]. Le T ne se prononce pas."
+    },
+    {
+      "id": "CON-MO-12",
+      "categorie": "MO",
+      "texte": "Dans PAS, le S ne se prononce pas."
+    },
+    {
+      "id": "CON-MO-13",
+      "categorie": "MO",
+      "texte": "NE et PAS ensemble veulent dire non : LE PUMA NE VA PAS SUR LE SOFA."
+    },
+    {
+      "id": "CON-MO-14",
+      "categorie": "MO",
+      "texte": "TES se lit comme LES."
+    },
+    {
+      "id": "CON-MO-15",
+      "categorie": "MO",
+      "texte": "Dans AS, le S ne se prononce pas : on entend [a]."
+    },
+    {
+      "id": "CON-MO-16",
+      "categorie": "MO",
+      "texte": "DES se lit comme LES."
+    },
+    {
+      "id": "CON-MU-01",
+      "categorie": "MU",
+      "texte": "Parfois, une lettre ferme la syllabe. Dans MUR, on entend le R à la fin."
+    },
+    {
+      "id": "CON-MU-02",
+      "categorie": "MU",
+      "texte": "Quand il y en a plusieurs, on ajoute un S à la fin du mot. Ce S ne se prononce pas : il est en gris."
+    },
+    {
+      "id": "CON-MU-03",
+      "categorie": "MU",
+      "texte": "Le E à la fin du mot se dit tout doucement : LU-NE."
+    }
+  ],
+  "parents": [
+    {
+      "id": "PAR-01",
+      "texte": "Laissez votre enfant chercher : attendez quelques secondes avant de l'aider."
+    },
+    {
+      "id": "PAR-02",
+      "texte": "Dites le son, pas le nom de la lettre : « fff » et non « effe »."
+    },
+    {
+      "id": "PAR-03",
+      "texte": "Dix à quinze minutes par jour valent mieux qu'une longue séance par semaine."
+    },
+    {
+      "id": "PAR-04",
+      "texte": "Ne montrez pas l'image avant que votre enfant ait lu le mot : il doit déchiffrer, pas deviner."
+    },
+    {
+      "id": "PAR-05",
+      "texte": "Valorisez l'effort plus que la réussite."
+    },
+    {
+      "id": "PAR-06",
+      "texte": "En cas d'erreur, faites relire son par son, puis coller les sons."
+    },
+    {
+      "id": "PAR-07",
+      "texte": "Pour l'écriture, vérifiez la tenue du crayon ou du stylet, entre le pouce et l'index."
+    },
+    {
+      "id": "PAR-08",
+      "texte": "Le S gris à la fin d'un mot ne se prononce pas : c'est voulu."
+    },
+    {
+      "id": "PAR-09",
+      "texte": "Si votre enfant bloque plusieurs jours sur le même son, parlez-en à son enseignant."
+    },
+    {
+      "id": "PAR-10",
+      "texte": "Votre enfant confond deux sons ? Jouez à « j'entends / je n'entends pas » avec des mots du quotidien."
+    },
+    {
+      "id": "PAR-11",
+      "texte": "Lisez-lui des histoires chaque jour : aimer les livres compte autant que déchiffrer."
+    },
+    {
+      "id": "PAR-12",
+      "texte": "Le mode Dys change la police de caractères : activez-le si un professionnel vous l'a conseillé."
+    },
+    {
+      "id": "PAR-13",
+      "texte": "Le profil 5 ans ou 6 ans se règle dans l'espace adulte, sans perdre la progression."
+    },
+    {
+      "id": "PAR-14",
+      "texte": "Un enfant fatigué apprend moins bien : respectez les pauses proposées."
+    },
+    {
+      "id": "PAR-15",
+      "texte": "Pour revenir à l'espace adulte, touchez le cadenas et répondez à la question."
+    }
+  ]
+}

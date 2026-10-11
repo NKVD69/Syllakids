@@ -1,0 +1,526 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U06",
+    "rang": 6,
+    "titre": "N",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "N",
+        "p": "n",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": [
+      "UNE",
+      "UN",
+      "ET"
+    ]
+  },
+  "items": [
+    {
+      "id": "U06-S-NA",
+      "type": "syllabe",
+      "texte": "NA",
+      "api": "na"
+    },
+    {
+      "id": "U06-S-NE",
+      "type": "syllabe",
+      "texte": "NE",
+      "api": "nə"
+    },
+    {
+      "id": "U06-S-NI",
+      "type": "syllabe",
+      "texte": "NI",
+      "api": "ni"
+    },
+    {
+      "id": "U06-S-NO",
+      "type": "syllabe",
+      "texte": "NO",
+      "api": "no"
+    },
+    {
+      "id": "U06-S-NU",
+      "type": "syllabe",
+      "texte": "NU",
+      "api": "ny"
+    },
+    {
+      "id": "U06-S-NY",
+      "type": "syllabe",
+      "texte": "NY",
+      "api": "ni"
+    },
+    {
+      "id": "U06-S-NE1",
+      "type": "syllabe",
+      "texte": "NÉ",
+      "api": "ne"
+    },
+    {
+      "id": "U06-S-NE2",
+      "type": "syllabe",
+      "texte": "NÈ",
+      "api": "nɛ"
+    },
+    {
+      "id": "U06-S-NE3",
+      "type": "syllabe",
+      "texte": "NÊ",
+      "api": "nɛ"
+    },
+    {
+      "id": "U06-M-LUNE",
+      "type": "mot",
+      "texte": "LUNE",
+      "rangMin": 6,
+      "syllabes": [
+        "LU",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "lynə",
+      "image": "lune.webp"
+    },
+    {
+      "id": "U06-M-MENU",
+      "type": "mot",
+      "texte": "MENU",
+      "rangMin": 6,
+      "syllabes": [
+        "ME",
+        "NU"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        }
+      ],
+      "api": "məny",
+      "image": "menu.webp"
+    },
+    {
+      "id": "U06-M-FINI",
+      "type": "mot",
+      "texte": "FINI",
+      "rangMin": 6,
+      "syllabes": [
+        "FI",
+        "NI"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "fini",
+      "image": "fini.webp"
+    },
+    {
+      "id": "U06-M-NUL",
+      "type": "mot",
+      "texte": "NUL",
+      "rangMin": 6,
+      "syllabes": [
+        "NUL"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        }
+      ],
+      "api": "nyl",
+      "image": "nul.webp"
+    },
+    {
+      "id": "U06-M-MARINE",
+      "type": "mot",
+      "texte": "MARINE",
+      "rangMin": 6,
+      "syllabes": [
+        "MA",
+        "RI",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "maʁinə",
+      "image": "marine.webp"
+    },
+    {
+      "id": "U06-M-FARINE",
+      "type": "mot",
+      "texte": "FARINE",
+      "rangMin": 6,
+      "syllabes": [
+        "FA",
+        "RI",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "faʁinə",
+      "image": "farine.webp"
+    },
+    {
+      "id": "U06-M-ANIMAL",
+      "type": "mot",
+      "texte": "ANIMAL",
+      "rangMin": 6,
+      "syllabes": [
+        "A",
+        "NI",
+        "MAL"
+      ],
+      "segments": [
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        }
+      ],
+      "api": "animal",
+      "image": "animal.webp"
+    },
+    {
+      "id": "U06-M-NUME1RO",
+      "type": "mot",
+      "texte": "NUMÉRO",
+      "rangMin": 6,
+      "syllabes": [
+        "NU",
+        "MÉ",
+        "RO"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "nymeʁo",
+      "image": "nume1ro.webp"
+    },
+    {
+      "id": "U06-M-E1NORME",
+      "type": "mot",
+      "texte": "ÉNORME",
+      "rangMin": 6,
+      "syllabes": [
+        "É",
+        "NOR",
+        "ME"
+      ],
+      "segments": [
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "enoʁmə",
+      "image": "e1norme.webp"
+    },
+    {
+      "id": "U06-M-NINA",
+      "type": "mot",
+      "texte": "NINA",
+      "rangMin": 6,
+      "syllabes": [
+        "NI",
+        "NA"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "nina",
+      "image": "nina.webp"
+    },
+    {
+      "id": "U06-M-NAFILA",
+      "type": "mot",
+      "texte": "NAFILA",
+      "rangMin": 6,
+      "syllabes": [
+        "NA",
+        "FI",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "nafila",
+      "image": "nafila.webp"
+    },
+    {
+      "id": "U06-M-AMINA",
+      "type": "mot",
+      "texte": "AMINA",
+      "rangMin": 6,
+      "syllabes": [
+        "A",
+        "MI",
+        "NA"
+      ],
+      "segments": [
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "amina",
+      "image": "amina.webp"
+    },
+    {
+      "id": "U06-P-01",
+      "type": "phrase",
+      "texte": "IL Y A UNE LUNE.",
+      "rangMin": 6,
+      "image": "u06-p01.webp"
+    },
+    {
+      "id": "U06-P-02",
+      "type": "phrase",
+      "texte": "NAFILA A FINI LE MENU.",
+      "rangMin": 6,
+      "image": "u06-p02.webp"
+    },
+    {
+      "id": "U06-P-03",
+      "type": "phrase",
+      "texte": "UN ANIMAL ÉNORME EST LÀ.",
+      "rangMin": 6,
+      "image": "u06-p03.webp"
+    },
+    {
+      "id": "U06-P-04",
+      "type": "phrase",
+      "texte": "LA FARINE EST SUR LE SOFA.",
+      "rangMin": 6,
+      "image": "u06-p04.webp"
+    },
+    {
+      "id": "U06-P-05",
+      "type": "phrase",
+      "texte": "AMINA A LU ET ELLE A RI.",
+      "rangMin": 6,
+      "image": "u06-p05.webp"
+    }
+  ]
+}

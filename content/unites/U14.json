@@ -1,0 +1,756 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U14",
+    "rang": 14,
+    "titre": "Bilan de lecture",
+    "bloc": "bilan",
+    "graphemes": [],
+    "motsOutils": []
+  },
+  "items": [
+    {
+      "id": "U14-M-LOLA",
+      "type": "mot",
+      "texte": "LOLA",
+      "rangMin": 1,
+      "syllabes": [
+        "LO",
+        "LA"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "lola",
+      "image": "lola.webp"
+    },
+    {
+      "id": "U14-M-AMI",
+      "type": "mot",
+      "texte": "AMI",
+      "rangMin": 2,
+      "syllabes": [
+        "A",
+        "MI"
+      ],
+      "segments": [
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ami",
+      "image": "ami.webp"
+    },
+    {
+      "id": "U14-M-ME2RE",
+      "type": "mot",
+      "texte": "MÈRE",
+      "rangMin": 3,
+      "syllabes": [
+        "MÈ",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "È",
+          "p": "ɛ"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "mɛʁə",
+      "image": "me2re.webp"
+    },
+    {
+      "id": "U14-M-SALE1",
+      "type": "mot",
+      "texte": "SALÉ",
+      "rangMin": 4,
+      "syllabes": [
+        "SA",
+        "LÉ"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "sale",
+      "image": "sale1.webp"
+    },
+    {
+      "id": "U14-M-SOFA",
+      "type": "mot",
+      "texte": "SOFA",
+      "rangMin": 5,
+      "syllabes": [
+        "SO",
+        "FA"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "sofa",
+      "image": "sofa.webp"
+    },
+    {
+      "id": "U14-M-LUNE",
+      "type": "mot",
+      "texte": "LUNE",
+      "rangMin": 6,
+      "syllabes": [
+        "LU",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "lynə",
+      "image": "lune.webp"
+    },
+    {
+      "id": "U14-M-VE1LO",
+      "type": "mot",
+      "texte": "VÉLO",
+      "rangMin": 7,
+      "syllabes": [
+        "VÉ",
+        "LO"
+      ],
+      "segments": [
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "velo",
+      "image": "ve1lo.webp"
+    },
+    {
+      "id": "U14-M-JOLI",
+      "type": "mot",
+      "texte": "JOLI",
+      "rangMin": 8,
+      "syllabes": [
+        "JO",
+        "LI"
+      ],
+      "segments": [
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ʒoli",
+      "image": "joli.webp"
+    },
+    {
+      "id": "U14-M-ZE1RO",
+      "type": "mot",
+      "texte": "ZÉRO",
+      "rangMin": 9,
+      "syllabes": [
+        "ZÉ",
+        "RO"
+      ],
+      "segments": [
+        {
+          "g": "Z",
+          "p": "z"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "zeʁo",
+      "image": "ze1ro.webp"
+    },
+    {
+      "id": "U14-M-PYJAMA",
+      "type": "mot",
+      "texte": "PYJAMA",
+      "rangMin": 10,
+      "syllabes": [
+        "PY",
+        "JA",
+        "MA"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "Y",
+          "p": "i"
+        },
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "piʒama",
+      "image": "pyjama.webp"
+    },
+    {
+      "id": "U14-M-TOMATE",
+      "type": "mot",
+      "texte": "TOMATE",
+      "rangMin": 11,
+      "syllabes": [
+        "TO",
+        "MA",
+        "TE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "tomatə",
+      "image": "tomate.webp"
+    },
+    {
+      "id": "U14-M-BANANE",
+      "type": "mot",
+      "texte": "BANANE",
+      "rangMin": 12,
+      "syllabes": [
+        "BA",
+        "NA",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "bananə",
+      "image": "banane.webp"
+    },
+    {
+      "id": "U14-M-SALADE",
+      "type": "mot",
+      "texte": "SALADE",
+      "rangMin": 13,
+      "syllabes": [
+        "SA",
+        "LA",
+        "DE"
+      ],
+      "segments": [
+        {
+          "g": "S",
+          "p": "s"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "saladə",
+      "image": "salade.webp"
+    },
+    {
+      "id": "U14-M-DOMINO",
+      "type": "mot",
+      "texte": "DOMINO",
+      "rangMin": 13,
+      "syllabes": [
+        "DO",
+        "MI",
+        "NO"
+      ],
+      "segments": [
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "domino",
+      "image": "domino.webp"
+    },
+    {
+      "id": "U14-M-NAVIRE",
+      "type": "mot",
+      "texte": "NAVIRE",
+      "rangMin": 7,
+      "syllabes": [
+        "NA",
+        "VI",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "naviʁə",
+      "image": "navire.webp"
+    },
+    {
+      "id": "U14-M-PIANO",
+      "type": "mot",
+      "texte": "PIANO",
+      "rangMin": 10,
+      "syllabes": [
+        "PI",
+        "A",
+        "NO"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "piano",
+      "image": "piano.webp"
+    },
+    {
+      "id": "U14-M-TULIPE",
+      "type": "mot",
+      "texte": "TULIPE",
+      "rangMin": 11,
+      "syllabes": [
+        "TU",
+        "LI",
+        "PE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "tylipə",
+      "image": "tulipe.webp"
+    },
+    {
+      "id": "U14-M-RAPIDE",
+      "type": "mot",
+      "texte": "RAPIDE",
+      "rangMin": 13,
+      "syllabes": [
+        "RA",
+        "PI",
+        "DE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "D",
+          "p": "d"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁapidə",
+      "image": "rapide.webp"
+    },
+    {
+      "id": "U14-M-OLIVE",
+      "type": "mot",
+      "texte": "OLIVE",
+      "rangMin": 7,
+      "syllabes": [
+        "O",
+        "LI",
+        "VE"
+      ],
+      "segments": [
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "V",
+          "p": "v"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "olivə",
+      "image": "olive.webp"
+    },
+    {
+      "id": "U14-M-FARINE",
+      "type": "mot",
+      "texte": "FARINE",
+      "rangMin": 6,
+      "syllabes": [
+        "FA",
+        "RI",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "F",
+          "p": "f"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "faʁinə",
+      "image": "farine.webp"
+    },
+    {
+      "id": "U14-P-01",
+      "type": "phrase",
+      "texte": "PAPA A UNE MOTO RAPIDE.",
+      "rangMin": 13,
+      "image": "u14-p01.webp"
+    },
+    {
+      "id": "U14-P-02",
+      "type": "phrase",
+      "texte": "LE PIRATE EST SUR LE NAVIRE.",
+      "rangMin": 11,
+      "image": "u14-p02.webp"
+    },
+    {
+      "id": "U14-P-03",
+      "type": "phrase",
+      "texte": "JAMILA A VU UNE TULIPE.",
+      "rangMin": 11,
+      "image": "u14-p03.webp"
+    },
+    {
+      "id": "U14-P-04",
+      "type": "phrase",
+      "texte": "LE BÉBÉ A UN JOLI PYJAMA.",
+      "rangMin": 12,
+      "image": "u14-p04.webp"
+    },
+    {
+      "id": "U14-P-05",
+      "type": "phrase",
+      "texte": "OMAR A FINI LA SALADE DE TOMATE.",
+      "rangMin": 13,
+      "image": "u14-p05.webp"
+    },
+    {
+      "id": "U14-P-06",
+      "type": "phrase",
+      "texte": "ZOÉ NE VA PAS SUR LA DUNE.",
+      "rangMin": 13,
+      "image": "u14-p06.webp"
+    },
+    {
+      "id": "U14-P-07",
+      "type": "phrase",
+      "texte": "LA MULE A VOLÉ LA BANANE DE PAPA.",
+      "rangMin": 13,
+      "image": "u14-p07.webp"
+    },
+    {
+      "id": "U14-P-08",
+      "type": "phrase",
+      "texte": "SAMEDI, NAFILA A LU À MÉMÉ.",
+      "rangMin": 13,
+      "image": "u14-p08.webp"
+    }
+  ]
+}

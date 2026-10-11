@@ -1,0 +1,398 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U12",
+    "rang": 12,
+    "titre": "B",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "B",
+        "p": "b",
+        "type": "occlusive"
+      }
+    ],
+    "motsOutils": []
+  },
+  "items": [
+    {
+      "id": "U12-S-BA",
+      "type": "syllabe",
+      "texte": "BA",
+      "api": "ba"
+    },
+    {
+      "id": "U12-S-BE",
+      "type": "syllabe",
+      "texte": "BE",
+      "api": "bə"
+    },
+    {
+      "id": "U12-S-BI",
+      "type": "syllabe",
+      "texte": "BI",
+      "api": "bi"
+    },
+    {
+      "id": "U12-S-BO",
+      "type": "syllabe",
+      "texte": "BO",
+      "api": "bo"
+    },
+    {
+      "id": "U12-S-BU",
+      "type": "syllabe",
+      "texte": "BU",
+      "api": "by"
+    },
+    {
+      "id": "U12-S-BY",
+      "type": "syllabe",
+      "texte": "BY",
+      "api": "bi"
+    },
+    {
+      "id": "U12-S-BE1",
+      "type": "syllabe",
+      "texte": "BÉ",
+      "api": "be"
+    },
+    {
+      "id": "U12-S-BE2",
+      "type": "syllabe",
+      "texte": "BÈ",
+      "api": "bɛ"
+    },
+    {
+      "id": "U12-S-BE3",
+      "type": "syllabe",
+      "texte": "BÊ",
+      "api": "bɛ"
+    },
+    {
+      "id": "U12-M-BE1BE1",
+      "type": "mot",
+      "texte": "BÉBÉ",
+      "rangMin": 12,
+      "syllabes": [
+        "BÉ",
+        "BÉ"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "bebe",
+      "image": "be1be1.webp"
+    },
+    {
+      "id": "U12-M-BOA",
+      "type": "mot",
+      "texte": "BOA",
+      "rangMin": 12,
+      "syllabes": [
+        "BO",
+        "A"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "boa",
+      "image": "boa.webp"
+    },
+    {
+      "id": "U12-M-TUBE",
+      "type": "mot",
+      "texte": "TUBE",
+      "rangMin": 12,
+      "syllabes": [
+        "TU",
+        "BE"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "tybə",
+      "image": "tube.webp"
+    },
+    {
+      "id": "U12-M-TUBA",
+      "type": "mot",
+      "texte": "TUBA",
+      "rangMin": 12,
+      "syllabes": [
+        "TU",
+        "BA"
+      ],
+      "segments": [
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "tyba",
+      "image": "tuba.webp"
+    },
+    {
+      "id": "U12-M-ROBE",
+      "type": "mot",
+      "texte": "ROBE",
+      "rangMin": 12,
+      "syllabes": [
+        "RO",
+        "BE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁobə",
+      "image": "robe.webp"
+    },
+    {
+      "id": "U12-M-BARBE",
+      "type": "mot",
+      "texte": "BARBE",
+      "rangMin": 12,
+      "syllabes": [
+        "BAR",
+        "BE"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "baʁbə",
+      "image": "barbe.webp"
+    },
+    {
+      "id": "U12-M-BANANE",
+      "type": "mot",
+      "texte": "BANANE",
+      "rangMin": 12,
+      "syllabes": [
+        "BA",
+        "NA",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "bananə",
+      "image": "banane.webp"
+    },
+    {
+      "id": "U12-M-BOBINE",
+      "type": "mot",
+      "texte": "BOBINE",
+      "rangMin": 12,
+      "syllabes": [
+        "BO",
+        "BI",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "bobinə",
+      "image": "bobine.webp"
+    },
+    {
+      "id": "U12-M-BUTINE",
+      "type": "mot",
+      "texte": "BUTINE",
+      "rangMin": 12,
+      "syllabes": [
+        "BU",
+        "TI",
+        "NE"
+      ],
+      "segments": [
+        {
+          "g": "B",
+          "p": "b"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "T",
+          "p": "t"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "bytinə",
+      "image": "butine.webp"
+    },
+    {
+      "id": "U12-P-01",
+      "type": "phrase",
+      "texte": "LE BÉBÉ A UNE BANANE.",
+      "rangMin": 12,
+      "image": "u12-p01.webp"
+    },
+    {
+      "id": "U12-P-02",
+      "type": "phrase",
+      "texte": "PÉPÉ A UNE BARBE.",
+      "rangMin": 12,
+      "image": "u12-p02.webp"
+    },
+    {
+      "id": "U12-P-03",
+      "type": "phrase",
+      "texte": "LE BOA EST SUR LA TÉLÉ.",
+      "rangMin": 12,
+      "image": "u12-p03.webp"
+    },
+    {
+      "id": "U12-P-04",
+      "type": "phrase",
+      "texte": "AMINA A LAVÉ SA ROBE.",
+      "rangMin": 12,
+      "image": "u12-p04.webp"
+    }
+  ]
+}

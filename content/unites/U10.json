@@ -1,0 +1,531 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U10",
+    "rang": 10,
+    "titre": "P",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "P",
+        "p": "p",
+        "type": "occlusive"
+      }
+    ],
+    "motsOutils": [
+      "NE",
+      "PAS"
+    ]
+  },
+  "items": [
+    {
+      "id": "U10-S-PA",
+      "type": "syllabe",
+      "texte": "PA",
+      "api": "pa"
+    },
+    {
+      "id": "U10-S-PE",
+      "type": "syllabe",
+      "texte": "PE",
+      "api": "pə"
+    },
+    {
+      "id": "U10-S-PI",
+      "type": "syllabe",
+      "texte": "PI",
+      "api": "pi"
+    },
+    {
+      "id": "U10-S-PO",
+      "type": "syllabe",
+      "texte": "PO",
+      "api": "po"
+    },
+    {
+      "id": "U10-S-PU",
+      "type": "syllabe",
+      "texte": "PU",
+      "api": "py"
+    },
+    {
+      "id": "U10-S-PY",
+      "type": "syllabe",
+      "texte": "PY",
+      "api": "pi"
+    },
+    {
+      "id": "U10-S-PE1",
+      "type": "syllabe",
+      "texte": "PÉ",
+      "api": "pe"
+    },
+    {
+      "id": "U10-S-PE2",
+      "type": "syllabe",
+      "texte": "PÈ",
+      "api": "pɛ"
+    },
+    {
+      "id": "U10-S-PE3",
+      "type": "syllabe",
+      "texte": "PÊ",
+      "api": "pɛ"
+    },
+    {
+      "id": "U10-M-PAPA",
+      "type": "mot",
+      "texte": "PAPA",
+      "rangMin": 10,
+      "syllabes": [
+        "PA",
+        "PA"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "papa",
+      "image": "papa.webp"
+    },
+    {
+      "id": "U10-M-PAPI",
+      "type": "mot",
+      "texte": "PAPI",
+      "rangMin": 10,
+      "syllabes": [
+        "PA",
+        "PI"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "papi",
+      "image": "papi.webp"
+    },
+    {
+      "id": "U10-M-PE1PE1",
+      "type": "mot",
+      "texte": "PÉPÉ",
+      "rangMin": 10,
+      "syllabes": [
+        "PÉ",
+        "PÉ"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        }
+      ],
+      "api": "pepe",
+      "image": "pe1pe1.webp"
+    },
+    {
+      "id": "U10-M-PILE",
+      "type": "mot",
+      "texte": "PILE",
+      "rangMin": 10,
+      "syllabes": [
+        "PI",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "pilə",
+      "image": "pile.webp"
+    },
+    {
+      "id": "U10-M-PILULE",
+      "type": "mot",
+      "texte": "PILULE",
+      "rangMin": 10,
+      "syllabes": [
+        "PI",
+        "LU",
+        "LE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "pilylə",
+      "image": "pilule.webp"
+    },
+    {
+      "id": "U10-M-PUMA",
+      "type": "mot",
+      "texte": "PUMA",
+      "rangMin": 10,
+      "syllabes": [
+        "PU",
+        "MA"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "pyma",
+      "image": "puma.webp"
+    },
+    {
+      "id": "U10-M-POLO",
+      "type": "mot",
+      "texte": "POLO",
+      "rangMin": 10,
+      "syllabes": [
+        "PO",
+        "LO"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "polo",
+      "image": "polo.webp"
+    },
+    {
+      "id": "U10-M-PARI",
+      "type": "mot",
+      "texte": "PARI",
+      "rangMin": 10,
+      "syllabes": [
+        "PA",
+        "RI"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "paʁi",
+      "image": "pari.webp"
+    },
+    {
+      "id": "U10-M-PIRE",
+      "type": "mot",
+      "texte": "PIRE",
+      "rangMin": 10,
+      "syllabes": [
+        "PI",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "piʁə",
+      "image": "pire.webp"
+    },
+    {
+      "id": "U10-M-PARURE",
+      "type": "mot",
+      "texte": "PARURE",
+      "rangMin": 10,
+      "syllabes": [
+        "PA",
+        "RU",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "paʁyʁə",
+      "image": "parure.webp"
+    },
+    {
+      "id": "U10-M-PYJAMA",
+      "type": "mot",
+      "texte": "PYJAMA",
+      "rangMin": 10,
+      "syllabes": [
+        "PY",
+        "JA",
+        "MA"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "Y",
+          "p": "i"
+        },
+        {
+          "g": "J",
+          "p": "ʒ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "piʒama",
+      "image": "pyjama.webp"
+    },
+    {
+      "id": "U10-M-PIANO",
+      "type": "mot",
+      "texte": "PIANO",
+      "rangMin": 10,
+      "syllabes": [
+        "PI",
+        "A",
+        "NO"
+      ],
+      "segments": [
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "N",
+          "p": "n"
+        },
+        {
+          "g": "O",
+          "p": "o"
+        }
+      ],
+      "api": "piano",
+      "image": "piano.webp"
+    },
+    {
+      "id": "U10-M-OPE1RA",
+      "type": "mot",
+      "texte": "OPÉRA",
+      "rangMin": 10,
+      "syllabes": [
+        "O",
+        "PÉ",
+        "RA"
+      ],
+      "segments": [
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "P",
+          "p": "p"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "opeʁa",
+      "image": "ope1ra.webp"
+    },
+    {
+      "id": "U10-P-01",
+      "type": "phrase",
+      "texte": "PAPI A UN PIANO.",
+      "rangMin": 10,
+      "image": "u10-p01.webp"
+    },
+    {
+      "id": "U10-P-02",
+      "type": "phrase",
+      "texte": "JAMILA A UN JOLI PYJAMA.",
+      "rangMin": 10,
+      "image": "u10-p02.webp"
+    },
+    {
+      "id": "U10-P-03",
+      "type": "phrase",
+      "texte": "LE PUMA NE VA PAS SUR LE SOFA.",
+      "rangMin": 10,
+      "image": "u10-p03.webp"
+    },
+    {
+      "id": "U10-P-04",
+      "type": "phrase",
+      "texte": "LA PILE EST SUR LE PIANO.",
+      "rangMin": 10,
+      "image": "u10-p04.webp"
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "version": "1.0",
+  "unite": {
+    "id": "U03",
+    "rang": 3,
+    "titre": "R",
+    "bloc": "sons-simples",
+    "graphemes": [
+      {
+        "g": "R",
+        "p": "ʁ",
+        "type": "consonne-longue"
+      }
+    ],
+    "motsOutils": []
+  },
+  "items": [
+    {
+      "id": "U03-S-RA",
+      "type": "syllabe",
+      "texte": "RA",
+      "api": "ʁa"
+    },
+    {
+      "id": "U03-S-RE",
+      "type": "syllabe",
+      "texte": "RE",
+      "api": "ʁə"
+    },
+    {
+      "id": "U03-S-RI",
+      "type": "syllabe",
+      "texte": "RI",
+      "api": "ʁi"
+    },
+    {
+      "id": "U03-S-RO",
+      "type": "syllabe",
+      "texte": "RO",
+      "api": "ʁo"
+    },
+    {
+      "id": "U03-S-RU",
+      "type": "syllabe",
+      "texte": "RU",
+      "api": "ʁy"
+    },
+    {
+      "id": "U03-S-RY",
+      "type": "syllabe",
+      "texte": "RY",
+      "api": "ʁi"
+    },
+    {
+      "id": "U03-S-RE1",
+      "type": "syllabe",
+      "texte": "RÉ",
+      "api": "ʁe"
+    },
+    {
+      "id": "U03-S-RE2",
+      "type": "syllabe",
+      "texte": "RÈ",
+      "api": "ʁɛ"
+    },
+    {
+      "id": "U03-S-RE3",
+      "type": "syllabe",
+      "texte": "RÊ",
+      "api": "ʁɛ"
+    },
+    {
+      "id": "U03-M-ME2RE",
+      "type": "mot",
+      "texte": "MÈRE",
+      "rangMin": 3,
+      "syllabes": [
+        "MÈ",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "È",
+          "p": "ɛ"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "mɛʁə",
+      "image": "me2re.webp"
+    },
+    {
+      "id": "U03-M-MARI",
+      "type": "mot",
+      "texte": "MARI",
+      "rangMin": 3,
+      "syllabes": [
+        "MA",
+        "RI"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "maʁi",
+      "image": "mari.webp"
+    },
+    {
+      "id": "U03-M-RIRE",
+      "type": "mot",
+      "texte": "RIRE",
+      "rangMin": 3,
+      "syllabes": [
+        "RI",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁiʁə",
+      "image": "rire.webp"
+    },
+    {
+      "id": "U03-M-LIRE",
+      "type": "mot",
+      "texte": "LIRE",
+      "rangMin": 3,
+      "syllabes": [
+        "LI",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "L",
+          "p": "l"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "liʁə",
+      "image": "lire.webp"
+    },
+    {
+      "id": "U03-M-RAME",
+      "type": "mot",
+      "texte": "RAME",
+      "rangMin": 3,
+      "syllabes": [
+        "RA",
+        "ME"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁamə",
+      "image": "rame.webp"
+    },
+    {
+      "id": "U03-M-RARE",
+      "type": "mot",
+      "texte": "RARE",
+      "rangMin": 3,
+      "syllabes": [
+        "RA",
+        "RE"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "E",
+          "p": "ə"
+        }
+      ],
+      "api": "ʁaʁə",
+      "image": "rare.webp"
+    },
+    {
+      "id": "U03-M-MUR",
+      "type": "mot",
+      "texte": "MUR",
+      "rangMin": 3,
+      "syllabes": [
+        "MUR"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "U",
+          "p": "y"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        }
+      ],
+      "api": "myʁ",
+      "image": "mur.webp"
+    },
+    {
+      "id": "U03-M-MIRA",
+      "type": "mot",
+      "texte": "MIRA",
+      "rangMin": 3,
+      "syllabes": [
+        "MI",
+        "RA"
+      ],
+      "segments": [
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        }
+      ],
+      "api": "miʁa",
+      "image": "mira.webp"
+    },
+    {
+      "id": "U03-M-RE1MI",
+      "type": "mot",
+      "texte": "RÉMI",
+      "rangMin": 3,
+      "syllabes": [
+        "RÉ",
+        "MI"
+      ],
+      "segments": [
+        {
+          "g": "R",
+          "p": "ʁ"
+        },
+        {
+          "g": "É",
+          "p": "e"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "I",
+          "p": "i"
+        }
+      ],
+      "api": "ʁemi",
+      "image": "re1mi.webp"
+    },
+    {
+      "id": "U03-M-OMAR",
+      "type": "mot",
+      "texte": "OMAR",
+      "rangMin": 3,
+      "syllabes": [
+        "O",
+        "MAR"
+      ],
+      "segments": [
+        {
+          "g": "O",
+          "p": "o"
+        },
+        {
+          "g": "M",
+          "p": "m"
+        },
+        {
+          "g": "A",
+          "p": "a"
+        },
+        {
+          "g": "R",
+          "p": "ʁ"
+        }
+      ],
+      "api": "omaʁ",
+      "image": "omar.webp"
+    },
+    {
+      "id": "U03-P-01",
+      "type": "phrase",
+      "texte": "RÉMI A RAMÉ.",
+      "rangMin": 3,
+      "image": "u03-p01.webp"
+    },
+    {
+      "id": "U03-P-02",
+      "type": "phrase",
+      "texte": "MA MÈRE A RI.",
+      "rangMin": 3,
+      "image": "u03-p02.webp"
+    },
+    {
+      "id": "U03-P-03",
+      "type": "phrase",
+      "texte": "ÉMILE A LU À MÉMÉ.",
+      "rangMin": 2,
+      "image": "u03-p03.webp"
+    },
+    {
+      "id": "U03-P-04",
+      "type": "phrase",
+      "texte": "OMAR RIRA.",
+      "rangMin": 3,
+      "image": "u03-p04.webp"
+    }
+  ]
+}
