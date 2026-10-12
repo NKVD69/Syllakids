@@ -3,18 +3,22 @@ import { naviguer } from "../App";
 import { BoutonRond } from "../composants/BoutonRond";
 import { Etoile, Fleche, Maison, Oreille } from "../composants/Icones";
 import { UNITES, unite } from "../contenu";
+import { estMaitrisee, itemsDus, jour } from "../revisions";
 import { deroule, nombreSeances } from "../seances";
 import { useSyllakids } from "../contexte";
 
 export function EcranUnite({ id }: { id: string }) {
   const f = unite(id);
-  const { progression, modifier, dire, redire } = useSyllakids();
+  const { progression, modifier, dire, redire, debutSeance, bilanSeance } = useSyllakids();
   const profil = progression.reglages.profil;
   const total = f ? nombreSeances(f) : 1;
   const faites = progression.seances[id] ?? (progression.terminees.includes(id) ? total : 0);
   // la séance est fixée à l'ouverture de l'écran ; une unité terminée se rejoue depuis la séance 1
   const seance = useRef(faites >= total ? 0 : faites).current;
-  const etapes = useMemo(() => (f ? deroule(f, profil, seance) : []), [f, profil, seance]);
+  // révision en tête de séance si des items d'unités précédentes sont à revoir aujourd'hui
+  const revision = useRef(itemsDus(progression.items, jour(), { exclureUnite: id }).length > 0).current;
+  const etapes = useMemo(() => (f ? deroule(f, profil, seance, revision) : []), [f, profil, seance, revision]);
+  useEffect(() => debutSeance(), [debutSeance]);
   const [i, setI] = useState(0);
 
   const suivante = useCallback(() => setI((k) => k + 1), []);
@@ -25,17 +29,24 @@ export function EcranUnite({ id }: { id: string }) {
     if (!f) naviguer("#/");
   }, [f]);
 
+  const [revoir, setRevoir] = useState(false);
   useEffect(() => {
     if (!fini || etapes.length === 0) return;
+    // la dernière séance valide l'unité seulement si le critère de maîtrise est atteint
     const derniere = seance + 1 >= total;
+    const maitrisee = !derniere || total === 1 || estMaitrisee(bilanSeance(), profil);
+    const validee = derniere && maitrisee;
     modifier((p) => ({
       ...p,
-      seances: { ...p.seances, [id]: Math.max(p.seances[id] ?? 0, seance + 1) },
-      terminees: derniere && !p.terminees.includes(id) ? [...p.terminees, id] : p.terminees,
+      seances: { ...p.seances, [id]: maitrisee ? Math.max(p.seances[id] ?? 0, seance + 1) : seance },
+      terminees: validee && !p.terminees.includes(id) ? [...p.terminees, id] : p.terminees,
     }));
-    if (!derniere) void dire("CON-GEN-11");
+    if (!maitrisee) {
+      setRevoir(true);
+      void dire("CON-PROG-06");
+    } else if (!derniere) void dire("CON-GEN-11");
     else void dire(UNITES.at(-1)?.unite.id === id ? "CON-PROG-09" : "CON-PROG-01");
-  }, [fini, etapes.length, id, modifier, dire, seance, total]);
+  }, [fini, etapes.length, id, modifier, dire, seance, total, bilanSeance, profil]);
 
   if (!f) return null;
   const Courante = etapes[i]?.composant;
@@ -57,7 +68,7 @@ export function EcranUnite({ id }: { id: string }) {
           <Courante key={i} f={f} profil={profil} onFini={suivante} />
         ) : (
           <div className="scene">
-            <span className="fin" aria-hidden><Etoile /></span>
+            <span className="fin" aria-hidden style={revoir ? { color: "var(--bleu)" } : undefined}><Etoile /></span>
             <BoutonRond nom="Revenir au chemin" variante="principal" onClick={() => naviguer("#/")}><Fleche /></BoutonRond>
           </div>
         )}

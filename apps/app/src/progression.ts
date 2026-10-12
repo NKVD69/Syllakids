@@ -1,3 +1,4 @@
+import type { EtatItem } from "./revisions";
 import type { Profil } from "./types";
 
 export interface Reglages { profil: Profil; dys: boolean }
@@ -5,18 +6,22 @@ export interface Progression {
   terminees: string[];
   /** Nombre de séances faites par unité. */
   seances: Record<string, number>;
+  /** État de révision de chaque item lu ou écrit (boîtes de Leitner). */
+  items: Record<string, EtatItem>;
+  /** Meilleur score de chrono-lecture (mots lus en une minute). */
+  fluence?: { meilleur: number; date: string };
   reglages: Reglages;
 }
 
 const CLE = "syllakids:progression:v1";
-const DEFAUT: Progression = { terminees: [], seances: {}, reglages: { profil: "6ans", dys: false } };
+const DEFAUT: Progression = { terminees: [], seances: {}, items: {}, reglages: { profil: "6ans", dys: false } };
 
 export function charger(): Progression {
   try {
     const brut = localStorage.getItem(CLE);
     if (!brut) return structuredClone(DEFAUT);
     const p = JSON.parse(brut) as Partial<Progression>;
-    return { terminees: p.terminees ?? [], seances: p.seances ?? {}, reglages: { ...DEFAUT.reglages, ...p.reglages } };
+    return { ...p, terminees: p.terminees ?? [], seances: p.seances ?? {}, items: p.items ?? {}, reglages: { ...DEFAUT.reglages, ...p.reglages } };
   } catch {
     return structuredClone(DEFAUT);
   }

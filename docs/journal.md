@@ -1,5 +1,24 @@
 # Journal des sessions
 
+## Session 3 — 11 octobre 2026
+
+Fait :
+
+- 4 nouvelles activités : E2 dictée tracée (une case de cahier par lettre, reconnaissance de la lettre écrite, accents compris), E3 étiquettes (on reconstitue le mot entendu avec des lettres ; choisie en profil 5 ans et sur les petits écrans), C1 phrase et image (lire une phrase, toucher l'image qui correspond), F1 chrono-lecture (une minute de lecture, record conservé). Les 17 activités du MVP sont maintenant en place.
+- Révisions espacées : chaque réponse notée place l'élément dans une boîte (révision à 1, 2, 4, 8 puis 16 jours) ; chaque séance commence par 5 éléments à revoir au plus, pris dans les unités précédentes.
+- Critère de maîtrise : une unité n'est validée qu'avec 85 % de réussite à la séance 2 (profil 5 ans) ou 90 % (profil 6 ans) ; sinon, l'enfant refait la séance 2, sans être bloqué ailleurs.
+- Reconnaissance de lettres manuscrites sur l'appareil (nuage de points, accents traités à part), pour la dictée.
+- Le parcours automatique sait maintenant écrire dans les cases de la dictée, placer les étiquettes, faire la minute de lecture et préparer des éléments à réviser (`REVISIONS=…`) ; images factices pour C1 (`IMAGES_FACTICES=1`).
+- 159 tests automatisés.
+
+Points à surveiller :
+
+- C1 est sautée automatiquement tant que les illustrations n'existent pas (il en faut au moins 3 pour l'unité).
+- Les seuils de reconnaissance de l'écriture sont à ajuster avec de vrais tracés d'enfants.
+
+Reste après le MVP pédagogique : espace enseignant et parent, comptes et synchronisation, consentement, empaquetage Capacitor, sons enregistrés et illustrations, tests sur tablettes.
+
+
 ## Session 2 — 11 octobre 2026
 
 Fait :

@@ -18,7 +18,7 @@ function distracteurs(cible: ItemSyllabe, rang: number, n: number): ItemSyllabe[
 
 /** L4 Quelle syllabe ? Une syllabe est dite, l'enfant touche celle qu'il a entendue. */
 export function QuelleSyllabe({ f, profil, onFini }: PropsActivite) {
-  const { dire } = useSyllakids();
+  const { dire, noter } = useSyllakids();
   const tours = useMemo(() => {
     const cibles = melanger(syllabesDe(f)).slice(0, profil === "5ans" ? 3 : 5);
     return cibles.map((c) => ({ cible: c, choix: melanger([c, ...distracteurs(c, Math.min(f.unite.rang, 13), profil === "5ans" ? 2 : 3)]) }));
@@ -46,6 +46,7 @@ export function QuelleSyllabe({ f, profil, onFini }: PropsActivite) {
     occupe.current = true;
     if (s.texte === tour.cible.texte) {
       setEtat({ [s.id]: "juste" });
+      noter(f.unite.id, tour.cible.id, erreurs.current === 0);
       erreurs.current = 0;
       await dire(auHasard(ENCOURAGEMENTS));
       setEtat({});
@@ -58,6 +59,7 @@ export function QuelleSyllabe({ f, profil, onFini }: PropsActivite) {
       erreurs.current += 1;
       if (erreurs.current >= 3) {
         erreurs.current = 0;
+        noter(f.unite.id, tour.cible.id, false);
         setEtat({ [tour.cible.id]: "juste" });
         await dire("CON-ERR-08");
         setEtat({});
@@ -88,7 +90,7 @@ export function QuelleSyllabe({ f, profil, onFini }: PropsActivite) {
 
 /** L6 Vrai mot ou mot inventé ? L'enfant lit, puis dit si le mot existe : il doit déchiffrer, pas reconnaître. */
 export function VraiOuInvente({ f, profil, onFini }: PropsActivite) {
-  const { dire } = useSyllakids();
+  const { dire, noter } = useSyllakids();
   const n = profil === "5ans" ? 2 : 3;
   const items = useMemo(
     () =>
@@ -114,6 +116,7 @@ export function VraiOuInvente({ f, profil, onFini }: PropsActivite) {
   async function repondre(vrai: boolean) {
     if (occupe.current || !item) return;
     occupe.current = true;
+    noter(f.unite.id, item.id, vrai === item.vrai);
     await dire(vrai === item.vrai ? auHasard(ENCOURAGEMENTS) : "CON-ERR-07");
     await jouer(item.id, { texte: item.texte });
     occupe.current = false;

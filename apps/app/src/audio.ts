@@ -42,6 +42,8 @@ export interface OptionsLecture {
 
 export async function jouer(id: string, options: OptionsLecture): Promise<void> {
   arreter();
+  // dernier élément dit, lisible par les tests automatiques (aucune donnée personnelle)
+  document.documentElement.dataset.dernierSon = id;
   const a = await fichier(id);
   if (a) {
     enCours = a;

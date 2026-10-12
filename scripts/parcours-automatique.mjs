@@ -9,6 +9,12 @@ import { mkdirSync } from "node:fs";
 mkdirSync(out, { recursive: true });
 const traces = JSON.parse(readFileSync(new URL("../content/traces-capitales.json", import.meta.url), "utf8")).lettres;
 const [unite, seanceFaites, profil, prefixe] = process.argv.slice(2);
+const TEXTES = new Map();
+for (let k = 0; k <= 14; k++) {
+  const f = JSON.parse(readFileSync(new URL(`../content/unites/U${String(k).padStart(2, "0")}.json`, import.meta.url), "utf8"));
+  for (const it of f.items) TEXTES.set(it.id, it.texte);
+}
+const texteItem = (id) => TEXTES.get(id) ?? null;
 const b = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH || undefined,
   args: ["--use-fake-device-for-media-stream", "--use-fake-ui-for-media-stream",  "--autoplay-policy=no-user-gesture-required"],
@@ -19,10 +25,19 @@ const errors = [];
 p.on("pageerror", (e) => errors.push(e.message));
 p.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 const base = process.env.BASE_URL ?? "http://localhost:4173/";
+if (process.env.IMAGES_FACTICES) {
+  // illustrations factices pour tester l'activité C1 avant la production des vraies images
+  await p.route("**/images/*.webp", (r) => {
+    const teinte = [...r.request().url()].reduce((s, c) => s + c.charCodeAt(0), 0) % 360;
+    r.fulfill({ contentType: "image/svg+xml", body: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><rect width="10" height="10" fill="hsl(${teinte},60%,75%)"/></svg>` });
+  });
+}
 await p.goto(base);
 const ordre = ["U00","U01","U02","U03","U04","U05","U06","U07","U08","U09","U10","U11","U12","U13","U14"];
 const avant = ordre.slice(0, ordre.indexOf(unite));
-await p.evaluate(([t, u, s, pr]) => localStorage.setItem("syllakids:progression:v1", JSON.stringify({ terminees: t, seances: { [u]: Number(s) }, reglages: { profil: pr, dys: false } })), [avant, unite, seanceFaites, profil]);
+// REVISIONS=U03-M-LAMA,U05-S-SO : items déjà vus, à revoir aujourd'hui (teste l'étape de révision)
+const items = Object.fromEntries((process.env.REVISIONS ?? "").split(",").filter(Boolean).map((id) => [id, { boite: 1, prochaine: "2000-01-01", essais: 1, reussites: 1, unite: id.slice(0, 3) }]));
+await p.evaluate(([t, u, s, pr, it]) => localStorage.setItem("syllakids:progression:v1", JSON.stringify({ terminees: t, seances: { [u]: Number(s) }, items: it, reglages: { profil: pr, dys: false } })), [avant, unite, seanceFaites, profil, items]);
 await p.reload();
 await p.goto(base + "#/unite/" + unite);
 await p.waitForTimeout(600);
@@ -31,7 +46,7 @@ const t0 = Date.now();
 const has = async (sel) => (await p.$(sel)) !== null;
 const clic = async (sel) => { const e = await p.$(sel); if (e) await e.click().catch(() => {}); };
 let codes = [];
-while (Date.now() - t0 < 420000) {
+while (Date.now() - t0 < Number(process.env.DUREE_MAX ?? 420) * 1000) {
   if (await has(".fin")) { await p.screenshot({ path: `${out}/${prefixe}-fin.png` }); break; }
   const etape = await p.$$eval(".avancement span", (s) => s.findIndex((x) => x.classList.contains("encours")));
   if (!vu.has(etape)) {
@@ -39,7 +54,37 @@ while (Date.now() - t0 < 420000) {
     await p.waitForTimeout(700);
     await p.screenshot({ path: `${out}/${prefixe}-${String(etape).padStart(2, "0")}.png` });
   }
-  if (await has('[aria-label="Passer cette activité"]')) { codes.push(`${etape}:sans-micro`); await clic('[aria-label="Passer cette activité"]'); }
+  const dernier = await p.evaluate(() => document.documentElement.dataset.dernierSon ?? "");
+  if (await has('[aria-label$="mots lus"]')) { await clic('[aria-label="Continuer"]'); }
+  else if (await has('[aria-label="Commencer la minute"]')) { await clic('[aria-label="Commencer la minute"]'); }
+  else if (await has(".chrono")) { if (!vu.has("chrono")) { vu.add("chrono"); await p.screenshot({ path: `${out}/${prefixe}-chrono.png` }); } const ms = await p.$$(".chrono button:not(.lu)"); if (ms.length) await ms[0].click(); await p.waitForTimeout(800); }
+  else if (await has('[aria-label="J\'avais bien lu"]')) { await clic('[aria-label="J\'avais bien lu"]'); }
+  else if (await has(".images-choix button")) { const bs = await p.$$(".images-choix button"); await bs[Math.floor(Math.random() * bs.length)].click(); }
+  else if (await has(".emplacement")) {
+    const cible = texteItem(dernier);
+    const libres = await p.$$eval(".emplacement", (es) => es.map((e) => e.getAttribute("aria-label") ?? ""));
+    const k = libres.findIndex((l) => l.startsWith("Place"));
+    const lettre = cible ? [...cible][k] : null;
+    const tuile = lettre ? await p.$(`[aria-label="Étiquette ${lettre}"]`) : await p.$(".reserve .tuile");
+    if (tuile) await tuile.click(); else { const t = await p.$(".reserve .tuile"); if (t) await t.click(); }
+  }
+  else if (await has("canvas.case-ecriture")) {
+    const cible = texteItem(dernier);
+    const cases = await p.$$("canvas.case-ecriture");
+    for (let k = 0; k < cases.length; k++) {
+      const lettre = cible ? [...cible][k] : "A";
+      const box = await cases[k].boundingBox();
+      const w = box.width, h = box.height, cap = Math.min(h * 0.6, w * 0.62), s = cap / 100, x0 = (w - 100 * s) / 2, y0 = h * 0.27;
+      for (const t of (traces[lettre] ?? traces.A).traits) {
+        const [sx, sy] = t[0]; await p.mouse.move(box.x + x0 + sx * s, box.y + y0 + sy * s); await p.mouse.down();
+        for (const [x, y] of t.slice(1)) await p.mouse.move(box.x + x0 + x * s, box.y + y0 + y * s, { steps: 2 });
+        await p.mouse.up();
+      }
+    }
+    await clic('[aria-label="J\'ai fini"]');
+    await p.waitForTimeout(1500);
+  }
+  else if (await has('[aria-label="Passer cette activité"]')) { codes.push(`${etape}:sans-micro`); await clic('[aria-label="Passer cette activité"]'); }
   else if (await has('[aria-label="Écouter le son"]')) { await clic('[aria-label="Écouter le son"]'); await p.waitForSelector('[aria-label="Continuer"]:not([disabled])', { timeout: 30000 }); await clic('[aria-label="Continuer"]'); }
   else if (await has('.tuile[aria-label^="Voyelle"]')) { for (const e of await p.$$('.tuile[aria-label^="Voyelle"]')) await e.click(); await p.waitForTimeout(300); await clic('[aria-label="Continuer"]'); }
   else if (await has('[aria-label="J\'entends le son"]')) { await clic(Math.random() < 0.5 ? '[aria-label="J\'entends le son"]' : '[aria-label="Je n\'entends pas le son"]'); }
@@ -73,6 +118,11 @@ while (Date.now() - t0 < 420000) {
   }
   await p.waitForTimeout(400);
 }
+if (!(await has(".fin"))) await p.screenshot({ path: `${out}/${prefixe}-arret.png` });
 console.log(`${prefixe}: étapes vues ${[...vu].join(",")} ; fin=${await has(".fin")} ; ${codes.join(" ")} ; ${Math.round((Date.now() - t0) / 1000)} s`);
+const etat = await p.evaluate(() => JSON.parse(localStorage.getItem("syllakids:progression:v1") ?? "{}"));
+const notes = Object.entries(etat.items ?? {});
+console.log(`items notés : ${notes.length} ; ` + notes.map(([id, e]) => `${id}:${e.reussites}/${e.essais} b${e.boite}`).join(" "));
+if (etat.fluence) console.log("fluence", JSON.stringify(etat.fluence));
 console.log(errors.slice(0, 5).join("\n") || "aucune erreur");
 await b.close();

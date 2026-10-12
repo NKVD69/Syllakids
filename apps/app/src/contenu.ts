@@ -35,11 +35,21 @@ export function syllabesJusquAu(rang: number): ItemSyllabe[] {
 type Message = { id: string; texte: string };
 const MESSAGES = new Map<string, string>((consignes.messages as Message[]).map((m) => [m.id, m.texte]));
 
-/** Texte d'une consigne ; [son] est remplacé par le son fourni. */
-export function consigne(id: string, son?: string): string {
-  const t = MESSAGES.get(id);
-  if (!t) return "";
-  return son === undefined ? t : t.replaceAll("[son]", son);
+/** Texte d'une consigne ; [son] et [nombre] sont remplacés par les valeurs fournies. */
+export function consigne(id: string, son?: string, nombre?: number): string {
+  let t = MESSAGES.get(id) ?? "";
+  if (son !== undefined) t = t.replaceAll("[son]", son);
+  if (nombre !== undefined) t = t.replaceAll("[nombre]", String(nombre));
+  return t;
+}
+
+/** Retrouve un item (syllabe, mot, mot inventé, phrase) par son identifiant, avec son unité. */
+export function trouverItem(id: string): { item: FichierUnite["items"][number]; unite: FichierUnite } | undefined {
+  for (const u of UNITES) {
+    const item = u.items.find((i) => i.id === id);
+    if (item) return { item, unite: u };
+  }
+  return undefined;
 }
 
 export const ENCOURAGEMENTS = [...MESSAGES.keys()].filter((k) => k.startsWith("CON-OK-"));

@@ -15,6 +15,12 @@ npm run contenu:generer   # régénère content/unites/*.json depuis content/sou
 npm run parcours -- U07 0 6ans essai   # joue une séance automatiquement (après build + preview)
 ```
 
+Options du parcours automatique (variables d'environnement) : `IMAGES_FACTICES=1` (images de remplacement pour C1), `REVISIONS=U02-M-AMI,U03-S-RO` (éléments à revoir en début de séance), `DUREE_MAX=600` (secondes), `CAPTURES=dossier`.
+
+## Images
+
+Les illustrations sont attendues dans `apps/app/public/images/<image>` (nom indiqué par le champ `image` des items, par exemple `lave.webp`). L'activité C1 se saute d'elle-même tant qu'une unité a moins de 3 images.
+
 Node 20 ou plus récent.
 
 ## Organisation
