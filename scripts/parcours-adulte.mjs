@@ -43,10 +43,19 @@ async function inscrire(p, role, nom, email) {
   await p.waitForSelector(`text=${role === "enseignant" ? "Compte enseignant" : "Compte parent"}`);
 }
 
+// ---------------------------------------------------------------- compte enseignant non vérifié
+const inconnu = await appareil("inconnu", { width: 1024, height: 768 });
+await deverrouiller(inconnu);
+await inscrire(inconnu, "enseignant", "M. Inconnu", `inconnu-${suffixe}@gmail.com`);
+await inconnu.waitForSelector("text=Compte enseignant en attente de vérification");
+if (await inconnu.$('button:has-text("Créer la classe")')) throw new Error("un compte non vérifié peut créer une classe");
+etape("un compte enseignant sans adresse académique attend la vérification");
+await capture(inconnu, "00-enseignant-en-attente");
+
 // ---------------------------------------------------------------- tablette de la classe
 const classe = await appareil("classe", { width: 1024, height: 768 });
 await deverrouiller(classe);
-await inscrire(classe, "enseignant", "Mme Durand", `durand-${suffixe}@ecole.fr`);
+await inscrire(classe, "enseignant", "Mme Durand", `durand-${suffixe}@ac-lyon.fr`);
 etape("compte enseignant créé");
 await classe.getByLabel("Nom de la classe").fill("GS Les Lilas");
 await classe.click('button:has-text("Créer la classe")');
@@ -110,6 +119,37 @@ await classe.click('button:has-text("Synchroniser maintenant")');
 await classe.waitForSelector("text=Progrès enregistrés sur le compte");
 etape("espace adulte de la classe ouvert avec le mot de passe ; progrès de Léo envoyés");
 
+// accord papier : voix et tracés gardés sur la tablette et partagés avec l'enseignante
+await classe.click('a:has-text("GS Les Lilas")');
+await classe.click('table a:has-text("Léo")');
+await classe.check("text=Voix et lettres tracées conservées sur la tablette");
+await classe.check("text=Partagées avec l'enseignant");
+await classe.click('button:has-text("Enregistrer l\'accord papier")');
+await classe.waitForSelector("text=Accord papier enregistré");
+const accords = await classe.evaluate((id) => JSON.parse(localStorage.getItem("syllakids:appareil:v1")).profils.find((x) => x.id === id).accords, leo.id);
+if (!accords?.voixPartage) throw new Error("la tablette n'a pas reçu l'accord papier");
+etape("accord papier saisi ; la tablette le reçoit");
+// une lettre tracée par Léo (même format que celles gardées par les activités E1/E2)
+await classe.evaluate((id) => new Promise((ok) => {
+  const r = indexedDB.open("syllakids", 1);
+  r.onupgradeneeded = () => r.result.createObjectStore("productions", { keyPath: "id" }).createIndex("enfant", "enfant");
+  r.onsuccess = () => {
+    const tx = r.result.transaction("productions", "readwrite");
+    tx.objectStore("productions").put({ id: crypto.randomUUID(), enfant: id, type: "trace", item: "lettre:M", le: new Date().toISOString(),
+      traits: [[[[5, 100], [5, 0], [50, 60], [95, 0], [95, 100]]]], envoye: false });
+    tx.oncomplete = () => ok();
+  };
+}), leo.id);
+await classe.goto(base + "#/adulte");
+await classe.click('button:has-text("Synchroniser maintenant")');
+await classe.waitForSelector("text=Progrès enregistrés sur le compte");
+await classe.click('a:has-text("GS Les Lilas")');
+await classe.click('table a:has-text("Léo")');
+await classe.click('button:has-text("Afficher ce qui est sur le serveur")');
+await classe.waitForSelector(".productions li:has-text('la lettre M') svg");
+etape("la lettre tracée par Léo est partagée avec l'enseignante");
+await capture(classe, "05b-voix-et-traces");
+
 // ---------------------------------------------------------------- téléphone du parent
 const tel = await appareil("parent", { width: 390, height: 844 });
 await deverrouiller(tel);
@@ -123,6 +163,8 @@ await capture(tel, "06-consentement");
 if (!(await tel.isDisabled('button:has-text("Rattacher le profil")'))) throw new Error("rattachement possible sans accord");
 await tel.check("text=J'accepte que votre enfant utilise Syllakids");
 await tel.check("text=participe aux tests");
+await tel.check("text=soient conservées sur la tablette");
+await tel.check("text=partagées avec son enseignant");
 await tel.click('button:has-text("Rattacher le profil")');
 await tel.waitForSelector(".titre-fiche:has-text('Léo')");
 await tel.waitForSelector("text=Sons validés");

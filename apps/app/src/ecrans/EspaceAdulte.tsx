@@ -167,6 +167,25 @@ function BlocCompte() {
   );
 }
 
+/** Compte enseignant créé avec une adresse qui n'est ni académique ni celle d'une école reconnue. */
+function EnAttente() {
+  const { rafraichir, session } = useCompte();
+  return (
+    <Section titre="Compte enseignant en attente de vérification">
+      <p>
+        Pour protéger les élèves, un compte enseignant est vérifié avant de pouvoir créer une classe. Il l'est d'office avec une adresse académique
+        (par exemple prenom.nom@ac-lyon.fr) ou l'adresse d'une école reconnue par Syllakids.
+      </p>
+      <p>
+        Votre adresse ({session?.email}) doit être validée par l'équipe Syllakids : écrivez-nous depuis cette adresse
+        {import.meta.env.VITE_CONTACT ? <> (<a href={`mailto:${import.meta.env.VITE_CONTACT}?subject=Vérification%20d'un%20compte%20enseignant`}>{import.meta.env.VITE_CONTACT}</a>)</> : null}{" "}
+        en indiquant le nom et la ville de votre école. Vous pouvez aussi créer un nouveau compte avec votre adresse académique.
+      </p>
+      <button className="bouton-texte" type="button" onClick={() => void rafraichir()}>Vérifier à nouveau</button>
+    </Section>
+  );
+}
+
 function Accueil() {
   const { compte, session } = useCompte();
   const parent = !!session && compte?.role === "parent";
@@ -176,7 +195,8 @@ function Accueil() {
       <ProfilsAppareil />
       <BlocCompte />
       {parent && <MesEnfants />}
-      {enseignant && <MesClasses />}
+      {enseignant && compte?.verifie && <MesClasses />}
+      {enseignant && !compte?.verifie && <EnAttente />}
       <Section titre="Conseils pour accompagner l'enfant">
         <ul>{consignes.parents.map((c) => <li key={c.id}>{c.texte}</li>)}</ul>
       </Section>

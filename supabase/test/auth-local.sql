@@ -9,6 +9,8 @@ create table auth.users (
   email text unique not null,
   -- empreinte du mot de passe (mode démonstration local uniquement ; Supabase gère cela lui-même)
   empreinte text not null,
+  -- le serveur local confirme l'adresse d'office ; Supabase la confirme par e-mail
+  email_confirmed_at timestamptz default now(),
   cree_le timestamptz not null default now()
 );
 create function auth.uid() returns uuid language sql stable as $$

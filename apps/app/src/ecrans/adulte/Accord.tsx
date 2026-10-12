@@ -49,7 +49,8 @@ export function FormulaireAccord({
         <legend>2. Voix et lettres tracées (facultatif)</legend>
         <p>
           Dans certains exercices, l'enfant répète un son dans le micro (5 secondes au plus) et trace des lettres avec le doigt. Ces enregistrements restent sur la
-          tablette pendant 3 mois au plus. <em>Cette conservation n'est pas encore active : aujourd'hui, rien n'est gardé après l'exercice.</em>
+          tablette pendant 3 mois au plus.
+          Si vous l'acceptez, vous pouvez les écouter et les revoir dans cet espace.
         </p>
         <label>
           <input type="checkbox" checked={a.voix_appareil} onChange={(e) => changer("voix_appareil", e.target.checked)} />

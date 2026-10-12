@@ -44,7 +44,9 @@ export function MesClasses() {
         {classes?.map((c) => (
           <li key={c.id}>
             <a className="ligne-enfant" href={`#/adulte/classe/${c.id}`}>
-              <span><strong>{c.nom}</strong> <span className="petit">· {c.annee} · {c.nb_eleves} élève{c.nb_eleves > 1 ? "s" : ""}</span></span>
+              <span>
+                <strong>{c.nom}</strong> <span className="petit">· {c.annee} · {c.nb_eleves} élève{c.nb_eleves > 1 ? "s" : ""} · conservée jusqu'au {dateFr(c.conservee_jusquau)}</span>
+              </span>
             </a>
           </li>
         ))}
@@ -99,7 +101,7 @@ export function TableauClasse({ classe }: { classe: string }) {
   const tabletteDeCetteClasse = appareil.mode === "classe" && appareil.classe?.id === classe;
 
   const installer = () => {
-    installerProfils(eleves.map((e) => ({ id: e.id, prenom: e.prenom, avatar: e.avatar, codeImages: e.code_images, origine: "classe" as const, donnees: e.donnees ?? { reglages: { profil: e.profil, dys: e.dys } }, version: e.version })));
+    installerProfils(eleves.map((e) => ({ id: e.id, prenom: e.prenom, avatar: e.avatar, codeImages: e.code_images, origine: "classe" as const, donnees: e.donnees ?? { reglages: { profil: e.profil, dys: e.dys } }, version: e.version, accords: { voixAppareil: e.voix_appareil, voixPartage: e.voix_partage } })));
     // les profils vides créés au premier lancement ne servent pas sur la tablette de la classe
     for (const p of appareil.profils) {
       const pr = chargerProgression(p.id);
@@ -126,6 +128,11 @@ export function TableauClasse({ classe }: { classe: string }) {
     <>
       <Section titre={infos ? `${infos.nom} (${infos.annee})` : "Classe"}>
         <Erreur texte={erreur} />
+        {infos && (
+          <p className="petit">
+            La classe et les profils des élèves sans famille rattachée sont supprimés automatiquement après le {dateFr(infos.conservee_jusquau)}.
+          </p>
+        )}
         {infos && (
           <p>
             Code de la classe : <strong className="code">{infos.code}</strong>{" "}

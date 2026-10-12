@@ -19,6 +19,11 @@ export interface ProfilEnfant {
   version: number;
   /** Des changements attendent d'être envoyés. */
   sale: boolean;
+  /**
+   * Accords sur la voix et les tracés : reçus du serveur pour un profil rattaché à un compte,
+   * réglés dans l'espace adulte pour un profil qui n'existe que sur l'appareil.
+   */
+  accords?: { voixAppareil: boolean; voixPartage: boolean };
 }
 
 export interface Appareil {

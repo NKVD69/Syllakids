@@ -14,6 +14,8 @@ import type { Backend } from "../../serveur/backend";
 import { suivre, type Suivi } from "../../suivi";
 import { synchroniser } from "../../synchro";
 import { FormulaireAccord } from "./Accord";
+import { BlocProductions } from "./Productions";
+import { effacerProductions } from "../../productions";
 import { elevesDe, oublierCache } from "./Classes";
 import { ChoixAge, ChoixAvatar, versProfilsDistants } from "./Famille";
 import { dateFr, dateHeureFr, Erreur, Message, nomUnite, Section, telecharger, UNITES_RESUMEES, useAction, useDonnees } from "./outils";
@@ -165,12 +167,36 @@ export function FicheEnfant({ id, classe }: { id: string; classe?: string }) {
         </Section>
       )}
 
-      {enseignant && eleve && <BlocEleve id={id} classe={classe!} code={eleve.code_famille} images={eleve.code_images} famille={eleve.famille} onChange={recharger} />}
+      {enseignant && eleve && <BlocEleve id={id} classe={classe!} eleve={eleve} onChange={recharger} />}
+
+      {(() => {
+        // accords en vigueur : ceux de l'appareil (reçus du serveur ou réglés ici), sinon ceux lus sur le serveur
+        const voixAppareil = local?.accords?.voixAppareil ?? eleve?.voix_appareil ?? famille?.consentement?.voix_appareil ?? false;
+        const voixPartage = local?.accords?.voixPartage ?? eleve?.voix_partage ?? famille?.consentement?.voix_partage ?? false;
+        if (!voixAppareil && !voixPartage) return null;
+        const conservation = voixPartage
+          ? "Gardées 3 mois sur l'appareil, et partagées avec l'enseignant jusqu'à la fin de l'année scolaire, selon l'accord des parents."
+          : "Gardées 3 mois sur l'appareil seulement, selon l'accord des parents.";
+        return <BlocProductions id={id} surAppareil={!!local && voixAppareil} partageServeur={surCompte && voixPartage} conservation={conservation} />;
+      })()}
 
       <Section titre="Cet appareil">
         {local ? (
           <>
             <p>{local.origine === "appareil" ? "Ce profil n'existe que sur cet appareil." : "Ce profil est sur cet appareil et se synchronise avec le compte."}</p>
+            {local.origine === "appareil" && (
+              <label>
+                <input
+                  type="checkbox"
+                  checked={!!local.accords?.voixAppareil}
+                  onChange={(e) => {
+                    modifierProfil(id, { accords: { voixAppareil: e.target.checked, voixPartage: false } });
+                    if (!e.target.checked) void effacerProductions(id);
+                  }}
+                />
+                Garder la voix et les lettres tracées de l'enfant sur cet appareil pendant 3 mois, pour les réécouter et les revoir ici (rien n'est envoyé)
+              </label>
+            )}
             <p className="actions-adulte">
               {local.origine === "appareil" && (
                 <button className="bouton-texte" type="button" onClick={() => {
@@ -187,7 +213,7 @@ export function FicheEnfant({ id, classe }: { id: string; classe?: string }) {
         ) : (
           <button className="bouton-texte" type="button" onClick={() => {
             if (famille) installerProfils(versProfilsDistants([famille]));
-            else if (eleve) installerProfils([{ id, prenom: eleve.prenom, avatar: eleve.avatar, codeImages: eleve.code_images, origine: "classe", donnees: eleve.donnees, version: eleve.version }]);
+            else if (eleve) installerProfils([{ id, prenom: eleve.prenom, avatar: eleve.avatar, codeImages: eleve.code_images, origine: "classe", donnees: eleve.donnees, version: eleve.version, accords: { voixAppareil: eleve.voix_appareil, voixPartage: eleve.voix_partage } }]);
           }}>Mettre sur cet appareil</button>
         )}
         <Message message={action.message} />
@@ -264,12 +290,37 @@ function BlocFamille({ id, famille, local, onChange }: { id: string; famille: No
   );
 }
 
-function BlocEleve({ id, classe, code, images, famille, onChange }: { id: string; classe: string; code: string | null; images: string | null; famille: boolean; onChange: () => void }) {
+function BlocEleve({ id, classe, eleve, onChange }: { id: string; classe: string; eleve: Eleve; onChange: () => void }) {
   const { serveur } = useCompte();
-  const { appareil, modifierProfil, retirerProfil } = useSyllakids();
+  const { appareil, modifierProfil, retirerProfil, synchroniserMaintenant } = useSyllakids();
+  const { code_famille: code, code_images: images, famille } = eleve;
+  const [papier, setPapier] = useState({ voixAppareil: eleve.voix_appareil, voixPartage: eleve.voix_partage, tests: false });
   const action = useAction();
+  const accord = useAction();
   if (!serveur) return null;
   return (
+    <>
+    <Section titre="Accord des parents sur la voix et les tracés">
+      <p>
+        {eleve.accord_source === "application"
+          ? "Accord donné par la famille dans l'application. "
+          : eleve.accord_source === "papier" ? "Accord papier saisi en classe. " : "Aucun accord enregistré : rien n'est gardé. "}
+        Saisissez ici le formulaire papier signé par la famille ; l'accord le plus récent s'applique.
+      </p>
+      <form className="formulaire" onSubmit={(e) => { e.preventDefault(); void accord.lancer(async () => {
+        await api.accordPapier(serveur, id, papier.voixAppareil, papier.voixPartage, papier.tests);
+        oublierCache(classe);
+        await synchroniserMaintenant();
+        onChange();
+        return "Accord papier enregistré.";
+      }); }}>
+        <label><input type="checkbox" checked={papier.voixAppareil} onChange={(e) => setPapier({ ...papier, voixAppareil: e.target.checked, voixPartage: e.target.checked && papier.voixPartage })} /> Voix et lettres tracées conservées sur la tablette (3 mois)</label>
+        <label><input type="checkbox" checked={papier.voixPartage} disabled={!papier.voixAppareil} onChange={(e) => setPapier({ ...papier, voixPartage: e.target.checked })} /> Partagées avec l'enseignant jusqu'à la fin de l'année scolaire</label>
+        <label><input type="checkbox" checked={papier.tests} onChange={(e) => setPapier({ ...papier, tests: e.target.checked })} /> Participation aux tests de Syllakids en classe</label>
+        <button className="bouton-texte" type="submit" disabled={accord.occupe}>Enregistrer l'accord papier</button>
+      </form>
+      <Message message={accord.message} />
+    </Section>
     <Section titre="En classe">
       <p>Code famille : <strong className="code">{(code ?? "").replace(/(.{4})/, "$1 ")}</strong> {famille ? "(une famille est rattachée)" : "(aucune famille rattachée)"}</p>
       {images && (
@@ -296,5 +347,6 @@ function BlocEleve({ id, classe, code, images, famille, onChange }: { id: string
       </p>
       <Message message={action.message} />
     </Section>
+    </>
   );
 }

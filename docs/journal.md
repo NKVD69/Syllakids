@@ -1,5 +1,18 @@
 # Journal des sessions
 
+## Session 5 — 12 octobre 2026
+
+Fait (les points restants de la session 4, sauf la double authentification) :
+
+- Comptes enseignants vérifiés : d'office avec une adresse académique ou d'une école reconnue, sinon validation par l'éditeur ; pas de classe avant la vérification.
+- E-mail d'avertissement un mois avant toute suppression pour inactivité (fonction Edge, envoi par Brevo) ; la purge attend cet avertissement. Classes supprimées à la fin de l'année scolaire suivante.
+- Voix et lettres tracées gardées selon les accords : sur l'appareil 3 mois, partagées avec l'enseignant jusqu'à la rentrée ; accord papier saisi par l'enseignant ; écoute et relecture dans la fiche de l'enfant ; effacement au retrait de l'accord.
+- Juriste : retrait de l'accord sur un profil de classe et code famille personnel validés.
+- 33 tests de droits sur la base (12 de plus), 2 tests des e-mails ; parcours automatique classe + maison en 17 étapes ; parcours enfant avec conservation de la voix et des tracés.
+
+À faire par l'éditeur : appliquer la deuxième migration, déployer la fonction Edge et planifier les deux tâches (docs/supabase.md, section 6).
+
+
 ## Session 4 — 12 octobre 2026
 
 Fait :

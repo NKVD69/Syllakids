@@ -7,6 +7,8 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_ANON_KEY?: string;
   /** Serveur local de développement (scripts/serveur-local.ts), par exemple http://localhost:54330. */
   readonly VITE_SERVEUR_LOCAL?: string;
+  /** Adresse de contact de l'éditeur (vérification des comptes enseignants, exercice des droits). */
+  readonly VITE_CONTACT?: string;
 }
 
 interface ImportMeta {

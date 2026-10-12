@@ -20,7 +20,7 @@ const ESSAIS_MAX = 3;
 
 /** E1 Trace la lettre : observer, repasser, tracer avec le point de départ, puis sans aide. */
 export function TraceLettre({ f, profil, onFini }: PropsActivite) {
-  const { dire } = useSyllakids();
+  const { dire, conserver } = useSyllakids();
   const lettres = useMemo(
     () => (f.unite.rang === 0 ? (profil === "5ans" ? ["A", "I"] : ["A", "I", "O", "É"]) : f.unite.graphemes.map((g) => g.g)),
     [f, profil],
@@ -119,6 +119,10 @@ export function TraceLettre({ f, profil, onFini }: PropsActivite) {
     if (occupe.current || phase === "observer") return;
     occupe.current = true;
     const r = evaluer(modele, traits.current, phase);
+    // la lettre écrite à la dernière étape (sans aide, ou guidée à 5 ans) est gardée si l'accord le permet
+    if (iPhase === phases.length - 1 && essais.current === 0) {
+      conserver({ type: "trace", item: `lettre:${lettre}`, traits: [traits.current.map((t) => [...t])] });
+    }
     if (r.ok) {
       essais.current = 0;
       setMessage(consigne("CON-TR-13"));

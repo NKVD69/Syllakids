@@ -37,11 +37,11 @@ const ordre = ["U00","U01","U02","U03","U04","U05","U06","U07","U08","U09","U10"
 const avant = ordre.slice(0, ordre.indexOf(unite));
 // REVISIONS=U03-M-LAMA,U05-S-SO : items déjà vus, à revoir aujourd'hui (teste l'étape de révision)
 const items = Object.fromEntries((process.env.REVISIONS ?? "").split(",").filter(Boolean).map((id) => [id, { boite: 1, prochaine: "2000-01-01", essais: 1, reussites: 1, unite: id.slice(0, 3) }]));
-await p.evaluate(([t, u, s, pr, it]) => {
+await p.evaluate(([t, u, s, pr, it, voix]) => {
   const id = "00000000-0000-4000-8000-000000000001";
-  localStorage.setItem("syllakids:appareil:v1", JSON.stringify({ id: "appareil-test", mode: "maison", profils: [{ id, prenom: "", avatar: "soleil", origine: "appareil", version: 0, sale: false }] }));
+  localStorage.setItem("syllakids:appareil:v1", JSON.stringify({ id: "appareil-test", mode: "maison", profils: [{ id, prenom: "", avatar: "soleil", origine: "appareil", version: 0, sale: false, ...(voix ? { accords: { voixAppareil: true, voixPartage: false } } : {}) }] }));
   localStorage.setItem(`syllakids:progression:${id}`, JSON.stringify({ terminees: t, seances: { [u]: Number(s) }, items: it, reglages: { profil: pr, dys: false } }));
-}, [avant, unite, seanceFaites, profil, items]);
+}, [avant, unite, seanceFaites, profil, items, !!process.env.VOIX]);
 await p.reload();
 await p.goto(base + "#/unite/" + unite);
 await p.waitForTimeout(600);
@@ -128,5 +128,14 @@ const etat = await p.evaluate(() => JSON.parse(localStorage.getItem("syllakids:p
 const notes = Object.entries(etat.items ?? {});
 console.log(`items notés : ${notes.length} ; ` + notes.map(([id, e]) => `${id}:${e.reussites}/${e.essais} b${e.boite}`).join(" "));
 if (etat.fluence) console.log("fluence", JSON.stringify(etat.fluence));
+if (process.env.VOIX) {
+  // VOIX=1 : l'accord « voix et tracés sur l'appareil » est donné ; on compte ce qui a été gardé
+  const gardes = await p.evaluate(() => new Promise((ok) => {
+    const r = indexedDB.open("syllakids", 1);
+    r.onsuccess = () => { const g = r.result.transaction("productions").objectStore("productions").getAll(); g.onsuccess = () => ok(g.result.map((x) => `${x.type}:${x.item}`)); };
+    r.onerror = () => ok([]);
+  }));
+  console.log(`voix et tracés gardés : ${gardes.length} ${gardes.join(" ")}`);
+}
 console.log(errors.slice(0, 5).join("\n") || "aucune erreur");
 await b.close();

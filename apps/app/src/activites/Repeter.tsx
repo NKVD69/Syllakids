@@ -44,7 +44,7 @@ type EtapeEcho = "modele" | "pret" | "enregistre" | "reecoute" | "juge";
 
 /** R1 L'écho : modèle, enregistrement de l'enfant (5 s au plus), réécoute côte à côte, auto-évaluation. */
 export function Echo({ f, profil, onFini }: PropsActivite) {
-  const { dire } = useSyllakids();
+  const { dire, conserver } = useSyllakids();
   const flux = useMicro();
   const items = useMemo(() => melanger(syllabesDe(f)).slice(0, profil === "5ans" ? 3 : 4), [f, profil]);
   const [i, setI] = useState(0);
@@ -77,6 +77,7 @@ export function Echo({ f, profil, onFini }: PropsActivite) {
       setEtape("pret");
       return;
     }
+    conserver({ type: "voix", item: item.id, audio: voix.current, mime: voix.current.type || "audio/webm" });
     setEtape("reecoute");
     await dire("CON-MIC-04");
     await jouer(item.id, { texte: item.texte });

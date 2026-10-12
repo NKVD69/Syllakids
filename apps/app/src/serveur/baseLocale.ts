@@ -12,8 +12,12 @@ export async function preparerBase(db: PGlite, sqlAuth: string, migrations: stri
   for (const m of migrations) await db.exec(m);
 }
 
-/** Valeur passée à Postgres : objets en JSON, le reste tel quel. */
+/**
+ * Valeur passée à Postgres, comme le fait PostgREST : une liste de textes devient un tableau Postgres
+ * (paramètres uuid[]), les autres objets et listes deviennent du JSON (paramètres jsonb).
+ */
 function valeur(v: unknown): unknown {
+  if (Array.isArray(v) && v.every((x) => typeof x === "string")) return v;
   return v !== null && typeof v === "object" ? JSON.stringify(v) : v;
 }
 

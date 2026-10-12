@@ -5,8 +5,8 @@ import type { Profil } from "../types";
 import type { Backend } from "./backend";
 
 export type Role = "parent" | "enseignant";
-export interface Compte { id: string; role: Role; nom: string }
-export interface Classe { id: string; nom: string; annee: string; code: string; nb_eleves: number }
+export interface Compte { id: string; role: Role; nom: string; verifie: boolean }
+export interface Classe { id: string; nom: string; annee: string; code: string; nb_eleves: number; conservee_jusquau: string }
 
 /** Les trois accords du formulaire de consentement parental (documents RGPD). */
 export interface Accord { version: string; utilisation: boolean; voix_appareil: boolean; voix_partage: boolean; tests_classe: boolean }
@@ -15,7 +15,7 @@ export const VERSION_ACCORD = "2026-10";
 export interface Eleve {
   id: string; prenom: string; avatar: string; profil: Profil; dys: boolean;
   code_famille: string | null; code_images: string | null;
-  famille: boolean; voix_partage: boolean;
+  famille: boolean; voix_appareil: boolean; voix_partage: boolean; accord_source: "application" | "papier" | null;
   donnees: unknown; version: number; maj_le: string | null;
 }
 export interface EnfantFamille {
@@ -24,6 +24,7 @@ export interface EnfantFamille {
   donnees: unknown; version: number; maj_le: string | null;
 }
 export interface EntreeJournal { le: string; action: string; qui: string }
+export interface ProductionServeur { id: string; type: "voix" | "trace"; item: string; cree_le: string; traits: [number, number][][][] | null }
 
 const liste = <T>(x: unknown): T[] => (Array.isArray(x) ? (x as T[]) : x == null ? [] : [x as T]);
 const une = <T>(x: unknown): T | null => liste<T>(x)[0] ?? null;
@@ -55,6 +56,15 @@ export const api = {
     b.appeler("modifier_enfant", { p_enfant: enfant, p_prenom: prenom, p_avatar: avatar, p_profil: profil, p_dys: dys }),
   exporterEnfant: (b: Backend, enfant: string) => b.appeler("exporter_enfant", { p_enfant: enfant }),
   journalEnfant: async (b: Backend, enfant: string) => liste<EntreeJournal>(await b.appeler("journal_enfant", { p_enfant: enfant })),
+
+  accordsAppareil: async (b: Backend, enfants: string[]) =>
+    liste<{ enfant: string; voix_appareil: boolean; voix_partage: boolean }>(await b.appeler("accords_appareil", { p_enfants: enfants })),
+  accordPapier: (b: Backend, enfant: string, voixAppareil: boolean, voixPartage: boolean, tests: boolean) =>
+    b.appeler("accord_papier", { p_enfant: enfant, p_voix_appareil: voixAppareil, p_voix_partage: voixPartage, p_tests: tests }),
+  deposerProduction: async (b: Backend, p: { id: string; enfant: string; type: string; item: string; le: string; mime: string | null; audio: string | null; traits: unknown }) =>
+    Boolean(await b.appeler("deposer_production", { p_id: p.id, p_enfant: p.enfant, p_type: p.type, p_item: p.item, p_cree_le: p.le, p_mime: p.mime, p_audio: p.audio, p_traits: p.traits })),
+  productionsEnfant: async (b: Backend, enfant: string) => liste<ProductionServeur>(await b.appeler("productions_enfant", { p_enfant: enfant })),
+  audioProduction: async (b: Backend, id: string) => une<{ mime: string; audio: string }>(await b.appeler("audio_production", { p_id: id })),
 };
 
 /** La progression vue par le module de synchronisation. */

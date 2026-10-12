@@ -36,7 +36,7 @@ const modele = (l: string): Trait[] => (TRACES[l]?.traits ?? []).map((t) => t.ma
 
 /** E2 La dictée : une case par lettre ; l'application vérifie chaque lettre parmi celles déjà apprises. */
 export function Dictee({ f, profil, onFini, niveau }: PropsActivite & { niveau: Niveau }) {
-  const { dire, noter } = useSyllakids();
+  const { dire, noter, conserver } = useSyllakids();
   const items = useMemo(() => aDicter(f, niveau, profil), [f, niveau, profil]);
   const modeles = useMemo(() => Object.fromEntries(lettresApprises(f).map((l) => [l, modele(l)])), [f]);
   const [i, setI] = useState(0);
@@ -81,6 +81,8 @@ export function Dictee({ f, profil, onFini, niveau }: PropsActivite & { niveau: 
     if (occupe.current || !item) return;
     occupe.current = true;
     const resultats = item.lettres.map((l, k) => estLaLettre(cases.current[k]?.traits() ?? [], l, modeles));
+    // premier essai de l'enfant, gardé si l'accord le permet
+    if (erreurs.current === 0) conserver({ type: "trace", item: item.id, traits: item.lettres.map((_, k) => (cases.current[k]?.traits() ?? []).map((t) => [...t])) });
     setEtats(resultats.map((ok) => (ok ? "juste" : "faux")));
     if (resultats.every(Boolean)) {
       noter(f.unite.id, item.id, erreurs.current === 0);

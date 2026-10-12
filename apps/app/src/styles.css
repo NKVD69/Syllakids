@@ -219,6 +219,13 @@ details.changer-avatar summary { cursor: pointer; display: flex; align-items: ce
 .etiquettes-adulte { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .etiquettes-adulte li { border: 1px solid #c9d3ea; border-radius: 6px; padding: 2px 8px; font-family: var(--police); }
 .journal { font-size: 15px; max-height: 260px; overflow: auto; }
+.productions { list-style: none; padding: 0; margin: 0; }
+.productions li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid #edf0f7; }
+.productions audio { height: 36px; max-width: 260px; }
+.apercu-trace { display: inline-flex; gap: 2px; }
+.apercu-trace svg { background: #fff; border: 1px solid #d5dcec; border-radius: 4px; }
+.apercu-trace polyline { fill: none; stroke: var(--bleu); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.apercu-trace .ligne-haut, .apercu-trace .ligne-base { stroke: #b3c1e6; stroke-width: 2; }
 .accord p { margin: 4px 0 8px; }
 .images-coupon { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .coupons { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }

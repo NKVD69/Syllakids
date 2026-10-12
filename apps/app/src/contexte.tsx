@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
-  chargerAppareil, chargerProgression, enregistrerAppareil, enregistrerProgression, nouveauProfil, oublierProgression,
+  chargerAppareil, chargerProgression, enregistrerAppareil, enregistrerProgression, nouveauProfil, nouvelId, oublierProgression,
   type Appareil, type ProfilEnfant,
 } from "./appareil";
 import { jouer } from "./audio";
@@ -8,7 +8,8 @@ import { useCompte } from "./compte";
 import { consigne } from "./contenu";
 import { ajouterTemps, fusionner, normaliser, type Progression } from "./progression";
 import { jour, noterItem, type BilanSeance } from "./revisions";
-import { portProgression } from "./serveur/api";
+import { ajouterProduction, effacerProductions, marquerEnvoyee, productionsDe, purgerProductions, versBase64, type Production } from "./productions";
+import { api, portProgression } from "./serveur/api";
 import { synchroniser } from "./synchro";
 
 export type EtatSynchro = "sans-compte" | "a-jour" | "en-cours" | "a-envoyer" | "hors-ligne";
@@ -22,7 +23,11 @@ export interface ProfilDistant {
   origine: "famille" | "classe";
   donnees: unknown;
   version: number;
+  accords?: { voixAppareil: boolean; voixPartage: boolean };
 }
+
+/** Ce qu'une activité propose de garder : un enregistrement de voix ou un tracé. */
+export type NouvelleProduction = Pick<Production, "type" | "item" | "mime" | "audio" | "traits">;
 
 interface Contexte {
   appareil: Appareil;
@@ -44,6 +49,8 @@ interface Contexte {
   synchroniserMaintenant: () => Promise<void>;
   /** Ajoute du temps de lecture au profil en cours. */
   compterTemps: (secondes: number) => void;
+  /** Garde la voix ou un tracé de l'enfant en cours, seulement si l'accord le permet. */
+  conserver: (p: NouvelleProduction) => void;
   /** Dit une consigne (et la mémorise pour le bouton « oreille »). */
   dire: (id: string, son?: string, nombre?: number) => Promise<void>;
   /** Enregistre le résultat d'un item lu ou écrit : révisions espacées et bilan de la séance. */
@@ -124,15 +131,50 @@ export function FournisseurSyllakids({ children }: { children: ReactNode }) {
         } else echec = true;
       }
     }
+    try {
+      await synchroniserVoix(serveur);
+    } catch {
+      echec = true;
+    }
     enCours.current = false;
     const reste = appareilRef.current.profils.some((x) => x.origine !== "appareil" && x.sale);
     setEtatSynchro(echec ? "hors-ligne" : reste ? "a-envoyer" : "a-jour");
   }, [serveur, session, compte, majAppareil]);
 
+  /** Accords à jour pour les profils du compte, puis envoi de la voix et des tracés si le partage est accepté. */
+  async function synchroniserVoix(b: NonNullable<typeof serveur>) {
+    const lies = appareilRef.current.profils.filter((x) => x.origine !== "appareil");
+    if (!lies.length) return;
+    const accords = await api.accordsAppareil(b, lies.map((x) => x.id));
+    for (const p of lies) {
+      const a = accords.find((x) => x.enfant === p.id);
+      const nouveaux = { voixAppareil: !!a?.voix_appareil, voixPartage: !!a?.voix_partage };
+      if (JSON.stringify(nouveaux) !== JSON.stringify(p.accords)) {
+        majAppareil((ap) => ({ ...ap, profils: ap.profils.map((x) => (x.id === p.id ? { ...x, accords: nouveaux } : x)) }));
+      }
+      if (!nouveaux.voixAppareil) {
+        await effacerProductions(p.id);
+        continue;
+      }
+      if (!nouveaux.voixPartage) continue;
+      for (const prod of (await productionsDe(p.id)).filter((x) => !x.envoye)) {
+        await api.deposerProduction(b, {
+          id: prod.id, enfant: p.id, type: prod.type, item: prod.item, le: prod.le, mime: prod.mime ?? null,
+          audio: prod.audio ? await versBase64(prod.audio) : null, traits: prod.traits ?? null,
+        });
+        await marquerEnvoyee(prod.id);
+      }
+    }
+  }
+
   const planifierSynchro = useCallback(() => {
     window.clearTimeout(minuterie.current);
     minuterie.current = window.setTimeout(() => void synchroniserMaintenant(), DELAI_SYNCHRO);
   }, [synchroniserMaintenant]);
+
+  useEffect(() => {
+    void purgerProductions();
+  }, []);
 
   useEffect(() => {
     void synchroniserMaintenant();
@@ -177,6 +219,12 @@ export function FournisseurSyllakids({ children }: { children: ReactNode }) {
 
   const progressionDe = useCallback((id: string) => (id === actifRef.current ? progression : chargerProgression(id)), [progression]);
 
+  const conserver = useCallback((n: NouvelleProduction) => {
+    const p = appareilRef.current.profils.find((x) => x.id === actifRef.current);
+    if (!p?.accords?.voixAppareil) return;
+    void ajouterProduction({ ...n, id: nouvelId(), enfant: p.id, le: new Date().toISOString(), envoye: false });
+  }, []);
+
   const compterTemps = useCallback(
     (secondes: number) => modifier((p) => ajouterTemps(p, appareilRef.current.id, jour(), secondes)),
     [modifier],
@@ -211,6 +259,7 @@ export function FournisseurSyllakids({ children }: { children: ReactNode }) {
     (id: string) => {
       majAppareil((a) => ({ ...a, profils: a.profils.filter((x) => x.id !== id) }));
       oublierProgression(id);
+      void effacerProductions(id);
       if (actifRef.current === id) choisirProfil(null);
     },
     [majAppareil, choisirProfil],
@@ -235,6 +284,7 @@ export function FournisseurSyllakids({ children }: { children: ReactNode }) {
             ...(d.codeImages ? { codeImages: d.codeImages } : {}),
             origine: d.origine,
             version: d.version,
+            ...(d.accords ? { accords: d.accords } : {}),
             sale: local ? JSON.stringify(fusion) !== JSON.stringify(serveur) : false,
           };
           if (i >= 0) profils[i] = profil;
@@ -280,11 +330,11 @@ export function FournisseurSyllakids({ children }: { children: ReactNode }) {
   const valeur = useMemo(
     () => ({
       appareil, profil, progression, modifier, choisirProfil, ajouterProfil, modifierProfil, retirerProfil, installerProfils,
-      progressionDe, modifierProgressionDe, changerMode, etatSynchro, synchroniserMaintenant, compterTemps,
+      progressionDe, modifierProgressionDe, changerMode, etatSynchro, synchroniserMaintenant, compterTemps, conserver,
       dire, redire, noter, debutSeance, bilanSeance,
     }),
     [appareil, profil, progression, modifier, choisirProfil, ajouterProfil, modifierProfil, retirerProfil, installerProfils,
-      progressionDe, modifierProgressionDe, changerMode, etatSynchro, synchroniserMaintenant, compterTemps,
+      progressionDe, modifierProgressionDe, changerMode, etatSynchro, synchroniserMaintenant, compterTemps, conserver,
       dire, redire, noter, debutSeance, bilanSeance],
   );
   return <Ctx.Provider value={valeur}>{children}</Ctx.Provider>;

@@ -22,7 +22,8 @@ async function echoue(p: Promise<unknown>, motif: RegExp) {
 beforeAll(async () => {
   db = new PGlite();
   await preparerBase(db, auth, migrations);
-  for (const qui of ["prof", "prof2", "maman", "papa", "voisin"]) ids[qui] = await creerUtilisateur(db, `${qui}@exemple.fr`, "x");
+  const emails: Record<string, string> = { prof: "prof@ac-lyon.fr", prof2: "prof2@ac-lyon.fr" };
+  for (const qui of ["prof", "prof2", "maman", "papa", "voisin"]) ids[qui] = await creerUtilisateur(db, emails[qui] ?? `${qui}@exemple.fr`, "x");
   await comme("prof")("creer_compte", { p_role: "enseignant", p_nom: "Mme Durand" });
   await comme("prof2")("creer_compte", { p_role: "enseignant", p_nom: "M. Martin" });
   for (const qui of ["maman", "papa", "voisin"]) await comme(qui)("creer_compte", { p_role: "parent", p_nom: qui });
@@ -199,14 +200,56 @@ describe("profils créés à la maison", () => {
 });
 
 describe("durées de conservation", () => {
-  it("purge des journaux de plus de 6 mois et des comptes inactifs depuis 12 mois", async () => {
+  const superu = async <T,>(sql: string, params: unknown[] = []) => (await db.query<T>(sql, params)).rows;
+
+  it("rien n'est supprimé pour inactivité sans avertissement un mois avant", async () => {
     const e = lignes(await comme("papa")("mes_enfants"))[0]!;
     await db.query("update public.journal_acces set le = now() - interval '7 months' where enfant_id = $1", [e.id]);
     await db.query("update public.adultes set vu_le = now() - interval '13 months' where id = $1", [ids.papa]);
-    const r = (await db.query<{ r: Ligne }>("select public.purger_donnees() as r")).rows[0]!.r;
-    expect(r).toMatchObject({ comptes: 1, profils: 1 });
+    await db.query("update public.progressions set maj_le = now() - interval '13 months' where enfant_id = $1", [e.id]);
+    await db.query("update public.enfants set cree_le = now() - interval '13 months' where id = $1", [e.id]);
+    let r = (await superu<{ r: Ligne }>("select public.purger_donnees() as r"))[0]!.r;
+    expect(r).toMatchObject({ comptes: 0, profils: 0 });
     expect(Number(r.journaux)).toBeGreaterThan(0);
+
+    // la fonction d'avertissement trouve le compte et le profil
+    const prevenir = await superu<Ligne>("select * from public.a_prevenir()");
+    expect(prevenir.filter((x) => x.adulte === ids.papa).map((x) => x.raison).sort()).toEqual(["compte", "profil"]);
+    expect(prevenir.find((x) => x.raison === "profil")).toMatchObject({ email: "papa@exemple.fr", prenom: "Léo" });
+    await db.query("select public.marquer_prevenus($1::uuid[], $2::uuid[])", [[ids.papa], [e.id]]);
+    expect((await superu<Ligne>("select * from public.a_prevenir()")).filter((x) => x.adulte === ids.papa)).toHaveLength(0);
+
+    // moins de 30 jours après l'avertissement : toujours rien
+    r = (await superu<{ r: Ligne }>("select public.purger_donnees() as r"))[0]!.r;
+    expect(r).toMatchObject({ comptes: 0, profils: 0 });
+
+    // 31 jours après, toujours inactif : suppression
+    await db.query("update public.adultes set avertissement_le = now() - interval '31 days' where id = $1", [ids.papa]);
+    await db.query("update public.enfants set avertissement_le = now() - interval '31 days' where id = $1", [e.id]);
+    r = (await superu<{ r: Ligne }>("select public.purger_donnees() as r"))[0]!.r;
+    expect(r).toMatchObject({ comptes: 1, profils: 1 });
   });
+
+  it("un compte qui revient après l'avertissement est conservé", async () => {
+    const id = await creerUtilisateur(db, "retour@exemple.fr", "x");
+    ids.retour = id;
+    await comme("retour")("creer_compte", { p_role: "parent", p_nom: "" });
+    await db.query("update public.adultes set vu_le = now() - interval '12 months', avertissement_le = now() - interval '40 days' where id = $1", [id]);
+    await comme("retour")("mon_compte");
+    const r = (await superu<{ r: Ligne }>("select public.purger_donnees() as r"))[0]!.r;
+    expect(r).toMatchObject({ comptes: 0 });
+    expect((await superu<Ligne>("select avertissement_le from public.adultes where id = $1", [id]))[0]).toEqual({ avertissement_le: null });
+  });
+
+  it("une classe est conservée jusqu'à la fin de l'année scolaire suivante", async () => {
+    expect((await superu<Ligne>("select public.fin_conservation_classe('2026-2027')::text as d"))[0]).toEqual({ d: "2028-08-31" });
+    const c = lignes(await comme("prof2")("creer_classe", { p_nom: "Ancienne", p_annee: "2020-2021" }))[0]!;
+    await comme("prof2")("creer_eleve", { p_classe: c.id, p_prenom: "Ancien", p_avatar: "chat", p_profil: "6ans" });
+    const r = (await superu<{ r: Ligne }>("select public.purger_donnees() as r"))[0]!.r;
+    expect(Number(r.classes)).toBeGreaterThanOrEqual(1);
+    expect(lignes(await comme("prof2")("mes_classes")).map((x) => x.nom)).not.toContain("Ancienne");
+  });
+
   it("la purge et les fonctions internes ne sont pas accessibles aux comptes connectés", async () => {
     await echoue(comme("prof")("purger_donnees"), /permission denied/);
     await echoue(comme("maman")("_nettoyer", { p_enfant: crypto.randomUUID() }), /permission denied|does not exist/);
@@ -228,5 +271,103 @@ describe("durées de conservation", () => {
         /permission denied/,
       );
     }
+  });
+});
+
+describe("vérification des comptes enseignants", () => {
+  it("un enseignant sans adresse académique attend la validation de l'éditeur", async () => {
+    ids.prive = await creerUtilisateur(db, "maitresse@ecole-privee.fr", "x");
+    const a = lignes(await comme("prive")("creer_compte", { p_role: "enseignant", p_nom: "Mme Leroy" }))[0]!;
+    expect(a.verifie).toBe(false);
+    await echoue(comme("prive")("creer_classe", { p_nom: "CP", p_annee: "2026-2027" }), /en attente de vérification/);
+    const attente = (await db.query<Ligne>("select * from public.enseignants_en_attente()")).rows;
+    expect(attente.map((x) => x.email)).toContain("maitresse@ecole-privee.fr");
+    await echoue(comme("prive")("valider_enseignant", { p_email: "maitresse@ecole-privee.fr" }), /permission denied/);
+  });
+
+  it("un domaine d'école ajouté par l'éditeur vérifie le compte à la visite suivante", async () => {
+    await db.query("select public.ajouter_domaine_ecole('Ecole-Privee.fr')");
+    expect(lignes(await comme("prive")("mon_compte"))[0]).toMatchObject({ verifie: true });
+    expect(lignes(await comme("prive")("creer_classe", { p_nom: "CP", p_annee: "2026-2027" }))[0]).toMatchObject({ nom: "CP" });
+  });
+
+  it("validation manuelle par l'éditeur", async () => {
+    ids.autre = await creerUtilisateur(db, "prof@gmail.com", "x");
+    await comme("autre")("creer_compte", { p_role: "enseignant", p_nom: "M. Petit" });
+    expect((await db.query<{ v: boolean }>("select public.valider_enseignant('PROF@gmail.com') as v")).rows[0]).toEqual({ v: true });
+    expect(lignes(await comme("autre")("mon_compte"))[0]).toMatchObject({ verifie: true });
+  });
+
+  it("une adresse non confirmée n'est pas reconnue", async () => {
+    const id = await creerUtilisateur(db, "faux@ac-paris.fr", "x");
+    await db.query("update auth.users set email_confirmed_at = null where id = $1", [id]);
+    ids.faux = id;
+    expect(lignes(await comme("faux")("creer_compte", { p_role: "enseignant", p_nom: "X" }))[0]).toMatchObject({ verifie: false });
+  });
+});
+
+describe("voix et lettres tracées", () => {
+  let classe: Ligne;
+  let nina: Ligne;
+  const voix = (id: string) => ({ p_id: id, p_enfant: nina.id, p_type: "voix", p_item: "U03-S-RA", p_cree_le: new Date().toISOString(), p_mime: "audio/webm", p_audio: Buffer.from("son-test").toString("base64"), p_traits: null });
+  const trace = (id: string) => ({ p_id: id, p_enfant: nina.id, p_type: "trace", p_item: "lettre:R", p_cree_le: new Date().toISOString(), p_mime: null, p_audio: null, p_traits: [[[[10, 10], [10, 90]]]] });
+
+  beforeAll(async () => {
+    classe = lignes(await comme("prof")("creer_classe", { p_nom: "GS Les Roses", p_annee: "2026-2027" }))[0]!;
+    nina = lignes(await comme("prof")("creer_eleve", { p_classe: classe.id, p_prenom: "Nina", p_avatar: "fleur", p_profil: "5ans" }))[0]!;
+  });
+
+  it("sans accord de partage, rien n'est gardé sur le serveur", async () => {
+    expect(lignes(await comme("prof")("accords_appareil", { p_enfants: [nina.id] }))[0]).toMatchObject({ voix_appareil: false, voix_partage: false });
+    expect(await comme("prof")("deposer_production", voix(crypto.randomUUID()))).toBe(false);
+    expect(lignes(await comme("prof")("productions_enfant", { p_enfant: nina.id }))).toHaveLength(0);
+  });
+
+  it("avec l'accord papier saisi par l'enseignant, la voix et les tracés sont partagés", async () => {
+    await comme("prof")("accord_papier", { p_enfant: nina.id, p_voix_appareil: true, p_voix_partage: true, p_tests: false });
+    expect(lignes(await comme("prof")("accords_appareil", { p_enfants: [nina.id] }))[0]).toMatchObject({ voix_appareil: true, voix_partage: true });
+    const id = crypto.randomUUID();
+    expect(await comme("prof")("deposer_production", voix(id))).toBe(true);
+    expect(await comme("prof")("deposer_production", voix(id))).toBe(true); // renvoi idempotent
+    expect(await comme("prof")("deposer_production", trace(crypto.randomUUID()))).toBe(true);
+    const liste = lignes(await comme("prof")("productions_enfant", { p_enfant: nina.id }));
+    expect(liste.map((x) => x.type).sort()).toEqual(["trace", "voix"]);
+    const audio = lignes(await comme("prof")("audio_production", { p_id: id }))[0]!;
+    expect(Buffer.from(String(audio.audio), "base64").toString()).toBe("son-test");
+    expect(lignes(await comme("prof")("tableau_classe", { p_classe: classe.id }))[0]).toMatchObject({ voix_partage: true, accord_source: "papier" });
+    // personne d'autre n'y a accès
+    await echoue(comme("prof2")("audio_production", { p_id: id }), /Profil introuvable/);
+    expect(lignes(await comme("maman")("accords_appareil", { p_enfants: [nina.id] }))).toHaveLength(0);
+  });
+
+  it("le partage sans conservation sur l'appareil est impossible", async () => {
+    await comme("prof")("accord_papier", { p_enfant: nina.id, p_voix_appareil: false, p_voix_partage: true, p_tests: false });
+    expect(lignes(await comme("prof")("accords_appareil", { p_enfants: [nina.id] }))[0]).toMatchObject({ voix_partage: false });
+    expect(lignes(await comme("prof")("productions_enfant", { p_enfant: nina.id }))).toHaveLength(0);
+  });
+
+  it("le retrait du partage par le parent efface ce qui était sur le serveur", async () => {
+    await comme("prof")("accord_papier", { p_enfant: nina.id, p_voix_appareil: true, p_voix_partage: true, p_tests: false });
+    await comme("prof")("deposer_production", voix(crypto.randomUUID()));
+    await comme("maman")("rattacher_par_code", { p_code: nina.code_famille, p_consentement: { ...ACCORD, voix_appareil: true, voix_partage: true } });
+    expect(lignes(await comme("maman")("productions_enfant", { p_enfant: nina.id }))).toHaveLength(1);
+    await comme("maman")("donner_consentement", { p_enfant: nina.id, p_consentement: { ...ACCORD, voix_appareil: true, voix_partage: false } });
+    expect(lignes(await comme("prof")("productions_enfant", { p_enfant: nina.id }))).toHaveLength(0);
+    expect(lignes(await comme("maman")("accords_appareil", { p_enfants: [nina.id] }))[0]).toMatchObject({ voix_appareil: true, voix_partage: false });
+  });
+
+  it("l'export contient la voix et les tracés ; la purge de rentrée les efface", async () => {
+    await comme("prof")("accord_papier", { p_enfant: nina.id, p_voix_appareil: true, p_voix_partage: true, p_tests: false });
+    await comme("prof")("deposer_production", trace(crypto.randomUUID()));
+    const x = (await comme("maman")("exporter_enfant", { p_enfant: nina.id })) as Ligne;
+    expect((x.voix_et_traces as Ligne[]).length).toBe(1);
+    await db.query("update public.productions set cree_le = cree_le - interval '13 months' where enfant_id = $1", [nina.id]);
+    const r = (await db.query<{ r: Ligne }>("select public.purger_donnees() as r")).rows[0]!.r;
+    expect(Number(r.voix_et_traces)).toBe(1);
+  });
+
+  it("un dépôt daté d'une année scolaire passée est refusé", async () => {
+    const v = { ...voix(crypto.randomUUID()), p_cree_le: "2020-01-01T00:00:00Z" };
+    expect(await comme("prof")("deposer_production", v)).toBe(false);
   });
 });

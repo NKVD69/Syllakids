@@ -10,7 +10,8 @@ Sans cette étape, Syllakids fonctionne sur un seul appareil, sans compte. Compt
 
 ## 2. Installer la base
 
-Dans **SQL Editor**, coller tout le contenu de `supabase/migrations/20261012000000_comptes_et_progression.sql` et l'exécuter.
+Dans **SQL Editor**, coller puis exécuter, dans l'ordre, le contenu de chaque fichier de `supabase/migrations/` :
+`20261012000000_comptes_et_progression.sql`, puis `20261013000000_verification_avertissements_voix.sql`.
 (Avec l'outil en ligne de commande : `supabase link --project-ref <ref>` puis `supabase db push`.)
 
 La migration crée les tables, les règles d'accès par ligne et les fonctions appelées par l'application. Elle est testée à chaque `npm test` sur un vrai Postgres local.
@@ -33,24 +34,65 @@ VITE_SUPABASE_URL=https://xxxxxxxx.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJ...
 ```
 
-puis `npm run build`. La clé *anon* est publique par conception : elle ne donne accès qu'aux fonctions prévues, avec les droits de la personne connectée. **Ne jamais mettre la clé `service_role` dans l'application.**
+et `VITE_CONTACT=` avec l'adresse de contact de l'éditeur, puis `npm run build`. La clé *anon* est publique par conception : elle ne donne accès qu'aux fonctions prévues, avec les droits de la personne connectée. **Ne jamais mettre la clé `service_role` dans l'application.**
 
-## 5. Durées de conservation
+## 5. Comptes enseignants
 
-Dans **Database → Extensions**, activer `pg_cron`, puis dans le SQL Editor :
+Un compte enseignant est vérifié d'office si son adresse est académique (`@ac-….fr`) ou `@education.gouv.fr`, une fois l'adresse confirmée. Les autres attendent la validation de l'éditeur, dans le SQL Editor :
 
 ```sql
+select * from public.enseignants_en_attente();               -- qui attend
+select public.valider_enseignant('prenom.nom@ecole.fr');    -- après vérification (appel à l'école, par exemple)
+select public.ajouter_domaine_ecole('lalumieredusavoir.fr'); -- toute l'école d'un coup
+```
+
+L'enseignant voit le changement en touchant « Vérifier à nouveau » ou à sa prochaine visite.
+
+## 6. Durées de conservation et e-mails d'avertissement
+
+Rien n'est supprimé pour inactivité sans un e-mail envoyé un mois avant. Il faut donc une fonction Edge (envoi des e-mails) et deux tâches planifiées.
+
+**Service d'e-mails.** Créer un compte Brevo (entreprise française, données dans l'UE), vérifier le domaine d'envoi, créer une clé API.
+
+**Fonction Edge.** Avec l'outil en ligne de commande Supabase :
+
+```bash
+supabase functions deploy prevenir-inactifs
+supabase secrets set CLE_PLANIFICATION=<longue chaîne aléatoire> BREVO_API_KEY=<clé Brevo> \
+  EXPEDITEUR=bonjour@<votre-domaine> ADRESSE_APPLICATION=https://app.syllakids.fr/
+```
+
+**Tâches planifiées.** Dans **Database → Extensions**, activer `pg_cron` et `pg_net`, puis dans le SQL Editor (remplacer `<ref>`, `<clé anon>` et `<CLE_PLANIFICATION>`) :
+
+```sql
+-- chaque nuit à 3 h : e-mails d'avertissement (comptes et profils inactifs depuis 11 mois)
+select cron.schedule('prevenir-syllakids', '0 3 * * *', $$
+  select net.http_post(
+    url := 'https://<ref>.supabase.co/functions/v1/prevenir-inactifs',
+    headers := jsonb_build_object('Authorization', 'Bearer <clé anon>', 'x-cle-planification', '<CLE_PLANIFICATION>')
+  )
+$$);
+-- chaque nuit à 3 h 30 : suppressions
 select cron.schedule('purge-syllakids', '30 3 * * *', $$select public.purger_donnees()$$);
 ```
 
-La fonction supprime chaque nuit les journaux d'accès de plus de 6 mois, les comptes sans connexion depuis 12 mois et les profils d'enfants qui ne sont plus rattachés à personne. L'e-mail d'avertissement avant la suppression d'un compte inactif reste à mettre en place (fonction Edge planifiée, un mois avant).
+La purge supprime :
 
-## 6. Vérifier
+- les journaux d'accès de plus de 6 mois ;
+- les comptes prévenus depuis plus de 30 jours et toujours pas revenus ;
+- les profils familiaux prévenus depuis plus de 30 jours sans nouvelle séance, et les profils rattachés à personne ;
+- les classes à la fin de l'année scolaire suivante (une classe 2026-2027 le 1er septembre 2028), avec les élèves sans famille rattachée ;
+- la voix et les tracés partagés, à chaque rentrée (le 1er septembre).
+
+Sur les appareils, la voix et les tracés sont effacés au bout de 3 mois, ou dès que l'accord est retiré.
+
+## 7. Vérifier
 
 1. Créer un compte enseignant, une classe, deux élèves ; ouvrir « Codes pour les familles ».
 2. Sur un autre appareil, créer un compte parent et saisir un code famille : la progression de la classe apparaît.
 3. Dans le SQL Editor : `select count(*) from public.enfants;` doit montrer les élèves, mais une requête avec la clé *anon* sur `/rest/v1/enfants` doit renvoyer une liste vide, et un appel à `/rest/v1/rpc/purger_donnees` doit être refusé.
-4. Supprimer un compte de test depuis l'espace adulte : il doit disparaître de **Authentication → Users**. (Si Supabase refuse la suppression dans `auth.users` depuis la fonction, la remplacer par une fonction Edge qui utilise l'API d'administration.)
+4. Créer un compte enseignant avec une adresse non académique : il doit afficher « en attente de vérification » ; le valider avec `valider_enseignant`.
+5. Supprimer un compte de test depuis l'espace adulte : il doit disparaître de **Authentication → Users**. (Si Supabase refuse la suppression dans `auth.users` depuis la fonction, la remplacer par une fonction Edge qui utilise l'API d'administration.)
 
 ## Essayer sans Supabase
 

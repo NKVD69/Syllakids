@@ -32,9 +32,9 @@ Les tables ne sont lisibles qu'à travers des règles par ligne (un parent ne vo
 
 En classe, l'école est responsable du traitement : l'enseignant crée les profils de ses élèves. Chaque élève reçoit un code famille de 8 caractères, imprimé sur un coupon ; le parent le saisit et donne son accord, et retrouve le même profil à la maison (un seul parcours, comme le demande le cahier des charges). Un code de classe partagé aurait obligé à montrer la liste des élèves aux familles. Le code de classe sert seulement au cas inverse : un profil créé à la maison qui rejoint la classe.
 
-## 2026-10-12 — Retrait de l'accord parental
+## 2026-10-12 — Retrait de l'accord parental (validé par le juriste le 12 octobre)
 
-Retirer l'accord d'utilisation détache le parent du profil. Si le profil n'est plus rattaché à personne (ni famille ni classe), il est supprimé avec sa progression. Un profil de classe reste à l'école, responsable de traitement : le parent est invité à demander son retrait à l'enseignant. À faire valider par le juriste.
+Retirer l'accord d'utilisation détache le parent du profil. Si le profil n'est plus rattaché à personne (ni famille ni classe), il est supprimé avec sa progression. Un profil de classe reste à l'école, responsable de traitement : le parent est invité à demander son retrait à l'enseignant. Le juriste a validé ce fonctionnement, ainsi que le code famille personnel.
 
 ## 2026-10-12 — Progression : chaque appareil travaille hors ligne, le serveur arbitre par version
 
@@ -48,9 +48,17 @@ Sur la tablette partagée, chaque enfant touche son image puis ses 3 images secr
 
 Le temps est compté par tranches de 15 secondes tant que l'écran d'une séance est visible. L'adulte peut fixer une durée maximale par jour (tous appareils confondus) : une fois atteinte, le chemin se met en pause (« On s'arrête ici pour aujourd'hui »), la séance en cours se termine normalement.
 
-## 2026-10-12 — Ce qui n'est pas encore fait côté comptes
+## 2026-10-12 — Vérification des comptes enseignants, sans rôle supplémentaire
 
-Aucune vérification qu'un compte enseignant appartient bien à un enseignant (prévu avec le rôle « direction »), pas de double authentification (Supabase la permet, l'écran reste à faire), pas d'e-mail avant la suppression d'un compte inactif, pas de suivi des confusions fréquentes ni de seuils réglables par élève. La voix et les tracés ne sont toujours pas conservés : l'accord correspondant est recueilli mais sans effet pour l'instant, ce que le formulaire indique.
+Un compte enseignant ne peut créer de classe qu'une fois vérifié. Il l'est d'office avec une adresse académique confirmée (`@ac-….fr`, `@education.gouv.fr`) ou une adresse d'un domaine d'école ajouté par l'éditeur ; sinon l'éditeur le valide à la main (`valider_enseignant`). On évite ainsi qu'une personne se fasse passer pour un enseignant pour obtenir des données d'enfants, sans créer de rôle « direction » ni de back-office : c'est le plus simple qui protège. La double authentification n'est pas mise en place (décision du 12 octobre).
+
+## 2026-10-12 — Pas de suppression pour inactivité sans e-mail un mois avant
+
+Une fonction Edge envoie chaque nuit un e-mail aux adultes inactifs depuis 11 mois (compte, ou profil d'enfant sans séance) ; la purge ne supprime que ce qui a été prévenu depuis plus de 30 jours et n'a pas repris. Un e-mail qui n'a pas pu partir n'est pas noté : il est retenté le lendemain, et rien n'est supprimé entre-temps. Envoi par Brevo (société française, données dans l'UE). Les classes sont supprimées à la fin de l'année scolaire suivante, les élèves sans famille avec elles ; l'enseignant voit cette date dans la liste de ses classes.
+
+## 2026-10-12 — Voix et tracés : sur l'appareil, puis chez l'enseignant si la famille l'accepte
+
+La voix (activité R1) et les lettres tracées (E1 à la dernière étape, premier essai de la dictée E2) sont gardées dans l'appareil (IndexedDB) seulement si l'accord « conservation sur la tablette » est donné, 3 mois au plus. Avec l'accord de partage, elles sont envoyées au serveur et gardées jusqu'à la rentrée suivante. L'accord en vigueur est le plus récent : celui d'un parent dans l'application ou le formulaire papier saisi par l'enseignant. Quand le partage est retiré, le serveur efface tout aussitôt ; quand la conservation est retirée, l'appareil efface à la synchronisation suivante. Pour un profil sans compte, l'adulte coche lui-même la conservation sur l'appareil (rien n'est envoyé). Les enregistrements sont stockés dans la base (quelques dizaines de Ko chacun) plutôt que dans un espace de fichiers, pour garder les mêmes règles d'accès et les mêmes tests. L'adulte les écoute et les revoit dans la fiche de l'enfant ; l'enfant n'a pas encore d'écran pour se réécouter plus tard.
 
 ## 2026-10-11 — Reconnaissance de l'écriture sur l'appareil
 
