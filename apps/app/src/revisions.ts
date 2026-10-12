@@ -13,6 +13,8 @@ export interface EtatItem {
   reussites: number;
   /** Unité d'origine de l'item. */
   unite: string;
+  /** Moment de la dernière réponse (ISO 8601) : départage deux appareils lors de la synchronisation. */
+  vu?: string;
 }
 
 /** Délai avant la prochaine révision selon la boîte : 1, 2, 4, 8 puis 16 jours. */
@@ -29,7 +31,7 @@ export function ajouterJours(j: string, n: number): string {
 }
 
 /** Met à jour un item après une réponse : réussite = boîte suivante ; erreur = retour en boîte 1. */
-export function noterItem(etat: EtatItem | undefined, reussi: boolean, unite: string, aujourdhui: string): EtatItem {
+export function noterItem(etat: EtatItem | undefined, reussi: boolean, unite: string, aujourdhui: string, vu = new Date().toISOString()): EtatItem {
   const boite = reussi ? Math.min(5, (etat?.boite ?? 0) + 1) : 1;
   return {
     boite,
@@ -37,6 +39,7 @@ export function noterItem(etat: EtatItem | undefined, reussi: boolean, unite: st
     essais: (etat?.essais ?? 0) + 1,
     reussites: (etat?.reussites ?? 0) + (reussi ? 1 : 0),
     unite: etat?.unite ?? unite,
+    vu,
   };
 }
 

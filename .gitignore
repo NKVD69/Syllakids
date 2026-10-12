@@ -12,3 +12,4 @@ desktop.ini
 playwright-report/
 test-results/
 captures/
+.serveur-local/

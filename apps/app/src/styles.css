@@ -142,15 +142,94 @@ button { font: inherit; color: inherit; }
 .fin { width: 30vmin; height: 30vmin; color: var(--vert); }
 .fin svg { width: 100%; height: 100%; stroke: currentColor; fill: none; }
 
-/* Espace adulte */
-.adulte { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; font-size: 18px; line-height: 1.5; user-select: text; }
-.adulte h1 { font-size: 28px; margin: 8px 0 16px; }
-.adulte h2 { font-size: 20px; margin: 28px 0 8px; }
-.adulte fieldset { border: 1px solid var(--ligne-forte); border-radius: 10px; padding: 12px 16px; }
-.adulte label { display: flex; gap: 10px; align-items: center; padding: 6px 0; }
-.adulte input[type="radio"], .adulte input[type="checkbox"] { width: 22px; height: 22px; }
+/* Choix de l'enfant et images secrètes */
+.choix-profils { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, clamp(110px, 16vmin, 170px)); justify-content: center; gap: 3vmin; width: min(92vw, 1000px); }
+.choix-profils button { width: 100%; border: 0; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px; border-radius: 16px; }
+.choix-profils button:active { background: var(--ligne-fine); }
+.choix-profils .prenom { font-size: 20px; color: var(--trait-ui); min-height: 1.3em; }
+.grille-secrete { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2vmin; width: min(46vmin, 380px); }
+.grille-secrete button { border: 0; background: transparent; padding: 0; cursor: pointer; aspect-ratio: 1; border-radius: 50%; }
+.grille-secrete button:active { transform: scale(0.94); }
+.points-secrets { display: flex; gap: 14px; }
+.points-secrets span { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--trait-ui); }
+.points-secrets span.plein { background: var(--bleu); border-color: var(--bleu); }
+.avatar-barre { border: 0; background: transparent; padding: 0; cursor: pointer; border-radius: 50%; line-height: 0; }
+.nom-classe { font-size: 18px; color: var(--trait-ui); }
+.en-pause { position: relative; }
+.en-pause .chemin { opacity: 0.3; }
+.pause-du-jour { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); width: min(40vmin, 260px); aspect-ratio: 1; border: 0; background: transparent; padding: 0; cursor: pointer; }
+
+/* Espace adulte : sobre, lisible, conforme RGAA (contrastes, étiquettes, focus visible) */
+.adulte { width: 100%; max-width: 920px; margin: 0 auto; padding: 16px 16px 48px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 17px; line-height: 1.5; user-select: text; -webkit-user-select: text; color: #1d2433; }
+.adulte h1 { font-size: 26px; margin: 0; }
+.adulte h1 a { color: inherit; }
+.adulte h2 { font-size: 20px; margin: 0 0 10px; }
+.adulte h3 { font-size: 17px; margin: 16px 0 4px; }
+.adulte a { color: var(--bleu); }
+.entete-adulte { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 4px 0 16px; border-bottom: 1px solid var(--ligne-forte); margin-bottom: 16px; }
+.carte-adulte { border: 1px solid #c9d3ea; border-radius: 12px; padding: 16px 18px; margin: 0 0 16px; background: #fff; }
+.adulte fieldset { border: 1px solid var(--ligne-forte); border-radius: 10px; padding: 10px 14px; margin: 0 0 12px; }
+.adulte legend { font-weight: 600; padding: 0 4px; }
+.adulte label { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; }
+.adulte label.champ { flex-direction: column; gap: 4px; }
+.adulte input[type="radio"], .adulte input[type="checkbox"] { width: 22px; height: 22px; flex: none; margin: 1px 0 0; }
+.adulte input:not([type]), .adulte input[type="email"], .adulte input[type="password"], .adulte select { font: inherit; padding: 8px 10px; border: 2px solid var(--trait-ui); border-radius: 8px; width: min(100%, 420px); background: #fff; }
 .adulte .verrou input { font-size: 28px; width: 4ch; text-align: center; }
-.bouton-texte { border: 2px solid var(--trait-ui); background: var(--papier); border-radius: 10px; padding: 10px 18px; cursor: pointer; font-size: 18px; }
+.formulaire.en-ligne { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.formulaire.en-ligne .champ { flex: 1 1 220px; }
+.actions-adulte { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 0; }
+.bouton-texte { display: inline-block; border: 2px solid var(--trait-ui); background: var(--papier); color: #1d2433; border-radius: 10px; padding: 9px 16px; cursor: pointer; font-size: 17px; text-decoration: none; line-height: 1.3; }
+.bouton-texte.principal { background: var(--bleu); border-color: var(--bleu); color: #fff; }
+.bouton-texte.danger { border-color: var(--rouge); color: #a3231f; }
+.bouton-texte:disabled { opacity: 0.5; cursor: default; }
+.bouton-lien { border: 0; background: none; color: var(--bleu); text-decoration: underline; cursor: pointer; padding: 4px; font-size: inherit; }
+.message-adulte { padding: 8px 12px; border-radius: 8px; background: #e5f4ec; border: 1px solid #9fd2b5; margin: 10px 0 0; }
+.message-adulte.erreur { background: #fdecea; border-color: #eba8a4; color: #8c1d18; }
+.petit { font-size: 15px; color: #4a5570; }
+.liste-enfants { list-style: none; margin: 0 0 8px; padding: 0; }
+.liste-enfants li { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 6px 0; border-bottom: 1px solid #edf0f7; }
+.ligne-enfant { display: inline-flex; align-items: center; gap: 10px; color: inherit !important; text-decoration: none; }
+.ligne-enfant:hover strong, .ligne-enfant:focus-visible strong { text-decoration: underline; }
+.choix-avatar { display: flex; flex-wrap: wrap; gap: 4px; }
+details.changer-avatar { margin: 6px 0 10px; }
+details.changer-avatar summary { cursor: pointer; display: flex; align-items: center; gap: 10px; }
+.choix-avatar label { padding: 3px !important; border-radius: 50%; border: 3px solid transparent; cursor: pointer; position: relative; }
+.choix-avatar label input { position: absolute; opacity: 0; }
+.choix-avatar label.choisi { border-color: var(--bleu); }
+.choix-avatar label.pris { opacity: 0.35; }
+.choix-avatar label:focus-within { outline: 3px solid var(--bleu); outline-offset: 1px; }
+.tableau-defilant { overflow-x: auto; margin: 8px 0; }
+.tableau-classe { border-collapse: collapse; width: 100%; font-size: 15px; }
+.tableau-classe caption { text-align: left; padding-bottom: 6px; }
+.tableau-classe th .petit { margin-left: 6px; vertical-align: middle; }
+.tableau-classe th, .tableau-classe td { padding: 6px 8px; border-bottom: 1px solid #e3e8f3; text-align: left; white-space: nowrap; }
+.tableau-classe thead th { background: #f2f5fb; font-weight: 600; }
+.code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 1.1em; letter-spacing: 0.08em; }
+.titre-fiche { display: flex; align-items: center; gap: 12px; font-size: 24px; margin: 0 0 12px; }
+.chiffres { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin: 0 0 12px; }
+.chiffres div { background: #f5f7fc; border-radius: 10px; padding: 8px 12px; }
+.chiffres dt { font-size: 14px; color: #4a5570; }
+.chiffres dd { margin: 0; font-weight: 600; }
+.histogramme { margin: 8px 0 0; }
+.histogramme .barres { display: flex; align-items: flex-end; gap: 4px; height: 100px; }
+.histogramme .barres > div { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.histogramme span { display: block; width: 100%; max-width: 26px; background: var(--bleu); border-radius: 4px 4px 0 0; min-height: 1px; }
+.histogramme small { font-size: 12px; color: #4a5570; }
+.histogramme figcaption { margin-top: 4px; }
+.etiquettes-adulte { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.etiquettes-adulte li { border: 1px solid #c9d3ea; border-radius: 6px; padding: 2px 8px; font-family: var(--police); }
+.journal { font-size: 15px; max-height: 260px; overflow: auto; }
+.accord p { margin: 4px 0 8px; }
+.images-coupon { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.coupons { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.coupon { border: 2px dashed #9aa8c7; border-radius: 10px; padding: 12px 14px; break-inside: avoid; }
+.coupon h2 { display: flex; align-items: center; gap: 8px; font-size: 18px; }
+.coupon ol { padding-left: 20px; margin: 6px 0; }
+@media print {
+  .entete-adulte, .pas-imprime { display: none !important; }
+  .adulte { max-width: none; padding: 0; }
+  .coupons { grid-template-columns: 1fr 1fr; }
+}
 
 @media (max-width: 600px) {
   :root { --zone-toucher: 72px; --il: 12px; }

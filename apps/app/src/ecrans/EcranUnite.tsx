@@ -9,7 +9,7 @@ import { useSyllakids } from "../contexte";
 
 export function EcranUnite({ id }: { id: string }) {
   const f = unite(id);
-  const { progression, modifier, dire, redire, debutSeance, bilanSeance } = useSyllakids();
+  const { progression, modifier, dire, redire, debutSeance, bilanSeance, compterTemps, synchroniserMaintenant } = useSyllakids();
   const profil = progression.reglages.profil;
   const total = f ? nombreSeances(f) : 1;
   const faites = progression.seances[id] ?? (progression.terminees.includes(id) ? total : 0);
@@ -24,6 +24,15 @@ export function EcranUnite({ id }: { id: string }) {
   const suivante = useCallback(() => setI((k) => k + 1), []);
 
   const fini = i >= etapes.length;
+
+  // temps de lecture : compté par tranches de 15 secondes tant que l'écran est visible
+  useEffect(() => {
+    if (fini) return;
+    const t = window.setInterval(() => {
+      if (document.visibilityState === "visible") compterTemps(15);
+    }, 15_000);
+    return () => window.clearInterval(t);
+  }, [fini, compterTemps]);
 
   useEffect(() => {
     if (!f) naviguer("#/");
@@ -46,7 +55,9 @@ export function EcranUnite({ id }: { id: string }) {
       void dire("CON-PROG-06");
     } else if (!derniere) void dire("CON-GEN-11");
     else void dire(UNITES.at(-1)?.unite.id === id ? "CON-PROG-09" : "CON-PROG-01");
-  }, [fini, etapes.length, id, modifier, dire, seance, total, bilanSeance, profil]);
+    // fin de séance : bon moment pour envoyer les progrès
+    window.setTimeout(() => void synchroniserMaintenant(), 500);
+  }, [fini, etapes.length, id, modifier, dire, seance, total, bilanSeance, profil, synchroniserMaintenant]);
 
   if (!f) return null;
   const Courante = etapes[i]?.composant;

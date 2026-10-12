@@ -1,5 +1,22 @@
 # Journal des sessions
 
+## Session 4 — 12 octobre 2026
+
+Fait :
+
+- Base de données Supabase (`supabase/migrations`) : comptes adultes (parent, enseignant), classes, profils d'enfants, liens famille, accords parentaux, progression, journal des accès ; règles par ligne et fonctions qui vérifient les droits ; purge selon les durées de conservation du registre. 21 tests de droits sur un vrai Postgres (PGlite).
+- Plusieurs enfants sur un appareil : choix par l'image ; sur la tablette de la classe, 3 images secrètes. L'ancienne progression est reprise automatiquement.
+- Synchronisation hors ligne entre appareils, avec fusion sans perte (tests) ; envoi en fin de séance, au retour du réseau et toutes les 2 minutes.
+- Espace adulte refait : profils de l'appareil ; création de compte et connexion ; formulaire de consentement à 3 accords séparés ; côté parent, ajout d'un enfant, rattachement par code famille, suivi (son en cours, temps de la semaine, réussite, éléments à retravailler, record), réglages dont la durée maximale par jour, accords modifiables, export des données, journal des consultations, retrait de l'accord ; côté enseignant, classes, tableau de bord de la classe sans classement, fiche élève, coupons imprimables des codes familles, export CSV, tablette de la classe.
+- Serveur local de développement (`npm run serveur:local`) et parcours automatique classe + maison (`npm run parcours:adulte`, 14 étapes).
+- Guide de mise en service : `docs/supabase.md`.
+- 194 tests automatisés.
+
+À faire par l'éditeur : créer le projet Supabase en UE et renseigner `apps/app/.env.local` (voir le guide).
+
+Reste : double authentification, rôle direction, confusions fréquentes et seuils par élève, mode collectif (TBI) et fiches PDF, conservation de la voix et des tracés, empaquetage Capacitor, sons enregistrés et illustrations.
+
+
 ## Session 3 — 11 octobre 2026
 
 Fait :

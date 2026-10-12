@@ -37,7 +37,11 @@ const ordre = ["U00","U01","U02","U03","U04","U05","U06","U07","U08","U09","U10"
 const avant = ordre.slice(0, ordre.indexOf(unite));
 // REVISIONS=U03-M-LAMA,U05-S-SO : items déjà vus, à revoir aujourd'hui (teste l'étape de révision)
 const items = Object.fromEntries((process.env.REVISIONS ?? "").split(",").filter(Boolean).map((id) => [id, { boite: 1, prochaine: "2000-01-01", essais: 1, reussites: 1, unite: id.slice(0, 3) }]));
-await p.evaluate(([t, u, s, pr, it]) => localStorage.setItem("syllakids:progression:v1", JSON.stringify({ terminees: t, seances: { [u]: Number(s) }, items: it, reglages: { profil: pr, dys: false } })), [avant, unite, seanceFaites, profil, items]);
+await p.evaluate(([t, u, s, pr, it]) => {
+  const id = "00000000-0000-4000-8000-000000000001";
+  localStorage.setItem("syllakids:appareil:v1", JSON.stringify({ id: "appareil-test", mode: "maison", profils: [{ id, prenom: "", avatar: "soleil", origine: "appareil", version: 0, sale: false }] }));
+  localStorage.setItem(`syllakids:progression:${id}`, JSON.stringify({ terminees: t, seances: { [u]: Number(s) }, items: it, reglages: { profil: pr, dys: false } }));
+}, [avant, unite, seanceFaites, profil, items]);
 await p.reload();
 await p.goto(base + "#/unite/" + unite);
 await p.waitForTimeout(600);
@@ -120,7 +124,7 @@ while (Date.now() - t0 < Number(process.env.DUREE_MAX ?? 420) * 1000) {
 }
 if (!(await has(".fin"))) await p.screenshot({ path: `${out}/${prefixe}-arret.png` });
 console.log(`${prefixe}: étapes vues ${[...vu].join(",")} ; fin=${await has(".fin")} ; ${codes.join(" ")} ; ${Math.round((Date.now() - t0) / 1000)} s`);
-const etat = await p.evaluate(() => JSON.parse(localStorage.getItem("syllakids:progression:v1") ?? "{}"));
+const etat = await p.evaluate(() => JSON.parse(localStorage.getItem("syllakids:progression:00000000-0000-4000-8000-000000000001") ?? "{}"));
 const notes = Object.entries(etat.items ?? {});
 console.log(`items notés : ${notes.length} ; ` + notes.map(([id, e]) => `${id}:${e.reussites}/${e.essais} b${e.boite}`).join(" "));
 if (etat.fluence) console.log("fluence", JSON.stringify(etat.fluence));
