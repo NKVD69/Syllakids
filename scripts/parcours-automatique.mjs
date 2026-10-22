@@ -50,6 +50,7 @@ const t0 = Date.now();
 const has = async (sel) => (await p.$(sel)) !== null;
 const clic = async (sel) => { const e = await p.$(sel); if (e) await e.click().catch(() => {}); };
 let codes = [];
+let nTrace = 0;
 while (Date.now() - t0 < Number(process.env.DUREE_MAX ?? 420) * 1000) {
   if (await has(".fin")) { await p.screenshot({ path: `${out}/${prefixe}-fin.png` }); break; }
   const etape = await p.$$eval(".avancement span", (s) => s.findIndex((x) => x.classList.contains("encours")));
@@ -107,17 +108,24 @@ while (Date.now() - t0 < Number(process.env.DUREE_MAX ?? 420) * 1000) {
   }
   else if (await has('[aria-current="true"]')) { await clic('[aria-current="true"]'); }
   else if (await has("canvas.zone-trace")) {
-    const lettre = (await p.getAttribute("canvas.zone-trace", "aria-label")).at(-1);
+    // ligne de lettres identiques : on trace la lettre de la case en cours (repère donné par le canevas)
+    const lettre = (await p.getAttribute("canvas.zone-trace", "aria-label")).match(/la lettre (\S+),/)[1];
     const msg = await p.textContent(".message");
     if (!msg.includes("Regarde")) {
-      const box = await (await p.$("canvas.zone-trace")).boundingBox();
-      const w = box.width, h = box.height, cap = Math.min(h * 0.6, w * 0.62), s = cap / 100, x0 = (w - 100 * s) / 2, y0 = h * 0.27;
+      const c = await p.$("canvas.zone-trace");
+      const box = await c.boundingBox();
+      const [s, x0, y0] = await Promise.all(["data-s", "data-x0", "data-y0"].map(async (a) => Number(await c.getAttribute(a))));
       for (const t of traces[lettre].traits) {
         const [sx, sy] = t[0]; await p.mouse.move(box.x + x0 + sx * s, box.y + y0 + sy * s); await p.mouse.down();
         for (const [x, y] of t.slice(1)) await p.mouse.move(box.x + x0 + x * s, box.y + y0 + y * s, { steps: 3 });
         await p.mouse.up();
       }
-      await p.waitForTimeout(2500);
+      await p.waitForTimeout(1300);
+      if (process.env.CAPTURES_TRACE) await p.screenshot({ path: `${out}/${prefixe}-trace-${String(++nTrace).padStart(2, "0")}.png` });
+    } else if (process.env.CAPTURES_TRACE && !vu.has(`obs-${lettre}`)) {
+      vu.add(`obs-${lettre}`);
+      await p.waitForTimeout(3800);
+      await p.screenshot({ path: `${out}/${prefixe}-observer-${lettre}.png` });
     }
   }
   await p.waitForTimeout(400);

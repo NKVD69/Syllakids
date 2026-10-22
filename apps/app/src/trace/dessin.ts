@@ -9,6 +9,25 @@ export function calculerRepere(largeur: number, hauteur: number): Repere {
   const s = cap / 100;
   return { s, x0: (largeur - 100 * s) / 2, y0: hauteur * 0.27, largeur, hauteur };
 }
+/** Écart entre deux lettres d'une ligne, en unités du modèle (lettre de 100 de large, plus l'espace). */
+export const PAS_LIGNE = 135;
+
+/**
+ * Repère d'une ligne de n lettres identiques : même taille pour toutes, la plus grande qui tienne
+ * en largeur (et en hauteur : capitale au plus 60 % de la hauteur). La case k s'obtient avec repereCase.
+ */
+export function repereLigne(largeur: number, hauteur: number, n: number): Repere {
+  const s = Math.min((hauteur * 0.6) / 100, largeur / (n * PAS_LIGNE));
+  const x0 = (largeur - n * PAS_LIGNE * s) / 2 + ((PAS_LIGNE - 100) / 2) * s;
+  // un peu plus de place au-dessus (accents) qu'en dessous
+  const y0 = (hauteur - 100 * s) / 2 + 8 * s;
+  return { s, x0, y0, largeur, hauteur };
+}
+
+export function repereCase(ligne: Repere, k: number): Repere {
+  return { ...ligne, x0: ligne.x0 + k * PAS_LIGNE * ligne.s };
+}
+
 export const versEcran = (r: Repere, [x, y]: Point): Point => [r.x0 + x * r.s, r.y0 + y * r.s];
 export const versModele = (r: Repere, x: number, y: number): Point => [(x - r.x0) / r.s, (y - r.y0) / r.s];
 

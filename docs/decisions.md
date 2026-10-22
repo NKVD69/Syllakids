@@ -1,5 +1,9 @@
 # Décisions techniques
 
+## 2026-10-23 — Une ligne de lettres identiques à chaque étape du tracé
+
+Choix de l'utilisateur : chaque étape (observer, repasser, point de départ, sans aide) présente une ligne de lettres identiques au lieu d'une seule grande lettre — 5 en profil 6 ans, 3 en profil 5 ans. Les lettres sont plus petites (toute la ligne tient en largeur) et la séance plus longue, au profit de l'entraînement. Chaque lettre est jugée séparément ; après 3 essais, la case est laissée et l'enfant passe à la suivante.
+
 ## 2026-10-23 — Un calcul de CE1 pour les écrans adultes
 
 L'addition simple (7 + 8) pouvait être trouvée par un enfant de CP. Les paramètres et l'espace adulte demandent maintenant un calcul de CE1, tiré au hasard : addition ou soustraction à deux chiffres avec retenue, ou table de 2 à 5. Une mauvaise réponse change le calcul ; trois erreurs imposent 30 secondes d'attente, pour qu'on ne trouve pas en tapant au hasard. L'accès reste ouvert 10 minutes, et se referme dès qu'on revient à l'enfant. Sur la tablette de la classe, l'espace adulte (données des élèves) garde le mot de passe de l'enseignant : le calcul n'ouvre là que les paramètres.
