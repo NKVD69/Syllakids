@@ -1,5 +1,16 @@
+# Fins de ligne LF pour tous les fichiers texte, quel que soit le système (Windows, Google Drive, Mac).
+# Évite que des fichiers apparaissent « modifiés » sans changement réel.
 * text=auto eol=lf
+
+# Fichiers binaires
 *.png binary
+*.jpg binary
 *.webp binary
+*.svg text eol=lf
 *.m4a binary
 *.mp3 binary
+*.ogg binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.pptx binary
