@@ -19,3 +19,4 @@ export const VisageTriste = (_: P) => (<svg {...base} aria-hidden><circle cx="12
 export const Rond = (_: P) => (<svg {...base} aria-hidden><circle cx="12" cy="12" r="7.5" /></svg>);
 export const Triangle = (_: P) => (<svg {...base} aria-hidden><path d="M12 4.5 20 19H4z" /></svg>);
 export const Carre = (_: P) => (<svg {...base} aria-hidden><rect x="5" y="5" width="14" height="14" rx="1.5" /></svg>);
+export const Engrenage = (_: P) => (<svg {...base} aria-hidden><circle cx="12" cy="12" r="3" /><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6" /><circle cx="12" cy="12" r="6.3" /></svg>);

@@ -101,23 +101,26 @@ function hauteur(traits: readonly Trait[]): number {
   return ys.length ? Math.max(...ys) - Math.min(...ys) : 0;
 }
 
-export function evaluer(modele: readonly Trait[], enfant: readonly Trait[], etape: Etape): Resultat {
+/** Tolérance du tracé « souple » (réglage pour les enfants qui ont des difficultés motrices). */
+export const SOUPLESSE = 1.35;
+
+export function evaluer(modele: readonly Trait[], enfant: readonly Trait[], etape: Etape, souplesse = 1): Resultat {
   const traits = enfant.filter((t) => t.length > 1);
   if (traits.length === 0) return { ok: false, message: "CON-E1-RELANCE" };
 
-  const seuil = SEUILS[etape];
+  const seuil = SEUILS[etape] * souplesse;
   const groupes = raccorder(traits, modele.length);
   if (groupes.length < modele.length) return { ok: false, message: "CON-TR-07", trait: groupes.length };
   if (groupes.length > modele.length) return { ok: false, message: "CON-TR-12" };
 
-  if (hauteur(groupes) < 0.6 * hauteur(modele)) return { ok: false, message: "CON-TR-10" };
+  if (hauteur(groupes) < (souplesse > 1 ? 0.5 : 0.6) * hauteur(modele)) return { ok: false, message: "CON-TR-10" };
 
   for (let i = 0; i < modele.length; i++) {
     const m = modele[i]!;
     const e = groupes[i]!;
     const direct = ecartMoyen(e, m);
     if (direct <= seuil) {
-      if (dist(e[0]!, m[0]!) > SEUIL_DEPART) return { ok: false, message: "CON-TR-02", trait: i };
+      if (dist(e[0]!, m[0]!) > SEUIL_DEPART * souplesse) return { ok: false, message: "CON-TR-02", trait: i };
       continue;
     }
     const inverse = ecartMoyen(e, [...m].reverse());

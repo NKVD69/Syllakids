@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import traces from "../../../../content/traces-capitales.json";
-import { evaluer, type Trait } from "./evaluer";
+import { evaluer, SOUPLESSE, type Trait } from "./evaluer";
 
 const lettres = traces.lettres as unknown as Record<string, { traits: [number, number][][] }>;
 const modele = (l: string): Trait[] => lettres[l]!.traits.map((t) => t.map(([x, y]) => [x, y] as const));
@@ -46,5 +46,15 @@ describe("évaluation du tracé", () => {
   it("accepte un L tracé en deux traits (variante)", () => {
     const l = modele("L")[0]!;
     expect(evaluer(modele("L"), [l.slice(0, 2), l.slice(1)], "libre").ok).toBe(true);
+  });
+});
+
+describe("tracé plus tolérant (réglage)", () => {
+  const l = (traces.lettres as unknown as Record<string, { traits: [number, number][][] }>).L!.traits.map((t) => t.map(([x, y]) => [x, y] as const));
+  // un L décalé de 28 unités : au-delà du seuil normal (24), en deçà du seuil souple
+  const decale = l.map((t) => t.map(([x, y]) => [x + 28, y] as const));
+  it("le tracé décalé est refusé normalement, accepté en mode souple", () => {
+    expect(evaluer(l, decale, "libre").ok).toBe(false);
+    expect(evaluer(l, decale, "libre", SOUPLESSE).ok).toBe(true);
   });
 });

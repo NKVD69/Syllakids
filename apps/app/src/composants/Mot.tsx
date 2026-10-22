@@ -30,7 +30,7 @@ export function Mot({ texte, segments, syllabes, taille = "12vmin", aides = "com
   }
   const groupes = grouperParSyllabe(seg, syl);
   return (
-    <span className={`mot lettres ${regle ? "regle" : ""} ${aides === "nu" ? "nu" : ""} ${className}`} style={{ fontSize: taille }} aria-label={texte}>
+    <span className={`mot lettres ${regle ? "regle" : ""} ${aides === "nu" ? "nu" : ""} ${className}`} style={{ fontSize: taille === "1em" ? taille : `calc(${taille} * var(--echelle-texte, 1))` }} aria-label={texte}>
       {groupes.map((g, i) => (
         <span key={i} className={`syllabe ${aides !== "nu" ? "arc" : ""} ${aides === "complet" ? `c${i % 2}` : ""}`}>
           {g.map((s, j) => (

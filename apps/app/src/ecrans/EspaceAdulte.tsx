@@ -3,9 +3,11 @@
  * Routes : #/adulte, #/adulte/enfant/<id>[/<classe>], #/adulte/nouvel-enfant, #/adulte/rattacher,
  * #/adulte/classe/<id>, #/adulte/classe/<id>/codes.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import consignes from "@contenu/consignes.json";
 import { naviguer } from "../App";
+import { VerrouCalcul } from "../composants/VerrouCalcul";
+import { estOuvert, fermer, ouvrir as ouvrirVerrou } from "../verrou";
 import { Avatar } from "../composants/Avatars";
 import { useCompte } from "../compte";
 import { useSyllakids, type EtatSynchro } from "../contexte";
@@ -16,31 +18,12 @@ import { FicheEnfant } from "./adulte/FicheEnfant";
 import { MesEnfants, NouvelEnfant, Rattacher } from "./adulte/Famille";
 import { Message, nomUnite, Section, UNITES_RESUMEES, useAction } from "./adulte/outils";
 
-/** L'espace reste ouvert 10 minutes après le dernier passage, puis se reverrouille. */
+/**
+ * Sur la tablette de la classe, l'espace adulte (données des élèves) demande le mot de passe de l'enseignant,
+ * avec sa propre durée d'ouverture : le calcul qui ouvre les paramètres ne suffit pas.
+ */
 const DUREE_OUVERTURE = 10 * 60 * 1000;
-let ouvertJusqua = 0;
-
-/** Verrou parental : une petite addition que l'enfant de 5-6 ans ne sait pas encore lire. */
-function VerrouAddition({ onOuvert }: { onOuvert: () => void }) {
-  const [a, b] = useMemo(() => [6 + Math.floor(Math.random() * 4), 7 + Math.floor(Math.random() * 3)], []);
-  const [reponse, setReponse] = useState("");
-  return (
-    <form
-      className="verrou"
-      onSubmit={(e) => {
-        e.preventDefault();
-        if (Number(reponse) === a + b) onOuvert();
-        else setReponse("");
-      }}
-    >
-      <p>Espace réservé aux adultes. Combien font {a} + {b} ?</p>
-      <p>
-        <input inputMode="numeric" value={reponse} onChange={(e) => setReponse(e.target.value)} aria-label="Réponse" autoFocus />{" "}
-        <button className="bouton-texte" type="submit">Ouvrir</button>
-      </p>
-    </form>
-  );
-}
+let ouvertParMotDePasseJusqua = 0;
 
 /** Sur la tablette de la classe, où un compte enseignant est ouvert : le mot de passe de ce compte. */
 function VerrouMotDePasse({ onOuvert }: { onOuvert: () => void }) {
@@ -207,17 +190,23 @@ function Accueil() {
 export function EspaceAdulte({ route }: { route: string }) {
   const { session, compte } = useCompte();
   const { appareil } = useSyllakids();
-  const [ouvert, setOuvert] = useState(() => Date.now() < ouvertJusqua);
+  const classeAvecMotDePasse = appareil.mode === "classe" && !!session && compte?.role === "enseignant";
+  const dejaOuvert = () => (classeAvecMotDePasse ? Date.now() < ouvertParMotDePasseJusqua : estOuvert());
+  const [ouvert, setOuvert] = useState(dejaOuvert);
+  const prolonger = () => {
+    if (classeAvecMotDePasse) ouvertParMotDePasseJusqua = Date.now() + DUREE_OUVERTURE;
+    else ouvrirVerrou();
+  };
   const ouvrir = () => {
-    ouvertJusqua = Date.now() + DUREE_OUVERTURE;
+    prolonger();
     setOuvert(true);
   };
   useEffect(() => {
-    if (ouvert) ouvertJusqua = Date.now() + DUREE_OUVERTURE;
+    if (ouvert) prolonger();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ouvert, route]);
 
   const parties = route.replace(/^#\/adulte\/?/, "").split("/").filter(Boolean);
-  const classeAvecMotDePasse = appareil.mode === "classe" && !!session && compte?.role === "enseignant";
   const imprimable = parties[0] === "classe" && parties[2] === "codes";
 
   let contenu = <Accueil />;
@@ -231,9 +220,9 @@ export function EspaceAdulte({ route }: { route: string }) {
     <main className={`adulte${imprimable ? " imprimable" : ""}`}>
       <header className="entete-adulte">
         <h1>{parties.length ? <a href="#/adulte">Espace adulte</a> : "Espace adulte"}</h1>
-        <button className="bouton-texte" type="button" onClick={() => { ouvertJusqua = 0; naviguer("#/"); }}>Revenir à l'enfant</button>
+        <button className="bouton-texte" type="button" onClick={() => { ouvertParMotDePasseJusqua = 0; fermer(); naviguer("#/"); }}>Revenir à l'enfant</button>
       </header>
-      {!ouvert ? classeAvecMotDePasse ? <VerrouMotDePasse onOuvert={ouvrir} /> : <VerrouAddition onOuvert={ouvrir} /> : contenu}
+      {!ouvert ? classeAvecMotDePasse ? <VerrouMotDePasse onOuvert={ouvrir} /> : <VerrouCalcul titre="Espace réservé aux adultes." onOuvert={ouvrir} /> : contenu}
     </main>
   );
 }

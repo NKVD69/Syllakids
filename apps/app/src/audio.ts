@@ -40,6 +40,12 @@ export interface OptionsLecture {
   lent?: boolean;
 }
 
+let voixLente = false;
+/** Réglage de l'appareil : consignes et mots dits plus lentement. */
+export function reglerVoix(lente: boolean) {
+  voixLente = lente;
+}
+
 export async function jouer(id: string, options: OptionsLecture): Promise<void> {
   arreter();
   // dernier élément dit, lisible par les tests automatiques (aucune donnée personnelle)
@@ -48,6 +54,7 @@ export async function jouer(id: string, options: OptionsLecture): Promise<void> 
   if (a) {
     enCours = a;
     a.currentTime = 0;
+    a.playbackRate = voixLente ? 0.85 : 1;
     await new Promise<void>((fin) => {
       a.onended = () => fin();
       a.onerror = () => fin();
@@ -67,7 +74,7 @@ export async function jouer(id: string, options: OptionsLecture): Promise<void> 
     u.lang = "fr-FR";
     const v = voixFrancaise();
     if (v) u.voice = v;
-    u.rate = options.lent ? 0.7 : 0.9;
+    u.rate = options.lent ? 0.7 : voixLente ? 0.75 : 0.9;
     u.onboundary = (e) => options.surMot?.(e.charIndex);
     u.onend = () => fin();
     u.onerror = () => fin();

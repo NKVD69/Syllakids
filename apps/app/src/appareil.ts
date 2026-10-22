@@ -33,6 +33,15 @@ export interface Appareil {
   /** Tablette de la classe : choix de l'enfant et images secrètes à chaque ouverture. */
   mode: "maison" | "classe";
   classe?: { id: string; nom: string };
+  /** Réglages de l'appareil (les mêmes pour tous les enfants qui l'utilisent). */
+  options?: OptionsAppareil;
+}
+
+export interface OptionsAppareil {
+  /** Réglure Seyès sous les mots. Absent : oui. */
+  regle?: boolean;
+  /** Consignes et mots dits plus lentement. */
+  voixLente?: boolean;
 }
 
 const CLE_APPAREIL = "syllakids:appareil:v1";

@@ -17,7 +17,8 @@ export function EcranUnite({ id }: { id: string }) {
   const seance = useRef(faites >= total ? 0 : faites).current;
   // révision en tête de séance si des items d'unités précédentes sont à revoir aujourd'hui
   const revision = useRef(itemsDus(progression.items, jour(), { exclureUnite: id }).length > 0).current;
-  const etapes = useMemo(() => (f ? deroule(f, profil, seance, revision) : []), [f, profil, seance, revision]);
+  const micro = useRef(progression.reglages.micro !== false).current;
+  const etapes = useMemo(() => (f ? deroule(f, profil, seance, revision, micro) : []), [f, profil, seance, revision, micro]);
   useEffect(() => debutSeance(), [debutSeance]);
   const [i, setI] = useState(0);
 

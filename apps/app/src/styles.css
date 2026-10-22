@@ -113,6 +113,18 @@ button { font: inherit; color: inherit; }
 .regle .syllabe, .syllabe.regle { padding-bottom: 0; }
 .regle .syllabe.arc::after, .syllabe.arc.regle::after { bottom: auto; top: calc(var(--base) + 0.05em); }
 .phrase.regle .mot { padding-inline: 0; }
+
+/* Réglages d'affichage (paramètres) */
+.grand-texte { --echelle-texte: 1.25; }
+.sans-couleurs .syllabe.c0, .sans-couleurs .syllabe.c1 { color: var(--encre); }
+.sans-arcs .syllabe.arc::after { display: none; }
+.sans-regle .regle { background-image: none; }
+.apercu { display: flex; justify-content: center; padding: 8px 0 12px; font-family: var(--police); }
+.choix-enfant { display: flex; flex-wrap: wrap; gap: 8px; }
+.choix-enfant button { display: inline-flex; align-items: center; gap: 8px; border: 2px solid #c9d3ea; border-radius: 999px; padding: 4px 14px 4px 4px; background: #fff; cursor: pointer; font: inherit; }
+.choix-enfant button.choisi { border-color: var(--bleu); background: #eef3fc; }
+.question-calcul { font-size: 22px; }
+.adulte .question-calcul input { font-size: 26px; width: 4ch; text-align: center; padding: 4px 6px; border: 2px solid var(--trait-ui); border-radius: 8px; }
 .mot { display: inline-flex; gap: 0.02em; align-items: flex-end; }
 .syllabe { position: relative; padding-bottom: 0.18em; }
 .syllabe.arc::after {

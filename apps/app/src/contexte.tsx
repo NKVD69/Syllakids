@@ -45,6 +45,8 @@ interface Contexte {
   progressionDe: (id: string) => Progression;
   modifierProgressionDe: (id: string, f: (p: Progression) => Progression) => void;
   changerMode: (mode: Appareil["mode"], classe?: Appareil["classe"]) => void;
+  /** Réglages de l'appareil (réglure, voix). */
+  changerOptions: (o: Partial<NonNullable<Appareil["options"]>>) => void;
   etatSynchro: EtatSynchro;
   synchroniserMaintenant: () => Promise<void>;
   /** Ajoute du temps de lecture au profil en cours. */
@@ -302,6 +304,11 @@ export function FournisseurSyllakids({ children }: { children: ReactNode }) {
     [majAppareil],
   );
 
+  const changerOptions = useCallback(
+    (o: Partial<NonNullable<Appareil["options"]>>) => majAppareil((a) => ({ ...a, options: { ...a.options, ...o } })),
+    [majAppareil],
+  );
+
   // ---- consignes et séance -------------------------------------------------------------
   const dire = useCallback(async (id: string, son?: string, nombre?: number) => {
     derniere.current = { id, son, nombre };
@@ -330,11 +337,11 @@ export function FournisseurSyllakids({ children }: { children: ReactNode }) {
   const valeur = useMemo(
     () => ({
       appareil, profil, progression, modifier, choisirProfil, ajouterProfil, modifierProfil, retirerProfil, installerProfils,
-      progressionDe, modifierProgressionDe, changerMode, etatSynchro, synchroniserMaintenant, compterTemps, conserver,
+      progressionDe, modifierProgressionDe, changerMode, changerOptions, etatSynchro, synchroniserMaintenant, compterTemps, conserver,
       dire, redire, noter, debutSeance, bilanSeance,
     }),
     [appareil, profil, progression, modifier, choisirProfil, ajouterProfil, modifierProfil, retirerProfil, installerProfils,
-      progressionDe, modifierProgressionDe, changerMode, etatSynchro, synchroniserMaintenant, compterTemps, conserver,
+      progressionDe, modifierProgressionDe, changerMode, changerOptions, etatSynchro, synchroniserMaintenant, compterTemps, conserver,
       dire, redire, noter, debutSeance, bilanSeance],
   );
   return <Ctx.Provider value={valeur}>{children}</Ctx.Provider>;

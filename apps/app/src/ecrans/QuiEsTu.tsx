@@ -7,7 +7,7 @@ import { naviguer } from "../App";
 import type { ProfilEnfant } from "../appareil";
 import { Avatar, IMAGES_SECRETES } from "../composants/Avatars";
 import { BoutonRond } from "../composants/BoutonRond";
-import { Cadenas, Maison } from "../composants/Icones";
+import { Cadenas, Engrenage, Maison } from "../composants/Icones";
 import { useSyllakids } from "../contexte";
 
 function ImagesSecretes({ profil, onRetour }: { profil: ProfilEnfant; onRetour: () => void }) {
@@ -65,6 +65,7 @@ export function QuiEsTu() {
         <span className="logo" aria-label="Syllakids"><span className="s1">SYLLA</span><span className="s2">KIDS</span></span>
         {classe && appareil.classe && <span className="nom-classe">{appareil.classe.nom}</span>}
         <span className="espace" />
+        <BoutonRond nom="Paramètres" variante="petit" onClick={() => naviguer("#/parametres")}><Engrenage /></BoutonRond>
         <BoutonRond nom="Espace adulte" variante="petit" onClick={() => naviguer("#/adulte")}><Cadenas /></BoutonRond>
       </header>
       <main className="cahier" style={{ flex: 1, display: "flex" }}>

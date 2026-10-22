@@ -27,9 +27,11 @@ const etape = (t) => { etapes.push(t); console.log("✓", t); };
 
 async function deverrouiller(p) {
   await p.goto(base + "#/adulte");
-  const texte = await p.textContent(".verrou p");
-  const m = texte.match(/(\d+) \+ (\d+)/);
-  await p.fill('input[aria-label="Réponse"]', String(Number(m[1]) + Number(m[2])));
+  // calcul de CE1 : 47 + 25, 63 − 28 ou 4 × 7
+  const texte = await p.textContent('label[for="reponse-calcul"]');
+  const [, a, op, b] = texte.match(/(\d+) ([+−×]) (\d+)/);
+  const r = op === "+" ? Number(a) + Number(b) : op === "−" ? Number(a) - Number(b) : Number(a) * Number(b);
+  await p.fill("#reponse-calcul", String(r));
   await p.click('button:has-text("Ouvrir")');
 }
 

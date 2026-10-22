@@ -164,7 +164,7 @@ export function reconnaitre(traits: readonly Trait[], modeles: Readonly<Record<s
 }
 
 /** Vrai si le tracé est reconnu comme la lettre attendue parmi les lettres candidates. */
-export function estLaLettre(traits: readonly Trait[], attendue: string, modeles: Readonly<Record<string, readonly Trait[]>>): boolean {
+export function estLaLettre(traits: readonly Trait[], attendue: string, modeles: Readonly<Record<string, readonly Trait[]>>, souplesse = 1): boolean {
   const r = reconnaitre(traits, modeles);
-  return r !== null && r.lettre === attendue && r.distance <= SEUIL_RECONNAISSANCE;
+  return r !== null && r.lettre === attendue && r.distance <= SEUIL_RECONNAISSANCE * souplesse;
 }

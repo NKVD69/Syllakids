@@ -1,5 +1,11 @@
 # Journal des sessions
 
+## Session 7 — 23 octobre 2026
+
+- Bouton « Paramètres » (roue dentée) sur le chemin et sur l'écran de choix de l'enfant, protégé par un calcul de CE1 (addition ou soustraction avec retenue, table de 2 à 5) ; après 3 erreurs, 30 secondes d'attente. Le même calcul ouvre l'espace adulte (sauf sur la tablette de la classe, où le mot de passe de l'enseignant reste demandé).
+- Réglages de chaque enfant : niveau, syllabes en couleurs, arcs sous les syllabes, mots et phrases plus grands, mode Dys, activités au micro, tracé plus tolérant, temps maximal par jour ; avec un aperçu. Réglages de l'appareil : réglure Seyès sous les mots, voix plus lente.
+- 215 tests automatisés.
+
 ## Session 6 — 22 octobre 2026
 
 Corrections après les premiers essais :

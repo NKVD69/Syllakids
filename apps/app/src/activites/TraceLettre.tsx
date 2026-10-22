@@ -3,7 +3,7 @@ import { BoutonRond } from "../composants/BoutonRond";
 import { Coche, Gomme } from "../composants/Icones";
 import { ENCOURAGEMENTS, TRACES, consigne } from "../contenu";
 import { useSyllakids } from "../contexte";
-import { evaluer, type Etape, type Point, type Trait } from "../trace/evaluer";
+import { evaluer, SOUPLESSE, type Etape, type Point, type Trait } from "../trace/evaluer";
 import { auHasard, pause, type PropsActivite } from "./commun";
 import { calculerRepere, dessinerReglure, pointDepart, positionsNumeros, tracerChemin, versModele, type Repere } from "../trace/dessin";
 
@@ -20,7 +20,7 @@ const ESSAIS_MAX = 3;
 
 /** E1 Trace la lettre : observer, repasser, tracer avec le point de départ, puis sans aide. */
 export function TraceLettre({ f, profil, onFini }: PropsActivite) {
-  const { dire, conserver } = useSyllakids();
+  const { dire, conserver, progression } = useSyllakids();
   const lettres = useMemo(
     () => (f.unite.rang === 0 ? (profil === "5ans" ? ["A", "I"] : ["A", "I", "O", "É"]) : f.unite.graphemes.map((g) => g.g)),
     [f, profil],
@@ -123,7 +123,7 @@ export function TraceLettre({ f, profil, onFini }: PropsActivite) {
   async function verifier() {
     if (occupe.current || phase === "observer") return;
     occupe.current = true;
-    const r = evaluer(modele, traits.current, phase);
+    const r = evaluer(modele, traits.current, phase, progression.reglages.traceSouple ? SOUPLESSE : 1);
     // la lettre écrite à la dernière étape (sans aide, ou guidée à 5 ans) est gardée si l'accord le permet
     if (iPhase === phases.length - 1 && essais.current === 0) {
       conserver({ type: "trace", item: `lettre:${lettre}`, traits: [traits.current.map((t) => [...t])] });

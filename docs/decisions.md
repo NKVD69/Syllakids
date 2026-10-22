@@ -1,5 +1,13 @@
 # Décisions techniques
 
+## 2026-10-23 — Un calcul de CE1 pour les écrans adultes
+
+L'addition simple (7 + 8) pouvait être trouvée par un enfant de CP. Les paramètres et l'espace adulte demandent maintenant un calcul de CE1, tiré au hasard : addition ou soustraction à deux chiffres avec retenue, ou table de 2 à 5. Une mauvaise réponse change le calcul ; trois erreurs imposent 30 secondes d'attente, pour qu'on ne trouve pas en tapant au hasard. L'accès reste ouvert 10 minutes, et se referme dès qu'on revient à l'enfant. Sur la tablette de la classe, l'espace adulte (données des élèves) garde le mot de passe de l'enseignant : le calcul n'ouvre là que les paramètres.
+
+## 2026-10-23 — Réglages de l'enfant et réglages de l'appareil
+
+Les réglages qui dépendent de l'enfant (niveau, aides à la lecture, micro, tolérance du tracé, temps maximal) suivent l'enfant : ils sont enregistrés avec sa progression et synchronisés entre la classe et la maison. Ceux qui dépendent de l'appareil (réglure, vitesse de la voix) restent sur l'appareil.
+
 ## 2026-10-22 — La réglure Seyès sous chaque texte, plus sur toute la page
 
 Un fond Seyès de page ne peut pas tomber juste sous des textes centrés de tailles différentes : les lettres flottaient entre les lignes. Chaque texte à lire porte maintenant sa propre réglure (classe `.regle`), calculée à partir des mesures de la police : la ligne forte passe sous les lettres, la capitale occupe 3 interlignes, la ligne forte suivante est juste au-dessus (les accents s'y logent). La hauteur de ligne vaut 8 interlignes, si bien qu'une phrase sur plusieurs lignes garde une réglure continue. La page reste blanche avec sa marge rouge.

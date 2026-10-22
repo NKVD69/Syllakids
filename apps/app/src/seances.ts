@@ -25,8 +25,9 @@ export function nombreSeances(f: FichierUnite): number {
  * Déroulé d'une séance : écouter, répéter, lire, écrire.
  * Séance 1 : découverte du son. Séance 2 : entraînement et lecture de mots et de phrases.
  */
-export function deroule(f: FichierUnite, profil: Profil, seance: number, revision = false): Activite[] {
-  const etapes = derouleSansRevision(f, profil, seance);
+export function deroule(f: FichierUnite, profil: Profil, seance: number, revision = false, micro = true): Activite[] {
+  // sans micro (réglage de l'adulte), les activités de répétition sont retirées
+  const etapes = derouleSansRevision(f, profil, seance).filter((e) => micro || (e.code !== "R1" && e.code !== "R2"));
   return revision ? [{ code: "REV", composant: Revision }, ...etapes] : etapes;
 }
 

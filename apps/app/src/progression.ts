@@ -6,6 +6,16 @@ export interface Reglages {
   dys: boolean;
   /** Durée maximale de lecture par jour, en minutes (0 ou absent : pas de limite). */
   dureeMax?: number;
+  /** Syllabes en couleurs alternées (bleu, rouge). Absent : oui. */
+  couleurs?: boolean;
+  /** Arcs sous les syllabes. Absent : oui. */
+  arcs?: boolean;
+  /** Mots et phrases plus grands (un quart en plus). */
+  grandTexte?: boolean;
+  /** Activités au micro (répéter, faire durer un son). Absent : oui. */
+  micro?: boolean;
+  /** Tracé des lettres jugé avec plus de tolérance (difficultés motrices). */
+  traceSouple?: boolean;
 }
 
 export interface Progression {

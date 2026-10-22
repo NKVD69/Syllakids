@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { naviguer } from "../App";
 import { Avatar } from "../composants/Avatars";
 import { BoutonRond } from "../composants/BoutonRond";
-import { Cadenas, Coche, Etoile } from "../composants/Icones";
+import { Cadenas, Coche, Engrenage, Etoile } from "../composants/Icones";
 import { UNITES } from "../contenu";
 import { useSyllakids } from "../contexte";
 import { estOuverte, tempsDuJour } from "../progression";
@@ -31,6 +31,7 @@ export function Chemin() {
             <Avatar id={profil.avatar} taille={56} />
           </button>
         )}
+        <BoutonRond nom="Paramètres" variante="petit" onClick={() => naviguer("#/parametres")}><Engrenage /></BoutonRond>
         <BoutonRond nom="Espace adulte" variante="petit" onClick={() => naviguer("#/adulte")}><Cadenas /></BoutonRond>
       </header>
       <main className={`cahier${pause ? " en-pause" : ""}`} style={{ flex: 1 }}>

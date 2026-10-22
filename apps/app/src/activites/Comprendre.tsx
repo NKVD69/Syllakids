@@ -72,7 +72,7 @@ export function PhraseImage({ f, profil, onFini }: PropsActivite) {
 
   return (
     <div className="scene">
-      <div className="phrase lettres regle" style={{ fontSize: "6.5vmin" }}>
+      <div className="phrase lettres regle" style={{ fontSize: "calc(6.5vmin * var(--echelle-texte, 1))" }}>
         {motsDePhrase(tour.cible.texte).map((m, k) => <Mot key={k} texte={m} taille="1em" regle={false} />)}
       </div>
       <div className="images-choix">
@@ -248,7 +248,7 @@ export function Revision({ f, onFini }: PropsActivite) {
   return (
     <div className="scene">
       {courant.item.type === "phrase" ? (
-        <div className="phrase lettres regle" style={{ fontSize: "8vmin" }}>{motsDePhrase(courant.item.texte).map((m, k) => <Mot key={k} texte={m} taille="1em" regle={false} />)}</div>
+        <div className="phrase lettres regle" style={{ fontSize: "calc(8vmin * var(--echelle-texte, 1))" }}>{motsDePhrase(courant.item.texte).map((m, k) => <Mot key={k} texte={m} taille="1em" regle={false} />)}</div>
       ) : (
         <Mot texte={courant.item.texte} taille="15vmin" />
       )}

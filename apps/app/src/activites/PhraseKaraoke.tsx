@@ -41,7 +41,7 @@ export function PhraseKaraoke({ f, profil, onFini }: PropsActivite) {
 
   return (
     <div className="scene">
-      <div className="phrase lettres regle" style={{ fontSize: "8.5vmin" }}>
+      <div className="phrase lettres regle" style={{ fontSize: "calc(8.5vmin * var(--echelle-texte, 1))" }}>
         {mots.map((m, k) => (
           <span key={k} style={{ display: "inline-flex", alignItems: "flex-end" }}>
             <Mot texte={m} taille="1em" className={k === lu ? "lu" : ""} regle={false} />
