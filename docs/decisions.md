@@ -1,5 +1,9 @@
 # Décisions techniques
 
+## 2026-10-22 — La réglure Seyès sous chaque texte, plus sur toute la page
+
+Un fond Seyès de page ne peut pas tomber juste sous des textes centrés de tailles différentes : les lettres flottaient entre les lignes. Chaque texte à lire porte maintenant sa propre réglure (classe `.regle`), calculée à partir des mesures de la police : la ligne forte passe sous les lettres, la capitale occupe 3 interlignes, la ligne forte suivante est juste au-dessus (les accents s'y logent). La hauteur de ligne vaut 8 interlignes, si bien qu'une phrase sur plusieurs lignes garde une réglure continue. La page reste blanche avec sa marge rouge.
+
 ## 2026-10-11 — Vite plutôt que Next.js pour l'application enfant
 
 Le cahier des charges proposait React avec Next.js. L'application enfant doit fonctionner hors ligne et être empaquetée avec Capacitor : une application monopage Vite produit directement des fichiers statiques, sans serveur. Next.js reste envisagé pour le back-office (édition des contenus), qui partagera la bibliothèque `@syllakids/decodabilite`.

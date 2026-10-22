@@ -41,12 +41,12 @@ export function PhraseKaraoke({ f, profil, onFini }: PropsActivite) {
 
   return (
     <div className="scene">
-      <div className="phrase" style={{ fontSize: "8.5vmin" }}>
+      <div className="phrase lettres regle" style={{ fontSize: "8.5vmin" }}>
         {mots.map((m, k) => (
           <span key={k} style={{ display: "inline-flex", alignItems: "flex-end" }}>
-            <Mot texte={m} taille="1em" className={k === lu ? "lu" : ""} />
+            <Mot texte={m} taille="1em" className={k === lu ? "lu" : ""} regle={false} />
             {k === mots.length - 1 && /[.!?]/.test(ponctuation) && (
-              <span className="lettres" style={{ paddingBottom: "0.18em", marginLeft: ponctuation === "." ? "0.04em" : "0.25em" }}>{ponctuation}</span>
+              <span className="lettres" style={{ marginLeft: ponctuation === "." ? "0.04em" : "0.25em" }}>{ponctuation}</span>
             )}
           </span>
         ))}

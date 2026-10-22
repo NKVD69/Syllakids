@@ -44,7 +44,7 @@ export function Glissade({ f, profil, onFini }: PropsActivite) {
   return (
     <div className="scene">
       {colle ? (
-        <span className="lettres syllabe arc c0" style={{ fontSize: "24vmin" }}>{consonne + voyelle}</span>
+        <span className="lettres syllabe arc c0 regle" style={{ fontSize: "24vmin" }}>{consonne + voyelle}</span>
       ) : (
         <div className="piste">
           <div

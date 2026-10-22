@@ -72,8 +72,8 @@ export function PhraseImage({ f, profil, onFini }: PropsActivite) {
 
   return (
     <div className="scene">
-      <div className="phrase" style={{ fontSize: "6.5vmin" }}>
-        {motsDePhrase(tour.cible.texte).map((m, k) => <Mot key={k} texte={m} taille="1em" />)}
+      <div className="phrase lettres regle" style={{ fontSize: "6.5vmin" }}>
+        {motsDePhrase(tour.cible.texte).map((m, k) => <Mot key={k} texte={m} taille="1em" regle={false} />)}
       </div>
       <div className="images-choix">
         {tour.choix.map((p, k) => (
@@ -158,7 +158,7 @@ export function ChronoLecture({ onFini }: PropsActivite) {
         <div className="chrono">
           {page(mots, lus).map((m) => (
             <button key={m.id} type="button" className={lus.has(m.id) ? "lu" : ""} onClick={() => setLus((s) => new Set(s).add(m.id))} aria-label={m.texte}>
-              <Mot texte={m.texte} segments={m.segments} syllabes={m.syllabes} taille="6.5vmin" aides="arcs" />
+              <Mot texte={m.texte} segments={m.segments} syllabes={m.syllabes} taille="6.5vmin" aides="arcs" regle={false} />
             </button>
           ))}
         </div>
@@ -248,7 +248,7 @@ export function Revision({ f, onFini }: PropsActivite) {
   return (
     <div className="scene">
       {courant.item.type === "phrase" ? (
-        <div className="phrase" style={{ fontSize: "8vmin" }}>{motsDePhrase(courant.item.texte).map((m, k) => <Mot key={k} texte={m} taille="1em" />)}</div>
+        <div className="phrase lettres regle" style={{ fontSize: "8vmin" }}>{motsDePhrase(courant.item.texte).map((m, k) => <Mot key={k} texte={m} taille="1em" regle={false} />)}</div>
       ) : (
         <Mot texte={courant.item.texte} taille="15vmin" />
       )}

@@ -12,10 +12,15 @@ export function calculerRepere(largeur: number, hauteur: number): Repere {
 export const versEcran = (r: Repere, [x, y]: Point): Point => [r.x0 + x * r.s, r.y0 + y * r.s];
 export const versModele = (r: Repere, x: number, y: number): Point => [(x - r.x0) / r.s, (y - r.y0) / r.s];
 
-export function dessinerReglure(ctx: CanvasRenderingContext2D, r: Repere, marge = true) {
+/**
+ * Réglure Seyès du canevas, à l'échelle de la lettre modèle : ligne forte sous la lettre,
+ * capitale sur 3 interlignes, lignes verticales tous les 4 interlignes. Fond blanc opaque.
+ */
+export function dessinerReglure(ctx: CanvasRenderingContext2D, r: Repere, verticales = true) {
   const il = (100 * r.s) / 3; // la capitale occupe 3 interlignes
   const base = r.y0 + 100 * r.s;
-  ctx.lineWidth = 1;
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, r.largeur, r.hauteur);
   for (let k = -12; k <= 12; k++) {
     const y = base - k * il;
     if (y < 0 || y > r.hauteur) continue;
@@ -24,14 +29,44 @@ export function dessinerReglure(ctx: CanvasRenderingContext2D, r: Repere, marge 
     ctx.lineWidth = forte ? 1.6 : 1;
     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(r.largeur, y); ctx.stroke();
   }
-  for (let x = (marge ? 48 : 0) + il * 4; marge && x < r.largeur; x += il * 4) {
-    ctx.strokeStyle = "#cdd6ee"; ctx.lineWidth = 1;
+  if (!verticales) return;
+  // une verticale juste avant la lettre, puis tous les 4 interlignes de part et d'autre
+  const depart = r.x0 - il / 2;
+  for (let x = depart - Math.ceil(depart / (4 * il)) * 4 * il; x < r.largeur; x += 4 * il) {
+    if (x < 0) continue;
+    ctx.strokeStyle = "#dfe5f4"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, r.hauteur); ctx.stroke();
   }
-  if (marge) {
-    ctx.strokeStyle = "#e07a86"; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(47, 0); ctx.lineTo(47, r.hauteur); ctx.stroke();
+}
+
+/** Point situé à la distance d (unités du modèle) du début du trait, en suivant le trait. */
+function avancer(t: Trait, d: number): Point {
+  let reste = d;
+  for (let i = 1; i < t.length; i++) {
+    const [ax, ay] = t[i - 1]!;
+    const [bx, by] = t[i]!;
+    const l = Math.hypot(bx - ax, by - ay);
+    if (l >= reste && l > 0) return [ax + ((bx - ax) * reste) / l, ay + ((by - ay) * reste) / l];
+    reste -= l;
   }
+  return t[t.length - 1]!;
+}
+
+/**
+ * Où placer le numéro de chaque trait. Quand deux traits partent du même point (A, B, D, E, F, M, N, P, R…),
+ * le numéro du second est décalé le long de son trait : sinon il recouvre le « 1 » et la numérotation
+ * semble commencer à 2.
+ */
+export function positionsNumeros(modele: readonly Trait[], ecart = 16): Point[] {
+  const places: Point[] = [];
+  for (const t of modele) {
+    let p: Point = t[0]!;
+    for (let d = ecart; places.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) < ecart) && d <= ecart * 4; d += ecart / 2) {
+      p = avancer(t, d);
+    }
+    places.push(p);
+  }
+  return places;
 }
 
 export function tracerChemin(ctx: CanvasRenderingContext2D, r: Repere, t: Trait, jusqua = 1) {
@@ -44,8 +79,8 @@ export function tracerChemin(ctx: CanvasRenderingContext2D, r: Repere, t: Trait,
   ctx.stroke();
 }
 
-export function pointDepart(ctx: CanvasRenderingContext2D, r: Repere, t: Trait, numero?: number) {
-  const [x, y] = versEcran(r, t[0]!);
+export function pointDepart(ctx: CanvasRenderingContext2D, r: Repere, t: Trait, numero?: number, place?: Point) {
+  const [x, y] = versEcran(r, place ?? t[0]!);
   ctx.fillStyle = "#2e9e5b";
   ctx.beginPath(); ctx.arc(x, y, Math.max(10, r.s * 6), 0, Math.PI * 2); ctx.fill();
   if (numero !== undefined) {

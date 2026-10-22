@@ -21,6 +21,10 @@
   color-scheme: light;
 }
 .dys { --police: "OpenDyslexic", "Andika", sans-serif; }
+
+/* Mesures de la police (en em), pour poser les lettres sur la réglure : hauteur des capitales, jambages. */
+:root { --cap: 0.719; --asc: 1.221; --desc: 0.391; }
+.dys { --cap: 0.859; --asc: 1.3; --desc: 0.52; }
 .dys .lettres { letter-spacing: 0.12em; word-spacing: 0.35em; }
 
 * { box-sizing: border-box; }
@@ -39,12 +43,9 @@ button { font: inherit; color: inherit; }
 :focus-visible { outline: 4px solid var(--bleu); outline-offset: 3px; }
 
 .cahier {
+  /* page blanche avec la marge rouge ; la réglure Seyès est dessinée sous chaque texte, à son échelle (.regle) */
   background-color: var(--papier);
-  background-image:
-    linear-gradient(to right, transparent 46px, var(--marge) 46px, var(--marge) 48px, transparent 48px),
-    repeating-linear-gradient(to bottom, transparent 0 calc(4 * var(--il) - 1.5px), var(--ligne-forte) calc(4 * var(--il) - 1.5px) calc(4 * var(--il))),
-    repeating-linear-gradient(to bottom, transparent 0 calc(var(--il) - 1px), var(--ligne-fine) calc(var(--il) - 1px) var(--il)),
-    repeating-linear-gradient(to right, transparent 0 calc(4 * var(--il) - 1px), var(--ligne-fine) calc(4 * var(--il) - 1px) calc(4 * var(--il)));
+  background-image: linear-gradient(to right, transparent 46px, var(--marge) 46px, var(--marge) 48px, transparent 48px);
 }
 .fond-blanc .cahier { background-image: none; }
 
@@ -91,6 +92,27 @@ button { font: inherit; color: inherit; }
 
 /* Lettres et syllabes */
 .lettres { font-family: var(--police); font-weight: 700; line-height: 1; letter-spacing: 0.04em; }
+
+/*
+ * Réglure Seyès à l'échelle du texte : la ligne forte passe sous les lettres (ligne d'écriture),
+ * une capitale occupe 3 interlignes, la ligne forte suivante est au-dessus (les accents s'y logent).
+ * La hauteur de ligne vaut 8 interlignes : sur plusieurs lignes, la réglure reste alignée.
+ */
+.regle {
+  --i: calc(var(--cap) * 1em / 3);
+  --base: calc(var(--cap) * 4em / 3 + (var(--asc) - var(--desc)) * 0.5em);
+  line-height: calc(var(--cap) * 8 / 3);
+  background-image:
+    linear-gradient(to bottom, var(--ligne-forte) 0 max(1.5px, 0.016em), transparent 0),
+    linear-gradient(to bottom, var(--ligne-fine) 0 max(1px, 0.01em), transparent 0);
+  background-size: 100% calc(4 * var(--i)), 100% var(--i);
+  background-position: 0 calc(var(--base) - max(0.75px, 0.008em));
+  padding-inline: 0.3em;
+}
+.regle .lettres, .regle.lettres { line-height: calc(var(--cap) * 8 / 3); }
+.regle .syllabe, .syllabe.regle { padding-bottom: 0; }
+.regle .syllabe.arc::after, .syllabe.arc.regle::after { bottom: auto; top: calc(var(--base) + 0.05em); }
+.phrase.regle .mot { padding-inline: 0; }
 .mot { display: inline-flex; gap: 0.02em; align-items: flex-end; }
 .syllabe { position: relative; padding-bottom: 0.18em; }
 .syllabe.arc::after {
@@ -103,6 +125,7 @@ button { font: inherit; color: inherit; }
 .mot.nu .syllabe { color: var(--encre); }
 .muette { color: var(--muette); }
 .phrase { display: flex; flex-wrap: wrap; gap: 0.45em 0.55em; justify-content: center; max-width: 92vw; }
+.phrase.regle { row-gap: 0; padding-inline: 0.5em; }
 .phrase .mot.lu { outline: 0.06em solid var(--vert); outline-offset: 0.08em; border-radius: 0.12em; }
 
 /* Chemin des unités */

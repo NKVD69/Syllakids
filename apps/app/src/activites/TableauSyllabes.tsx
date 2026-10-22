@@ -12,7 +12,8 @@ export function TableauSyllabes({ f, profil, onFini }: PropsActivite) {
   const base = useMemo<ItemSyllabe[]>(() => {
     const s = syllabesDe(f);
     if (f.unite.rang === 0 && f.unite.revision) {
-      const lignes = f.unite.revision.slice(0, profil === "5ans" ? 1 : 2).flat();
+      // chaque voyelle une seule fois (les grilles de révision du livret répètent certaines voyelles)
+      const lignes = [...new Set(f.unite.revision.slice(0, profil === "5ans" ? 1 : 2).flat())];
       return lignes.map((v) => s.find((x) => x.texte === v)!).filter(Boolean);
     }
     return s;

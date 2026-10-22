@@ -1,5 +1,15 @@
 # Journal des sessions
 
+## Session 6 — 22 octobre 2026
+
+Corrections après les premiers essais :
+
+- Lettres posées sur la réglure : le fond Seyès de toute la page (impossible à aligner avec des textes de tailles différentes) est remplacé par une réglure dessinée sous chaque texte, à son échelle : ligne forte sous les lettres, capitale sur 3 interlignes, en police Andika comme en mode Dys. Le canevas de tracé a un fond blanc et sa seule réglure.
+- Le O n'apparaît plus deux fois dans le tableau des voyelles (les grilles du livret répètent certaines voyelles pour compléter les lignes).
+- Numéros des traits : quand deux traits partent du même point (A, B, D, E, F, M, N, P, R, É, È, Ê), le « 2 » recouvrait le « 1 » ; il est maintenant décalé le long de son trait.
+- 211 tests automatisés.
+
+
 ## Session 5 — 12 octobre 2026
 
 Fait (les points restants de la session 4, sauf la double authentification) :

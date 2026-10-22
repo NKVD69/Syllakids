@@ -10,10 +10,12 @@ interface Props {
   aides?: Aides;
   pluriel?: boolean;
   className?: string;
+  /** Réglure Seyès sous le mot (faux : le conteneur la dessine déjà, ou l'espace manque). */
+  regle?: boolean;
 }
 
 /** Affiche un mot avec ses repères de lecture : arcs sous les syllabes, couleurs alternées, lettres muettes en gris. */
-export function Mot({ texte, segments, syllabes, taille = "12vmin", aides = "complet", pluriel = true, className = "" }: Props) {
+export function Mot({ texte, segments, syllabes, taille = "12vmin", aides = "complet", pluriel = true, className = "", regle = true }: Props) {
   let seg = segments;
   let syl = syllabes;
   if (!seg || !syl) {
@@ -28,7 +30,7 @@ export function Mot({ texte, segments, syllabes, taille = "12vmin", aides = "com
   }
   const groupes = grouperParSyllabe(seg, syl);
   return (
-    <span className={`mot lettres ${aides === "nu" ? "nu" : ""} ${className}`} style={{ fontSize: taille }} aria-label={texte}>
+    <span className={`mot lettres ${regle ? "regle" : ""} ${aides === "nu" ? "nu" : ""} ${className}`} style={{ fontSize: taille }} aria-label={texte}>
       {groupes.map((g, i) => (
         <span key={i} className={`syllabe ${aides !== "nu" ? "arc" : ""} ${aides === "complet" ? `c${i % 2}` : ""}`}>
           {g.map((s, j) => (

@@ -19,7 +19,7 @@ export function Presentation({ f, onFini }: PropsActivite) {
 
   return (
     <div className="scene">
-      <span className="lettres" style={{ fontSize: "38vmin", color: "var(--bleu)" }} aria-label={`Lettre ${g.g}`}>{g.g}</span>
+      <span className="lettres regle" style={{ fontSize: "28vmin", color: "var(--bleu)" }} aria-label={`Lettre ${g.g}`}>{g.g}</span>
       <div className="actions">
         <BoutonRond nom="Écouter le son" onClick={async () => { await dire("CON-SON-01", son); setEcoute(true); }}><HautParleur /></BoutonRond>
         <BoutonRond

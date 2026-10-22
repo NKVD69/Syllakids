@@ -5,7 +5,7 @@ import { ENCOURAGEMENTS, TRACES, consigne } from "../contenu";
 import { useSyllakids } from "../contexte";
 import { evaluer, type Etape, type Point, type Trait } from "../trace/evaluer";
 import { auHasard, pause, type PropsActivite } from "./commun";
-import { calculerRepere, dessinerReglure, pointDepart, tracerChemin, versModele, type Repere } from "../trace/dessin";
+import { calculerRepere, dessinerReglure, pointDepart, positionsNumeros, tracerChemin, versModele, type Repere } from "../trace/dessin";
 
 type Phase = "observer" | Etape;
 const PHASES_6ANS: Phase[] = ["observer", "repasser", "guide", "libre"];
@@ -63,7 +63,12 @@ export function TraceLettre({ f, profil, onFini }: PropsActivite) {
         if (avance > 0) tracerChemin(ctx, r, t, avance);
       });
       ctx.setLineDash([]);
-      modele.forEach((t, k) => pointDepart(ctx, r, t, total > 1 ? k + 1 : undefined));
+      const places = positionsNumeros(modele);
+      // du dernier au premier : le « 1 » reste toujours visible au-dessus
+      [...modele].reverse().forEach((t, j) => {
+        const k = total - 1 - j;
+        pointDepart(ctx, r, t, total > 1 ? k + 1 : undefined, places[k]);
+      });
     } else if (phase === "guide" && modele[0]) {
       const k = Math.min(traits.current.length, modele.length - 1);
       pointDepart(ctx, r, modele[k]!, modele.length > 1 ? k + 1 : undefined);
