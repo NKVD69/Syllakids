@@ -5,14 +5,15 @@ import { Fleche, HautParleur } from "../composants/Icones";
 import { Mot } from "../composants/Mot";
 import { ENCOURAGEMENTS, motsDe } from "../contenu";
 import { consigneProfil, useSyllakids } from "../contexte";
-import { auHasard, melanger, type PropsActivite } from "./commun";
+import { auHasard, melanger, type PropsActivite, useAvancement } from "./commun";
 
 /** L5 Lis le mot : l'enfant lit à voix haute, puis touche le haut-parleur pour vérifier. Pas d'image avant la lecture. */
-export function LisLeMot({ f, profil, onFini }: PropsActivite) {
+export function LisLeMot({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const nombre = f.unite.bloc === "bilan" ? (profil === "5ans" ? 6 : 10) : profil === "5ans" ? 3 : 5;
   const mots = useMemo(() => melanger(motsDe(f).filter((m) => !m.motOutil)).slice(0, nombre), [f, nombre]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, mots.length);
   const [verifie, setVerifie] = useState(false);
   const mot = mots[i];
 

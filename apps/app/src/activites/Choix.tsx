@@ -6,7 +6,7 @@ import { Mot } from "../composants/Mot";
 import { ENCOURAGEMENTS, motsDe, pseudosDe, syllabesDe, syllabesJusquAu } from "../contenu";
 import { consigneProfil, useSyllakids } from "../contexte";
 import type { ItemSyllabe } from "../types";
-import { auHasard, melanger, pause, type PropsActivite } from "./commun";
+import { auHasard, melanger, pause, type PropsActivite, useAvancement } from "./commun";
 
 /** Distracteurs proches : même voyelle ou même consonne, déjà lisibles. */
 function distracteurs(cible: ItemSyllabe, rang: number, n: number): ItemSyllabe[] {
@@ -17,13 +17,14 @@ function distracteurs(cible: ItemSyllabe, rang: number, n: number): ItemSyllabe[
 }
 
 /** L4 Quelle syllabe ? Une syllabe est dite, l'enfant touche celle qu'il a entendue. */
-export function QuelleSyllabe({ f, profil, onFini }: PropsActivite) {
+export function QuelleSyllabe({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire, noter } = useSyllakids();
   const tours = useMemo(() => {
     const cibles = melanger(syllabesDe(f)).slice(0, profil === "5ans" ? 3 : 5);
     return cibles.map((c) => ({ cible: c, choix: melanger([c, ...distracteurs(c, Math.min(f.unite.rang, 13), profil === "5ans" ? 2 : 3)]) }));
   }, [f, profil]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, tours.length);
   const [etat, setEtat] = useState<Record<string, "juste" | "faux">>({});
   const erreurs = useRef(0);
   const occupe = useRef(true);
@@ -89,7 +90,7 @@ export function QuelleSyllabe({ f, profil, onFini }: PropsActivite) {
 }
 
 /** L6 Vrai mot ou mot inventé ? L'enfant lit, puis dit si le mot existe : il doit déchiffrer, pas reconnaître. */
-export function VraiOuInvente({ f, profil, onFini }: PropsActivite) {
+export function VraiOuInvente({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire, noter } = useSyllakids();
   const n = profil === "5ans" ? 2 : 3;
   const items = useMemo(
@@ -101,6 +102,7 @@ export function VraiOuInvente({ f, profil, onFini }: PropsActivite) {
     [f, n],
   );
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, items.length);
   const occupe = useRef(false);
   const item = items[i];
 

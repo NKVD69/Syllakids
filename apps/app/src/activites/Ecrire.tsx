@@ -10,7 +10,7 @@ import type { Trait } from "../trace/evaluer";
 import { estLaLettre } from "../trace/reconnaitre";
 import { SOUPLESSE } from "../trace/evaluer";
 import type { FichierUnite, Profil } from "../types";
-import { auHasard, melanger, pause, type PropsActivite } from "./commun";
+import { auHasard, melanger, pause, type PropsActivite, useAvancement } from "./commun";
 
 export type Niveau = "syllabes" | "mots";
 interface ADicter { id: string; texte: string; lettres: string[] }
@@ -36,11 +36,12 @@ export function aDicter(f: FichierUnite, niveau: Niveau, profil: Profil): ADicte
 const modele = (l: string): Trait[] => (TRACES[l]?.traits ?? []).map((t) => t.map(([x, y]) => [x, y] as const));
 
 /** E2 La dictée : une case par lettre ; l'application vérifie chaque lettre parmi celles déjà apprises. */
-export function Dictee({ f, profil, onFini, niveau }: PropsActivite & { niveau: Niveau }) {
+export function Dictee({ f, profil, onFini, niveau, avancer }: PropsActivite & { niveau: Niveau }) {
   const { dire, noter, conserver, progression } = useSyllakids();
   const items = useMemo(() => aDicter(f, niveau, profil), [f, niveau, profil]);
   const modeles = useMemo(() => Object.fromEntries(lettresApprises(f).map((l) => [l, modele(l)])), [f]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, items.length);
   const [etats, setEtats] = useState<("juste" | "faux" | undefined)[]>([]);
   const [aide, setAide] = useState(false);
   const cases = useRef<(PoigneeEcriture | null)[]>([]);
@@ -135,11 +136,12 @@ export function Dictee({ f, profil, onFini, niveau }: PropsActivite & { niveau: 
 }
 
 /** E3 Les étiquettes : l'enfant compose ce qu'il entend avec des lettres à toucher dans l'ordre. */
-export function Etiquettes({ f, profil, onFini, niveau }: PropsActivite & { niveau: Niveau }) {
+export function Etiquettes({ f, profil, onFini, niveau, avancer }: PropsActivite & { niveau: Niveau }) {
   const { dire, noter } = useSyllakids();
   const items = useMemo(() => aDicter(f, niveau, profil), [f, niveau, profil]);
   const apprises = useMemo(() => lettresApprises(f), [f]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, items.length);
   const item = items[i];
   const reserveInitiale = useMemo(() => {
     if (!item) return [];

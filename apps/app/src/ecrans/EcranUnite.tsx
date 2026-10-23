@@ -22,7 +22,12 @@ export function EcranUnite({ id }: { id: string }) {
   useEffect(() => debutSeance(), [debutSeance]);
   const [i, setI] = useState(0);
 
-  const suivante = useCallback(() => setI((k) => k + 1), []);
+  // avancement à l'intérieur de l'activité en cours (0 à 1), remis à zéro à chaque activité
+  const [fraction, setFraction] = useState(0);
+  const suivante = useCallback(() => {
+    setFraction(0);
+    setI((k) => k + 1);
+  }, []);
 
   const fini = i >= etapes.length;
 
@@ -69,15 +74,24 @@ export function EcranUnite({ id }: { id: string }) {
         <BoutonRond nom="Revenir au chemin" variante="petit" onClick={() => naviguer("#/")}><Maison /></BoutonRond>
         <BoutonRond nom="Réécouter la consigne" variante="petit" onClick={() => void redire()}><Oreille /></BoutonRond>
         <span className="espace" />
-        <div className="avancement" aria-label={`Étape ${Math.min(i + 1, etapes.length)} sur ${etapes.length}`}>
+        <div
+          className="avancement"
+          role="progressbar"
+          aria-label={`Activité ${Math.min(i + 1, etapes.length)} sur ${etapes.length}`}
+          aria-valuemin={0}
+          aria-valuemax={etapes.length}
+          aria-valuenow={Math.min(etapes.length, i + fraction)}
+        >
           {etapes.map((e, k) => (
-            <span key={k} className={k < i ? "fait" : k === i ? "encours" : ""} />
+            <span key={k} className={k < i || fini ? "fait" : k === i ? "encours" : ""}>
+              {k === i && !fini && <i style={{ width: `${Math.round(fraction * 100)}%` }} />}
+            </span>
           ))}
         </div>
       </header>
       <main className="cahier" style={{ flex: 1, display: "flex" }}>
         {Courante ? (
-          <Courante key={i} f={f} profil={profil} onFini={suivante} />
+          <Courante key={i} f={f} profil={profil} onFini={suivante} avancer={setFraction} />
         ) : (
           <div className="scene">
             <span className="fin" aria-hidden style={revoir ? { color: "var(--bleu)" } : undefined}><Etoile /></span>

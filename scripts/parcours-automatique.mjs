@@ -51,6 +51,7 @@ const has = async (sel) => (await p.$(sel)) !== null;
 const clic = async (sel) => { const e = await p.$(sel); if (e) await e.click().catch(() => {}); };
 let codes = [];
 let nTrace = 0;
+const valeursAvancement = new Set();
 while (Date.now() - t0 < Number(process.env.DUREE_MAX ?? 420) * 1000) {
   if (await has(".fin")) { await p.screenshot({ path: `${out}/${prefixe}-fin.png` }); break; }
   const etape = await p.$$eval(".avancement span", (s) => s.findIndex((x) => x.classList.contains("encours")));
@@ -60,6 +61,8 @@ while (Date.now() - t0 < Number(process.env.DUREE_MAX ?? 420) * 1000) {
     await p.screenshot({ path: `${out}/${prefixe}-${String(etape).padStart(2, "0")}.png` });
   }
   const dernier = await p.evaluate(() => document.documentElement.dataset.dernierSon ?? "");
+  const v = await p.getAttribute(".avancement", "aria-valuenow").catch(() => null);
+  if (v) valeursAvancement.add(Math.round(Number(v) * 10) / 10);
   if (await has('[aria-label$="mots lus"]')) { await clic('[aria-label="Continuer"]'); }
   else if (await has('[aria-label="Commencer la minute"]')) { await clic('[aria-label="Commencer la minute"]'); }
   else if (await has(".chrono")) { if (!vu.has("chrono")) { vu.add("chrono"); await p.screenshot({ path: `${out}/${prefixe}-chrono.png` }); } const ms = await p.$$(".chrono button:not(.lu)"); if (ms.length) await ms[0].click(); await p.waitForTimeout(800); }
@@ -132,6 +135,7 @@ while (Date.now() - t0 < Number(process.env.DUREE_MAX ?? 420) * 1000) {
 }
 if (!(await has(".fin"))) await p.screenshot({ path: `${out}/${prefixe}-arret.png` });
 console.log(`${prefixe}: étapes vues ${[...vu].join(",")} ; fin=${await has(".fin")} ; ${codes.join(" ")} ; ${Math.round((Date.now() - t0) / 1000)} s`);
+console.log(`barre d'avancement : ${valeursAvancement.size} positions (${[...valeursAvancement].sort((a, b) => a - b).join(" ")})`);
 const etat = await p.evaluate(() => JSON.parse(localStorage.getItem("syllakids:progression:00000000-0000-4000-8000-000000000001") ?? "{}"));
 const notes = Object.entries(etat.items ?? {});
 console.log(`items notés : ${notes.length} ; ` + notes.map(([id, e]) => `${id}:${e.reussites}/${e.essais} b${e.boite}`).join(" "));

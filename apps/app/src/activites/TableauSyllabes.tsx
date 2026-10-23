@@ -4,10 +4,10 @@ import { Mot } from "../composants/Mot";
 import { syllabesDe } from "../contenu";
 import { consigneProfil, useSyllakids } from "../contexte";
 import type { ItemSyllabe } from "../types";
-import { melanger, type PropsActivite } from "./commun";
+import { melanger, type PropsActivite, useAvancement } from "./commun";
 
 /** L3 Le tableau de syllabes : chaque syllabe s'allume à son tour, l'enfant la lit puis la touche pour vérifier. */
-export function TableauSyllabes({ f, profil, onFini }: PropsActivite) {
+export function TableauSyllabes({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const base = useMemo<ItemSyllabe[]>(() => {
     const s = syllabesDe(f);
@@ -22,6 +22,7 @@ export function TableauSyllabes({ f, profil, onFini }: PropsActivite) {
   const [tour, setTour] = useState(0);
   const [ordre, setOrdre] = useState(base);
   const [i, setI] = useState(0);
+  useAvancement(avancer, tour * ordre.length + i, tours * ordre.length);
 
   useEffect(() => {
     void dire(consigneProfil("L3", profil));

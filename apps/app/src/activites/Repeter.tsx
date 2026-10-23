@@ -6,7 +6,7 @@ import { Mot } from "../composants/Mot";
 import { syllabesDe } from "../contenu";
 import { consigneProfil, useSyllakids } from "../contexte";
 import { enregistrer, fermerMicro, lireEnregistrement, ouvrirMicro, SEUIL_VOIX, suivreNiveau } from "../micro";
-import { melanger, pause, type PropsActivite } from "./commun";
+import { melanger, pause, type PropsActivite, useAvancement } from "./commun";
 
 /** Ouvre le micro pour la durée de l'activité ; null si refusé ou absent. */
 function useMicro(): MediaStream | null | undefined {
@@ -43,11 +43,12 @@ function SansMicro({ onFini }: { onFini: () => void }) {
 type EtapeEcho = "modele" | "pret" | "enregistre" | "reecoute" | "juge";
 
 /** R1 L'écho : modèle, enregistrement de l'enfant (5 s au plus), réécoute côte à côte, auto-évaluation. */
-export function Echo({ f, profil, onFini }: PropsActivite) {
+export function Echo({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire, conserver } = useSyllakids();
   const flux = useMicro();
   const items = useMemo(() => melanger(syllabesDe(f)).slice(0, profil === "5ans" ? 3 : 4), [f, profil]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, items.length);
   const [etape, setEtape] = useState<EtapeEcho>("modele");
   const [niveau, setNiveau] = useState(0);
   const voix = useRef<Blob | null>(null);
@@ -117,12 +118,13 @@ export function Echo({ f, profil, onFini }: PropsActivite) {
 }
 
 /** R2 Le son qui dure : la barre avance tant que l'enfant fait durer le son. */
-export function SonQuiDure({ f, profil, onFini }: PropsActivite) {
+export function SonQuiDure({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const flux = useMicro();
   const lettres = useMemo(() => (f.unite.rang === 0 ? ["A", "O", "I"].slice(0, profil === "5ans" ? 2 : 3) : [f.unite.graphemes[0]!.g]), [f, profil]);
   const objectif = profil === "5ans" ? 1500 : 2500; // millisecondes de son continu
   const [k, setK] = useState(0);
+  useAvancement(avancer, k, lettres.length);
   const [progres, setProgres] = useState(0);
   const [ecoute, setEcoute] = useState(false);
   const [passer, setPasser] = useState(false);

@@ -4,7 +4,7 @@ import { Coche, Gomme } from "../composants/Icones";
 import { ENCOURAGEMENTS, TRACES, consigne } from "../contenu";
 import { useSyllakids } from "../contexte";
 import { evaluer, SOUPLESSE, type Etape, type Point, type Trait } from "../trace/evaluer";
-import { auHasard, pause, type PropsActivite } from "./commun";
+import { auHasard, pause, type PropsActivite, useAvancement } from "./commun";
 import { dessinerReglure, pointDepart, positionsNumeros, repereCase, repereLigne, tracerChemin, versModele, type Repere } from "../trace/dessin";
 
 type Phase = "observer" | Etape;
@@ -27,7 +27,7 @@ const MS_PAR_COPIE = 350;
  * E1 Trace la lettre : une ligne de lettres identiques, à chaque étape : observer, repasser,
  * tracer avec le point de départ, puis sans aide. L'enfant trace les lettres de la ligne l'une après l'autre.
  */
-export function TraceLettre({ f, profil, onFini }: PropsActivite) {
+export function TraceLettre({ f, profil, onFini, avancer: signalerAvancement }: PropsActivite) {
   const { dire, conserver, progression } = useSyllakids();
   const lettres = useMemo(
     () => (f.unite.rang === 0 ? (profil === "5ans" ? ["A", "I"] : ["A", "I", "O", "É"]) : f.unite.graphemes.map((g) => g.g)),
@@ -38,6 +38,7 @@ export function TraceLettre({ f, profil, onFini }: PropsActivite) {
   const [iLettre, setILettre] = useState(0);
   const [iPhase, setIPhase] = useState(0);
   const [iCase, setICase] = useState(0);
+  useAvancement(signalerAvancement, (iLettre * phases.length + iPhase) * n + (phases[iPhase] === "observer" ? 0 : iCase), lettres.length * phases.length * n);
   const [message, setMessage] = useState("");
   const lettre = lettres[iLettre]!;
   const phase = phases[iPhase]!;

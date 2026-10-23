@@ -8,7 +8,7 @@ import { ENCOURAGEMENTS, UNITES, motsDe, phrasesDe, syllabesJusquAu, trouverItem
 import { consigneProfil, useSyllakids } from "../contexte";
 import { itemsDus, jour } from "../revisions";
 import type { ItemPhrase, ItemSyllabe } from "../types";
-import { auHasard, melanger, pause, type PropsActivite } from "./commun";
+import { auHasard, melanger, pause, type PropsActivite, useAvancement } from "./commun";
 
 /** Vérifie qu'une image existe (les illustrations arrivent au fil de leur production). */
 async function imageDisponible(nom: string): Promise<boolean> {
@@ -24,7 +24,7 @@ async function imageDisponible(nom: string): Promise<boolean> {
  * C1 Lis et choisis l'image. L'image n'apparaît qu'avec la phrase déjà lue.
  * Sans illustrations disponibles pour l'unité, l'activité se retire d'elle-même.
  */
-export function PhraseImage({ f, profil, onFini }: PropsActivite) {
+export function PhraseImage({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire, noter } = useSyllakids();
   const [phrases, setPhrases] = useState<ItemPhrase[] | null>(null);
   const [i, setI] = useState(0);
@@ -52,6 +52,7 @@ export function PhraseImage({ f, profil, onFini }: PropsActivite) {
       .slice(0, profil === "5ans" ? 1 : 2)
       .map((cible) => ({ cible, choix: melanger([cible, ...melanger(phrases.filter((p) => p.id !== cible.id)).slice(0, 2)]) }));
   }, [phrases, profil]);
+  useAvancement(avancer, i, tours.length);
 
   const tour = tours[i];
   if (!tour) return <div className="scene" />;
@@ -106,7 +107,7 @@ function page<T extends { id: string }>(mots: T[], lus: Set<string>): T[] {
 }
 
 /** F1 Chrono-lecture : une minute pour lire le plus de mots possible ; l'enfant touche chaque mot lu. */
-export function ChronoLecture({ onFini }: PropsActivite) {
+export function ChronoLecture({ onFini, avancer }: PropsActivite) {
   const { dire, progression, modifier } = useSyllakids();
   const mots = useMemo(() => melanger(motsChrono()).slice(0, 48), []);
   const [lus, setLus] = useState<Set<string>>(new Set());
@@ -114,6 +115,7 @@ export function ChronoLecture({ onFini }: PropsActivite) {
   const [score, setScore] = useState<number | null>(null);
   const lusRef = useRef(lus);
   lusRef.current = lus;
+  useAvancement(avancer, reste === null ? 0 : 60 - reste, 60);
 
   // tous les mots lus avant la fin : la minute s'arrête
   useEffect(() => {
@@ -173,7 +175,7 @@ export function ChronoLecture({ onFini }: PropsActivite) {
 }
 
 /** Révision en début de séance : les items dus des unités précédentes (boîtes de Leitner). */
-export function Revision({ f, onFini }: PropsActivite) {
+export function Revision({ f, onFini, avancer }: PropsActivite) {
   const { dire, noter, progression } = useSyllakids();
   const items = useMemo(
     () => itemsDus(progression.items, jour(), { exclureUnite: f.unite.id, max: 5 }).map(trouverItem).filter(Boolean) as NonNullable<ReturnType<typeof trouverItem>>[],
@@ -182,6 +184,7 @@ export function Revision({ f, onFini }: PropsActivite) {
     [],
   );
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, items.length);
   const [ecoute, setEcoute] = useState(false);
   const [etat, setEtat] = useState<Record<string, "juste" | "faux">>({});
   const debut = useRef(false);

@@ -6,7 +6,7 @@ import { Carre, Coche, HautParleur, Oreille, Rond, Triangle } from "../composant
 import { ENCOURAGEMENTS, MOTS_ORAUX } from "../contenu";
 import { consigneProfil, useSyllakids } from "../contexte";
 import type { ItemMot } from "../types";
-import { auHasard, melanger, pause, type PropsActivite } from "./commun";
+import { auHasard, melanger, pause, type PropsActivite, useAvancement } from "./commun";
 
 /** Son étudié dans l'unité : son phonème (API) et sa forme provisoire pour la synthèse vocale. */
 function sonDe(f: PropsActivite["f"]) {
@@ -27,7 +27,7 @@ function useDebut(lancer: () => Promise<void>, deps: unknown[]) {
 }
 
 /** A1 J'entends / je n'entends pas. */
-export function JEntends({ f, profil, onFini }: PropsActivite) {
+export function JEntends({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const son = sonDe(f);
   const n = profil === "5ans" ? 4 : 6;
@@ -37,6 +37,7 @@ export function JEntends({ f, profil, onFini }: PropsActivite) {
     return melanger([...avec, ...sans]);
   }, [son.p, n]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, mots.length);
   const erreurs = useRef(0);
   const occupe = useRef(true);
 
@@ -86,7 +87,7 @@ export function JEntends({ f, profil, onFini }: PropsActivite) {
 }
 
 /** A2 Où est le son ? L'enfant pose le jeton dans la case-syllabe où il entend le son. */
-export function OuEstLeSon({ f, profil, onFini }: PropsActivite) {
+export function OuEstLeSon({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const son = sonDe(f);
   const mots = useMemo(
@@ -98,6 +99,7 @@ export function OuEstLeSon({ f, profil, onFini }: PropsActivite) {
     [son.p, profil],
   );
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, mots.length);
   const [jeton, setJeton] = useState<number | null>(null);
   const [faux, setFaux] = useState<number | null>(null);
   const erreurs = useRef(0);
@@ -168,7 +170,7 @@ export function OuEstLeSon({ f, profil, onFini }: PropsActivite) {
 const FORMES = [Rond, Triangle, Carre];
 
 /** A3 L'intrus sonore : trois mots entendus, un seul n'a pas le son. Aucun texte affiché. */
-export function IntrusSonore({ f, profil, onFini }: PropsActivite) {
+export function IntrusSonore({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const son = sonDe(f);
   const tours = useMemo(() => {
@@ -181,6 +183,7 @@ export function IntrusSonore({ f, profil, onFini }: PropsActivite) {
     }).filter((t) => t.cartes.every(Boolean));
   }, [son.p, profil]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, tours.length);
   const [choix, setChoix] = useState<number | null>(null);
   const [entendues, setEntendues] = useState<Set<number>>(new Set());
   const erreurs = useRef(0);

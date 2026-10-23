@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { jouer } from "../audio";
 import { syllabesDe } from "../contenu";
 import { consigneProfil, useSyllakids } from "../contexte";
-import { pause, type PropsActivite } from "./commun";
+import { pause, type PropsActivite, useAvancement } from "./commun";
 
 /** L1 La glissade : l'enfant fait glisser la consonne jusqu'à la voyelle, les deux sons se collent. */
-export function Glissade({ f, profil, onFini }: PropsActivite) {
+export function Glissade({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const consonne = f.unite.graphemes[0]!.g;
   const voyelles = profil === "5ans" ? ["A", "I", "O"] : ["A", "I", "O", "U"];
   const [tour, setTour] = useState(0);
+  useAvancement(avancer, tour, voyelles.length);
   const [decalage, setDecalage] = useState({ x: 0, y: 0 });
   const [colle, setColle] = useState(false);
   const depart = useRef<{ x: number; y: number } | null>(null);

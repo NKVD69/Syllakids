@@ -6,13 +6,14 @@ import { Fleche, HautParleur } from "../composants/Icones";
 import { Mot } from "../composants/Mot";
 import { phrasesDe } from "../contenu";
 import { consigneProfil, useSyllakids } from "../contexte";
-import type { PropsActivite } from "./commun";
+import { type PropsActivite, useAvancement } from "./commun";
 
 /** L7 La phrase karaoké : l'enfant lit, puis écoute la phrase pendant que les mots s'allument. */
-export function PhraseKaraoke({ f, profil, onFini }: PropsActivite) {
+export function PhraseKaraoke({ f, profil, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const phrases = useMemo(() => phrasesDe(f).slice(0, profil === "5ans" ? 2 : 4), [f, profil]);
   const [i, setI] = useState(0);
+  useAvancement(avancer, i, phrases.length);
   const [lu, setLu] = useState(-1);
   const [ecoutee, setEcoutee] = useState(false);
   const phrase = phrases[i];

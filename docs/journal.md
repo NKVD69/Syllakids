@@ -2,6 +2,8 @@
 
 ## Session 7 — 23 octobre 2026
 
+- Barre d'avancement : elle n'avançait qu'en changeant d'activité. La pastille de l'activité en cours s'allonge maintenant et se remplit à chaque exercice réussi ou passé (chaque syllabe, chaque mot, chaque lettre tracée).
+
 - Tracé des lettres (E1) : une ligne de lettres identiques à chaque étape, comme sur un cahier — 5 lettres en profil 6 ans, 3 en profil 5 ans. L'enfant les trace l'une après l'autre (la case en cours est colorée) ; la première lettre s'anime avec l'ordre des traits, les copies apparaissent ensuite. En profil 6 ans, cela fait 15 lettres tracées par lettre apprise (repasser, point de départ, sans aide). La ligne écrite à la dernière étape est gardée si l'accord le permet.
 
 - Bouton « Paramètres » (roue dentée) sur le chemin et sur l'écran de choix de l'enfant, protégé par un calcul de CE1 (addition ou soustraction avec retenue, table de 2 à 5) ; après 3 erreurs, 30 secondes d'attente. Le même calcul ouvre l'espace adulte (sauf sur la tablette de la classe, où le mot de passe de l'enseignant reste demandé).

@@ -4,7 +4,7 @@ import { BoutonRond } from "../composants/BoutonRond";
 import { Parler, Fleche, HautParleur } from "../composants/Icones";
 import { syllabesDe } from "../contenu";
 import { useSyllakids } from "../contexte";
-import type { PropsActivite } from "./commun";
+import { type PropsActivite, useAvancement } from "./commun";
 
 /** Présentation du son de l'unité : la lettre, son son, « dis-le avec moi ». */
 export function Presentation({ f, onFini }: PropsActivite) {
@@ -38,10 +38,11 @@ export function Presentation({ f, onFini }: PropsActivite) {
 }
 
 /** Présentation des voyelles : l'enfant touche chaque lettre pour entendre son son. */
-export function PresentationVoyelles({ f, onFini }: PropsActivite) {
+export function PresentationVoyelles({ f, onFini, avancer }: PropsActivite) {
   const { dire } = useSyllakids();
   const syllabes = syllabesDe(f);
   const [ecoutees, setEcoutees] = useState<Set<string>>(new Set());
+  useAvancement(avancer, ecoutees.size, syllabes.length);
 
   useEffect(() => {
     void dire("CON-GEN-08");

@@ -57,10 +57,13 @@ button { font: inherit; color: inherit; }
   border-bottom: 1px solid var(--ligne-fine);
 }
 .barre .espace { flex: 1; }
-.avancement { display: flex; gap: 8px; }
-.avancement span { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--trait-ui); }
+.avancement { display: flex; gap: 8px; align-items: center; }
+.avancement span { width: 14px; height: 14px; border-radius: 7px; border: 2px solid var(--trait-ui); flex: none; overflow: hidden; }
 .avancement span.fait { background: var(--vert); border-color: var(--vert); }
-.avancement span.encours { background: var(--trait-ui); }
+/* l'activité en cours s'allonge et se remplit au fil des exercices */
+.avancement span.encours { width: 64px; border-color: var(--vert); background: var(--papier); }
+.avancement span.encours i { display: block; height: 100%; background: var(--vert); transition: width 0.4s ease; }
+@media (max-width: 600px) { .avancement { gap: 5px; } .avancement span { width: 10px; height: 10px; } .avancement span.encours { width: 40px; } }
 
 .bouton-rond {
   width: var(--zone-toucher); height: var(--zone-toucher);
